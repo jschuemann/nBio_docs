@@ -8,7 +8,7 @@ If working on a Mac, I recommend installing Python with Homebrew to avoid messin
 To build and view the docs locally (recommended for substantial editing), you will need to
 
 pip install sphinx sphinx-autobuild sphinx_rtd_theme
-pip install -e git://github.com/jschuemann/nBio-docs.git
+pip install -e git://github.com/jschuemann/nBio)\_docs.git
 then, after your edits
 
 make clean
