@@ -1,5 +1,5 @@
-# SDD
-SDD - Standard data format to record DNA Damage
+# TOPAS-nBio
+The nanometer scale extension for radiobiology of the TOPAS Monte Carlo system
 
 The documentation is written in reStructuredText format (reST). It is hosted by ReadTheDocs. A good resource on reST is the Sphinx documentation, but please note that not all features described there are supported by ReadTheDocs. It also describes some Python-only features, since that is its domain.
 
@@ -8,7 +8,7 @@ If working on a Mac, I recommend installing Python with Homebrew to avoid messin
 To build and view the docs locally (recommended for substantial editing), you will need to
 
 pip install sphinx sphinx-autobuild sphinx_rtd_theme
-pip install -e git://github.com/jschuemann/SDD.git
+pip install -e git://github.com/jschuemann/nBio-docs.git
 then, after your edits
 
 make clean
