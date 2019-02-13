@@ -16,7 +16,7 @@ Getting Started
     docs/Introduction
     
 
-The SDD Collaboration
+The TOPAS-nBio Collaboration
 ^^^^^^^^^^^^^^^^^^^^^^^
 .. toctree::
     :maxdepth: 1
