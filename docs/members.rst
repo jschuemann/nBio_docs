@@ -1,4 +1,4 @@
-Members of the SDD Collaboration
+Members of the TOPAS-nBio Collaboration
 ==================================
 :doc:`Main Page <../index>`
 
