@@ -1,0 +1,11 @@
+div[class^='highlight'] pre {
+    background-color: #272822 !important;
+}
+
+.highlight .nc {
+    font-weight: normal !important;
+} /* Name.Class */
+
+.highlight .kc {
+    font-weight: normal !important;
+} /* Keyword.Constant */
