@@ -14,6 +14,7 @@ Getting Started
     :maxdepth: 1
 
     docs/Introduction
+    docs/HowToInstall
     
 
 The TOPAS-nBio Collaboration
