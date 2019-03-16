@@ -9,7 +9,7 @@ Members of the TOPAS-nBio Collaboration
 .. figure:: ../images/HMS_Logo.gif
    :scale: 18 %
 .. figure:: ../images/mgh-logo.png
-   :scale: 30 %
+   :scale: 35 %
 
 Jan Schuemann (PI)
 
@@ -38,6 +38,6 @@ Jose Mendez-Ramos
 **Members of:**
 
 .. figure:: ../images/SLAC-logo.png
-   :scale: 40 %
+   :scale: 42 %
 
 Joseph Perl
