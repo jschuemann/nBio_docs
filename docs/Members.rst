@@ -13,13 +13,13 @@ and
 .. figure:: ../images/mgh-logo.png
    :scale: 35 %
 
-Jan Schuemann (PI)
+Jan Schuemann, Ph.D. (PI)
 
-Aimee McNamara 
+Aimee McNamara, Ph.D. 
 
-Harald Paganetti
+Harald Paganetti, Ph.D.
 
-Kathy Held
+Kathy Held, Ph.D.
 
 
 |
@@ -30,9 +30,9 @@ Kathy Held
    :scale: 20 %
 
 
-Bruce Faddegon
+Bruce Faddegon, Ph.D.
 
-Jose Mendez-Ramos
+Jose Mendez-Ramos, Ph.D.
 
 
 |
@@ -42,4 +42,4 @@ Jose Mendez-Ramos
 .. figure:: ../images/SLAC-logo.png
    :scale: 42 %
 
-Joseph Perl
+Joseph Perl, M.S.
