@@ -19,6 +19,9 @@ Harald Paganetti
 Kathy Held
 
 
+
+
+
 .. figure:: ../images/ucsf-logo.png
    :scale: 20 %
 
@@ -26,6 +29,9 @@ Kathy Held
 Bruce Faddegon
 
 Jose Mendez-Ramos
+
+
+
 
 
 .. figure:: ../images/SLAC-logo.png
