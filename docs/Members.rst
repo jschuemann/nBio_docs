@@ -8,7 +8,7 @@ Members of the TOPAS-nBio Collaboration
 .. figure:: ../images/HMS_Logo.gif
    :scale: 20 %
 .. figure:: ../images/mgh-logo.png
-   :scale: 20 %
+   :scale: 30 %
 
 Jan Schuemann (PI)
 
@@ -17,8 +17,6 @@ Aimee McNamara
 Harald Paganetti
 
 Kathy Held
-
-
 
 
 
@@ -35,6 +33,6 @@ Jose Mendez-Ramos
 
 
 .. figure:: ../images/SLAC-logo.png
-   :scale: 20 %
+   :scale: 40 %
 
 Joseph Perl
