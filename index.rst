@@ -3,13 +3,20 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+
+.. note::
+    This page will be fully avaialable (hopefully) by 04/01/2019.
+
+
 Welcome to the documentation of TOPAS-nBio!
 =========================================================================================
 
 The TOPAS Monte Carlo (MC) system is used in radiation therapy and medical imaging research, having played a significant role in making Monte Carlo simulations widely available for proton therapy related research. While TOPAS provides detailed simulations of patient scale properties, the fundamental unit of the biological response to radiation is a cell. Thus, our goal was to develop TOPAS-nBio, an extension of TOPAS dedicated to advance understanding of radiobiological effects at the (sub-)cellular (i.e., the cellular and sub-cellular) scale. TOPAS-nBio was designed as a set of open source classes that extends TOPAS to model radiobiological experiments. TOPAS-nBio is based on and extends Geant4-DNA, which extends the Geant4 toolkit, the basis of TOPAS, to include very low-energy interactions of particles down to vibrational energies. TOPAS-nBio explicitly simulates every particle interaction (i.e., without using condensed histories) and propagates radiolysis products. To further facilitate the use of TOPAS-nBio, a graphical user interface was developed. TOPAS-nBio offers full track-structure Monte Carlo simulations, integration of chemical reactions within the first millisecond, an extensive catalogue of specialized cell geometries as well as sub-cellular structures such as DNA and mitochondria, and interfaces to mechanistic models of DNA repair kinetics. We compared TOPAS-nBio simulations to measured and published data of energy deposition patterns and chemical reaction rates (G values). Our simulations agree well within the experimental uncertainties. Additionally, we expanded the chemical reactions and species provided in Geant4-DNA and developed a new method based on independent reaction times (IRT), including a total of 72 reactions classified into 6 types between neutral and charged species. Chemical stage simulations using IRT were a factor of 145 faster than with step-by-step tracking. The IRT method is, however, still under development and will only be part of a later release.
 
+
 In summary, the TOPAS-nBio extension to the TOPAS MC application offers access to accurate and detailed multiscale simulations, from a macroscopic description of the radiation field to microscopic description of biological outcome for selected cells. TOPAS-nBio offers detailed physics and chemistry simulations of radiobiological experiments on cells simulating the initially induced damage and links to models of DNA repair kinetics. By releasing TOPAS-nBio as an open source extension to TOPAS, we intend to encourage active involvement of the research community to continuously extend and improve the features of TOPAS-nBio.
 
+|
 |
 
 TOPAS-nBio is described in the following publications:
@@ -47,9 +54,6 @@ Underwood, T. S. A., Sung, W., McFadden, C. H., McMahon, S. J., Hall, D. C., McN
 Perl, J., Shin, J., Schuemann, J., Faddegon, B., & Paganetti, H. (2012). TOPAS: an innovative proton Monte Carlo platform for research and clinical applications. Medical Physics, 39(11), 6818–6837. http://doi.org/10.1118/1.4758060
 
 |
-
-.. note::
-    This page will be fully avaialable (hopefully) by 04/01/2019.
 
 Getting Started
 ^^^^^^^^^^^^^^^^^^
