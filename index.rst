@@ -62,6 +62,9 @@ Getting Started
 
     docs/Introduction
     docs/HowToInstall
+    docs/Geometries
+    docs/Chemistry
+    docs/BiologyModeling
     
 
 The TOPAS-nBio Collaboration
