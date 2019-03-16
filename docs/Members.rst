@@ -6,19 +6,22 @@ Members of the TOPAS-nBio Collaboration
 
 
 .. figure:: ../images/HMS_Logo.png
-   :scale: 60 %
+   :scale: 20 %
 .. figure:: ../images/mgh-logo.png
-   :scale: 60 %
+   :scale: 20 %
 
-Jan Schuemann, Aimee McNamara, Harald Paganetti, Kathy Held
+Jan Schuemann (PI)
+Aimee McNamara 
+Harald Paganetti
+Kathy Held
 
 .. figure:: ../images/ucsf-logo.png
-   :scale: 60 %
+   :scale: 20 %
 
 
 Bruce Faddegon, Jose Mendez-Ramos
 
 .. figure:: ../images/SLAC-logo.png
-   :scale: 60 %
+   :scale: 20 %
 
 Joseph Perl
