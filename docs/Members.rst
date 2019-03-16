@@ -5,14 +5,14 @@ Members of the TOPAS-nBio Collaboration
 **Founding members of TOPAS-nBio**
 
 
-.. figure:: ../images/HMS-logo.png
+.. figure:: ../images/HMS_Logo.png
    :scale: 60 %
-.. figure:: ../images/MGH-logo.png
+.. figure:: ../images/mgh-logo.png
    :scale: 60 %
 
 Jan Schuemann, Aimee McNamara, Harald Paganetti, Kathy Held
 
-.. figure:: ../images/UCSF-logo.png
+.. figure:: ../images/ucsf-logo.png
    :scale: 60 %
 
 
