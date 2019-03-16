@@ -8,6 +8,7 @@ Members of the TOPAS-nBio Collaboration
 
 .. figure:: ../images/HMS_Logo.gif
    :scale: 18 %
+and
 .. figure:: ../images/mgh-logo.png
    :scale: 35 %
 
