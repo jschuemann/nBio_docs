@@ -20,6 +20,7 @@ Harald Paganetti
 Kathy Held
 
 
+|
 
 **Members of:**
 
@@ -32,7 +33,7 @@ Bruce Faddegon
 Jose Mendez-Ramos
 
 
-
+|
 
 **Members of:**
 
