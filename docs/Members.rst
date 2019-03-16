@@ -5,7 +5,7 @@ Members of the TOPAS-nBio Collaboration
 **Founding members of TOPAS-nBio**
 
 
-.. figure:: ../images/HMS_Logo.png
+.. figure:: ../images/HMS_Logo.gif
    :scale: 20 %
 .. figure:: ../images/mgh-logo.png
    :scale: 20 %
