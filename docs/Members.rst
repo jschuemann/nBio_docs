@@ -4,7 +4,7 @@ Members of the TOPAS-nBio Collaboration
 
 **Founding members of TOPAS-nBio**
 
-Members of:
+**Members of:**
 
 .. figure:: ../images/HMS_Logo.gif
    :scale: 18 %
@@ -21,7 +21,7 @@ Kathy Held
 
 
 
-Members of:
+**Members of:**
 
 .. figure:: ../images/ucsf-logo.png
    :scale: 20 %
@@ -34,7 +34,7 @@ Jose Mendez-Ramos
 
 
 
-Membesr of:
+**Members of:**
 
 .. figure:: ../images/SLAC-logo.png
    :scale: 40 %
