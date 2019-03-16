@@ -19,7 +19,7 @@ In summary, the TOPAS-nBio extension to the TOPAS MC application offers access t
 |
 |
 
-TOPAS-nBio is described in the following publications:
+**TOPAS-nBio is described in the following publications:**
 
 **Main Publication**
 When using TOPAS-nBio, please cite this paper:
