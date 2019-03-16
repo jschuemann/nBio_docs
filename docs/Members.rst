@@ -3,17 +3,22 @@ Members of the TOPAS-nBio Collaboration
 :doc:`Main Page <../index>`
 
 **Founding members of TOPAS-nBio**
- 
-Jan Schuemann, Massachusetts General Hospital & Harvard Medical School
 
-Aimee McNamara, Massachusetts General Hospital & Harvard Medical School
 
-Harald Paganetti, Massachusetts General Hospital & Harvard Medical School
+.. figure:: images/HMS-logo.png
+   :scale: 60 %
+.. figure:: images/MGH-logo.png
+   :scale: 60 %
 
-Kathy Held, Massachusetts General Hospital & Harvard Medical School
+Jan Schuemann, Aimee McNamara, Harald Paganetti, Kathy Held
 
-Bruce Faddegon, University of California, San Francisco
+.. figure:: images/UCSF-logo.png
+   :scale: 60 %
 
-Jose Mendez-Ramos, University of California, San Francisco
 
-Joseph Perl, SLAC National Accelerator Laboratory
+Bruce Faddegon, Jose Mendez-Ramos
+
+.. figure:: images/SLAC-logo.png
+   :scale: 60 %
+
+Joseph Perl
