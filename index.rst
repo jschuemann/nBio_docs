@@ -22,6 +22,7 @@ In summary, the TOPAS-nBio extension to the TOPAS MC application offers access t
 **TOPAS-nBio is described in the following publications:**
 
 **Main Publication**
+
 When using TOPAS-nBio, please cite this paper:
 
 Schuemann, J., McNamara, A. L., Ramos-Méndez, J., Perl, J., Held, K. D., Paganetti, H., Incerti, S., Faddegon, B. (2019). TOPAS-nBio: An Extension to the TOPAS Simulation Toolkit for Cellular and Sub-cellular Radiobiology. Radiation Research, 191(2), 125–138. http://doi.org/10.1667/RR15226.1
@@ -29,6 +30,7 @@ Schuemann, J., McNamara, A. L., Ramos-Méndez, J., Perl, J., Held, K. D., Pagane
 |
 
 **The Geant4-DNA project**
+
 TOPAS-nBio is based on and extends Geant4-DNA. Information on the Geant4-DNA project can be found at:
 
 http://geant4-dna.org/
