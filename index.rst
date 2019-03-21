@@ -29,7 +29,6 @@ Schuemann, J., McNamara, A. L., Ramos-Méndez, J., Perl, J., Held, K. D., Pagane
 .. figure:: ./images/CoverBig2.pdf
    :scale: 30 %
 
-
 |
 
 **The Geant4-DNA project**
