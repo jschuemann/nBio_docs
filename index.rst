@@ -20,11 +20,15 @@ The TOPAS-nBio extension to the TOPAS MC application offers access to accurate a
 
 **TOPAS-nBio is described in the following publications:**
 
-**Main Publication**
+**Main Publication (Featured on the Cover of Radiation Research)**
 
 When using TOPAS-nBio, please cite this paper:
 
 Schuemann, J., McNamara, A. L., Ramos-Méndez, J., Perl, J., Held, K. D., Paganetti, H., Incerti, S., Faddegon, B. (2019). TOPAS-nBio: An Extension to the TOPAS Simulation Toolkit for Cellular and Sub-cellular Radiobiology. Radiation Research, 191(2), 125–138. http://doi.org/10.1667/RR15226.1
+
+.. figure:: ../images/Cover2.png
+   :scale: 60 %
+
 
 |
 
@@ -38,11 +42,11 @@ http://geant4-dna.org/
 
 **Other relevant publications**
 
-McNamara, A. L., Ramos-Méndez, J., Perl, J., Held, K., Dominguez, N., Moreno, E., Henthorn, N., Kirkby, K. J., Meylan, S., Villagrasa, C., Incerti, S., Faddegon, B., Paganetti, H., Schuemann, J. (2018). Geometrical structures for radiation biology research as implemented in the TOPAS-nBio toolkit. Physics in Medicine and Biology, 63(17), 175018. http://doi.org/10.1088/1361-6560/aad8eb
+McNamara, A. L., Ramos-Méndez, J., Perl, J., Held, K., Dominguez, N., Moreno, E., Henthorn, N., Kirkby, K. J., Meylan, S., Villagrasa, C., Incerti, S., Faddegon, B., Paganetti, H., Schuemann, J. (2018). Geometrical structures for radiation biology research as implemented in the TOPAS-nBio toolkit. Physics in Medicine and Biology, 63(17), 175018. http://doi.org/10.1088/1361-6560/aad8eb
 
 Ramos-Méndez, J., Perl, J., Schuemann, J., McNamara, A., Paganetti, H., & Faddegon, B. (2018). Monte Carlo simulation of chemistry following radiolysis with TOPAS-nBio. Physics in Medicine and Biology, 63(10), 105014. http://doi.org/10.1088/1361-6560/aac04c
 
-Ramos-Méndez, J., Schuemann, J., Incerti, S., Paganetti, H., Schulte, R., & Faddegon, B. (2017). Flagged uniform particle splitting for variance reduction in proton and carbon ion track-structure simulations. Physics in Medicine and Biology, 62(15), 5908–5925. http://doi.org/10.1088/1361-6560/aa7831
+Ramos-Méndez, J., Schuemann, J., Incerti, S., Paganetti, H., Schulte, R., & Faddegon, B. (2017). Flagged uniform particle splitting for variance reduction in proton and carbon ion track-structure simulations. Physics in Medicine and Biology, 62(15), 5908–5925. http://doi.org/10.1088/1361-6560/aa7831
 
 McNamara, A., Geng, C., Turner, R., Méndez, J. R., Perl, J., Held, K., et al. (2017). Validation of the radiobiology toolkit TOPAS-nBio in simple DNA geometries. Physica Medica : PM : an International Journal Devoted to the Applications of Physics to Medicine and Biology : Official Journal of the Italian Association of Biomedical Physics (AIFB), 33, 207–215. http://doi.org/10.1016/j.ejmp.2016.12.010
 
