@@ -26,7 +26,7 @@ When using TOPAS-nBio, please cite this paper:
 
 Schuemann, J., McNamara, A. L., Ramos-Méndez, J., Perl, J., Held, K. D., Paganetti, H., Incerti, S., Faddegon, B. (2019). TOPAS-nBio: An Extension to the TOPAS Simulation Toolkit for Cellular and Sub-cellular Radiobiology. Radiation Research, 191(2), 125–138. http://doi.org/10.1667/RR15226.1
 
-.. figure:: ./images/Cover2.png
+.. figure:: ./images/CoverBig2.pdf
    :scale: 30 %
 
 
