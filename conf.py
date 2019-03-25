@@ -177,8 +177,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'nBio.tex', u'TOPAS-nBio Documentation',
-     u'Jan Schuemann', 'manual'),
+    (master_doc, 'nBio.tex', 'TOPAS-nBio Documentation',
+     'Jan Schuemann', 'manual'),
 ]
 
 
@@ -187,7 +187,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'TOPAS-nBio', u'TOPAS-nBio Documentation',
+    (master_doc, 'TOPAS-nBio', 'TOPAS-nBio Documentation',
      [author], 1)
 ]
 
