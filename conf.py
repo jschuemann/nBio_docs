@@ -68,14 +68,16 @@ language = None
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path .
 #exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']
-exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store', '.build']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.build']
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+#pygments_style = 'sphinx'
 #pygments_style = 'sdd'
+pygments_style = 'topas'
 
 # The default language used to highlight source code
 #highlight_language = 'sdd'
+highlight_language = 'topas'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
