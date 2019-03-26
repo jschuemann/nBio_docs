@@ -28,7 +28,9 @@ Ramos-Méndez, J., Perl, J., Schuemann, J., McNamara, A., Paganetti, H., & Fadde
 
 Ramos-Méndez, J., Schuemann, J., Incerti, S., Paganetti, H., Schulte, R., & Faddegon, B. (2017). Flagged uniform particle splitting for variance reduction in proton and carbon ion track-structure simulations. Physics in Medicine and Biology, 62(15), 5908–5925. http://doi.org/10.1088/1361-6560/aa7831
 
-McNamara, A., Geng, C., Turner, R., Méndez, J. R., Perl, J., Held, K., et al. (2017). Validation of the radiobiology toolkit TOPAS-nBio in simple DNA geometries. Physica Medica : PM : an International Journal Devoted to the Applications of Physics to Medicine and Biology : Official Journal of the Italian Association of Biomedical Physics (AIFB), 33, 207–215. http://doi.org/10.1016/j.ejmp.2016.12.010
+Ramos-Méndez, J., Burigo, L. N., Schulte, R,, Chuang, C, & Faddegon, B. (2018) Fast calculation of nanodosimetric quantities in treatment planning of proton and ion therapy. Physics in Medicine and Biology 63(23), 235015-14 pp. http://iopscience.iop.org/article/10.1088/1361-6560/aaeeee
+
+McNamara, A., Geng, C., Turner, R., Ramos-Méndez, J., Perl, J., Held, K., et al. (2017). Validation of the radiobiology toolkit TOPAS-nBio in simple DNA geometries. Physica Medica : PM : an International Journal Devoted to the Applications of Physics to Medicine and Biology : Official Journal of the Italian Association of Biomedical Physics (AIFB), 33, 207–215. http://doi.org/10.1016/j.ejmp.2016.12.010
 
 Underwood, T. S. A., Sung, W., McFadden, C. H., McMahon, S. J., Hall, D. C., McNamara, A. L., et al. (2017). Comparing stochastic proton interactions simulated using TOPAS-nBio to experimental data from fluorescent nuclear track detectors. Physics in Medicine and Biology, 62(8), 3237–3249. http://doi.org/10.1088/1361-6560/aa6429
 
