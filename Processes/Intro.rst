@@ -2,7 +2,7 @@ Introduction
 ============
 
 TOPAS-nBio facilitates the use of the physical and chemical processes available in Geant4-DNA toolkit.
-Additional capabilities are also provided that allows: 
+Additional capabilities are also provided that allow: 
  1. The customization of physical models involved in the physics list.
  2. The use of Geant4-DNA physics per region.
  3. The use of a variance reduction technique.
