@@ -7,6 +7,67 @@ these modules in the modular physics list, e.g.::
 
  sv:Ph/Default/Modules = 1 "g4em-dna_opt2"
 
+List of Available Modules
+-------------------------
+It is not trivial to set a default physics list for track-structure Monte Carlo. The lack
+of experimental measurements for liquid water at nanoscopic scales makes it difficult to 
+validate of the existing physics models. Several constructors are provided by Geant4-DNA
+which contain a variety of physics models for scattering processes. Hence, the
+selection of a suitable physics is delegated to the users judgment according to the problem
+they need to tackle. The detailed description of each process and associated model available 
+in Geant4-DNA is shown `here <http://geant4-dna.in2p3.fr/styled-3/styled-8/index.html>`_. These
+models are condensed into several Geant4 constructors as shown 
+`here <http://geant4-dna.in2p3.fr/styled-3/styled-9/index.html>`_ The
+correspondence between the Geant4-DNA physics constructors and the TOPAS modules is shown 
+in the table at below. Users who are advanced experts in Geant4 physics can also write 
+their own Geant4 physics modules and plug these into TOPAS through the Extensions 
+Interface, see `TOPAS physics list <https://topas.readthedocs.io/en/latest/extension-docs/physics.html>`_.
+
+
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+|  **TOPAS Module Name**      | **Geant4 Class Name**          | **Notes**                                                                              |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna                    | G4EmDNAPhysics                 | Default Geant4-DNA constructor                                                         |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna_opt1               | G4EmDNAPhysics_option1         |                                                                                        |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna_opt2               | G4EmDNAPhysics_option2         | Accelerated default Geant4-DNA constructor                                             |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna_opt3               | G4EmDNAPhysics_option3         |                                                                                        |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna_opt4               | G4EmDNAPhysics_option4         | See `Kyriakou et al., (2016) <http://dx.doi.org/10.1063/1.4950808>`_                   |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna_opt5               | G4EmDNAPhysics_option5         |                                                                                        |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna_opt6               | G4EmDNAPhysics_option6         | See `Bordage et al., (2016) <http://dx.doi.org/10.1016/j.ejmp.2016.10.006>`_           |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna_opt7               | G4EmDNAPhysics_option7         |                                                                                        |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna_opt8               | G4EmDNAPhysics_option8         |                                                                                        |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna-stationary         | G4EmDNAPhysics_stationary      | The kinetic energy of the particle is set to its incident value in inelastic processes |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna-stationary_opt2    | G4EmDNAPhysics_stationary_opt2 | The kinetic energy of the particle is set to its incident value in inelastic processes |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna-stationary_opt4    | G4EmDNAPhysics_stationary_opt4 | The kinetic energy of the particle is set to its incident value in inelastic processes |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna-stationary_opt6    | G4EmDNAPhysics_stationary_opt6 | The kinetic energy of the particle is set to its incident value in inelastic processes |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna-chemistry          | G4EmDNAChemistry               | Default Geant4-DNA constructor                                                         |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| g4em-dna-chemistry_opt1     | G4EmDNAChemistry_opt1          | Includes revised chemistry parameters                                                  |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| TsEmDNAPhysics              | N/A                            | Allows to customize physics models per process                                         |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| TsEmDNAChemistry            | N/A                            | Includes revised chemistry parameters                                                  |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+| TsEmDNAChemistryExtended    | N/A                            | Includes revised chemistry parameters and an extended set of reactions                 |
++-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+
+
+
+
+
+
 Physics models per region
 --------------------------
 A region is a Geant4 development that allows the use of different production cuts 
