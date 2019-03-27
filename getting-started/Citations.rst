@@ -12,6 +12,15 @@ Schuemann, J., McNamara, A. L., Ramos-Méndez, J., Perl, J., Held, K. D., Pagane
 
 |
 
+**TOPAS**
+
+TOPAS can be downloaded from http://www.topasmc.org and the TOPAS documentation can be found at:
+
+https://topas.readthedocs.io
+
+
+|
+
 **The Geant4-DNA project**
 
 TOPAS-nBio is based on and extends Geant4-DNA. Information on the Geant4-DNA project can be found at:
