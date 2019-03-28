@@ -1,15 +1,14 @@
 Members of the TOPAS-nBio Collaboration
 =======================================
 
-**Founding members of TOPAS-nBio**
+Founding members of TOPAS-nBio
+-------------------------------
 
-**Members of:**
-
-.. figure:: ../images/HMS_Logo.gif
+.. image:: ../images/HMS_Logo.gif
    :scale: 18 %
-and
 
-.. figure:: ../images/mgh-logo.png
+
+.. image:: ../images/mgh-logo.png
    :scale: 35 %
 
 Jan Schuemann, Ph.D. (PI)
@@ -20,10 +19,8 @@ Harald Paganetti, Ph.D.
 
 Kathy Held, Ph.D.
 
-
 |
 
-**Members of:**
 
 .. figure:: ../images/ucsf-logo.png
    :scale: 20 %
@@ -36,9 +33,12 @@ Jose Mendez-Ramos, Ph.D.
 
 |
 
-**Members of:**
-
 .. figure:: ../images/SLAC-logo.png
    :scale: 42 %
 
 Joseph Perl, M.S.
+
+|
+
+External Collaborators
+----------------------
