@@ -19,18 +19,17 @@ parameter::
 The order of these modules must be consistent with the occurrence of the 
 physical and chemical processes. Then, the module for the physical process
 must be followed by the module for the chemical process. By default, the 
-pre-chemical and chemical stages are actived, but not explicit step-by-step 
+pre-chemical and chemical stages are activated, but not explicit step-by-step 
 transport is performed. This is useful only for the scoring of the G-value 
-(the yield chemical of species per 100 eV of energy deposit) as a function 
-of the time. A scorer that retrieves this quantity is the ``GValue`` scorer.
+(the yield of chemical species per 100 eV of energy deposit) as a function 
+of time. A scorer that retrieves this quantity is the ``GValue`` scorer.
 The example ``GvalueG4DNADefault.txt`` shows a complete implementation of this
 scorer.
 
 Explicit transport of chemical species
 ---------------------------------------------
 The explicit step-by-step transport of chemical species can be activated by
-using a set of parameters associated to a chemistry name (in an analog way 
-to the physics list ``Ph/ListName``). Different sets of parameters can be 
+using a set of parameters associated to a chemistry name (analogous to the physics list ``Ph/ListName``). Different sets of parameters can be 
 associated to different chemistry names, and only those assigned to the 
 chemistry name called by the following parameter will be used (e.g.
 ``TOPASChemistry``::
@@ -38,11 +37,10 @@ chemistry name called by the following parameter will be used (e.g.
  s:Ch/ChemistryName = "TOPASChemistry"
 
 The configuration of parameters for the step-by-step chemistry 
-stage requires to define: end time and time resolution. The end time must be
-larger than 1 ps (init time for the chemical stage). The time resolution can be 
-defined piecewise. For example, to set the transport of chemical species up to 15 ns with time 
-steps resolution of 1 ns from 1 ps to 10 ns and 10 ps from 10 ns to 15 ns,
-the following paremeters must be set (assuming the chemistry name ``TOPASChemistry``)::
+stage requires the user to define end time and time resolution. The end time must be
+larger than 1 ps (time for the chemical stage). The time resolution can be 
+defined piecewise. For example, to set the transport of chemical species up to 15 ns with time step resolution of 1 ns from 1 ps to 10 ns and 10 ps from 10 ns to 15 ns,
+the following parameters must be set (assuming the chemistry name ``TOPASChemistry``)::
 
  b:Ch/TOPASChemistry/ChemicalStageTransportActive     = "True" 
  d:Ch/TOPASChemistry/ChemicalStageTimeEnd             = 15.0 ns
@@ -58,7 +56,7 @@ of chemical species is ``ActiveChemistryDefault.txt``.
 Configurable chemistry list
 ---------------------------
 Simulation of the water radiolysis process requires the setup of a 
-large set of parameters: branching ratios, dissociaction schemes, 
+large set of parameters: branching ratios, dissociation schemes, 
 reaction rates, type of chemical species  and diffusion coefficients. 
 Advanced users that require to activate or deactivate reactions, change the 
 reaction rates or diffusion coefficients, etc., have that flexibility 
@@ -75,7 +73,7 @@ or::
 In this way, a whole set of parameters can be customized by using the following 
 conventions. Chemical species are named using full names without separation 
 spaces, for example, H\ :sub:`2`\ O\ :sub:`2` is HydrogenPeroxide (case 
-unsensitive). The list of available molecules and diffusion coefficients 
+insensitive). The list of available molecules and diffusion coefficients 
 customizable via ``TsEmDNAChemistry`` and ``TsEmDNAChemistryExtended``  are 
 shown in the following table:
 
@@ -110,7 +108,7 @@ Prechemical stage
 The dissociation schemes and branching ratios are inherit from Geant4-DNA. 
 In general, users do not need to change or set these values. If for any reason
 the users require customization of these parameters, then the following 
-will facilicate such task (assuming ``s:Ch/ChemistryName = "TOPASChemistry"``)::
+will facilitate such task (assuming ``s:Ch/ChemistryName = "TOPASChemistry"``)::
 
  u:Ch/TOPASChemistry/IonizationState/DissociativeDecayProbability = 1.00
  u:Ch/TOPASChemistry/A1B1/DissociativeDecayProbability = 0.65 

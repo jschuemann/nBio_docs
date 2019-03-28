@@ -11,7 +11,7 @@ List of Available Modules
 -------------------------
 It is not trivial to set a default physics list for track-structure Monte Carlo. The lack
 of experimental measurements for liquid water at nanoscopic scales makes it difficult to 
-validate of the existing physics models. Several constructors are provided by Geant4-DNA
+validate of the existing physics models. Several constructors are provided by Geant4-DNA,
 which contain a variety of physics models for scattering processes. Hence, the
 selection of a suitable physics is delegated to the users judgment according to the problem
 they need to tackle. The detailed description of each process and associated model available 

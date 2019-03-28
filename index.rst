@@ -22,6 +22,7 @@ The TOPAS-nBio extension to the TOPAS MC application offers access to accurate a
 
     getting-started/Introduction
     getting-started/HowToInstall
+    getting-started/ParameterFile
     getting-started/Members
     getting-started/Citations
    
@@ -51,4 +52,10 @@ The TOPAS-nBio extension to the TOPAS MC application offers access to accurate a
 	
     Modeling/Intro
     Modeling/DNARepair
+
+.. toctree::
+    :maxdepth: 1
+    :caption: GUI
+	
+    GUI/Intro	
   
