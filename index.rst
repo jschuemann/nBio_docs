@@ -5,7 +5,8 @@
 
 
 .. note::
-    This page is currently under construction.
+    This page is currently under construction. 
+    TOPAS-nBio is expected to be released this month after the next TOPAS release which includes essential updates required for TOPAS-nBio.
 
 
 Welcome to the documentation of TOPAS-nBio!
