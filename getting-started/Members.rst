@@ -60,6 +60,30 @@ External Collaborators
 +--------------------------------------+
 
 
-University of Manchester
++--------------------------------------+
+| .. image:: ../images/UManchester.png |
+|    :scale: 31%                       |
++--------------------------------------+
+|  Michael Merchant, Ph.D.             |
+|                                      |
+|  Karen Kirkby, Ph.D.                 |
+|                                      |
+|  John Warmenhoven, Ph.D.             |
+|                                      |
+|  Nicolas Henthorn, Ph.D.             |
+|                                      |
+|  Sam Ingram, M.S.                    |
+|                                      |
++--------------------------------------+
 
-Queens University Belfast
+
++--------------------------------------+
+| .. image:: ../images/QUB.png         |
+|    :scale: 31%                       |
++--------------------------------------+
+|  Stephen McMahon, Ph.D.              |
+|                                      |
++--------------------------------------+
+
+
+
