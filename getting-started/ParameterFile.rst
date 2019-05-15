@@ -20,7 +20,7 @@ A Parameter_Name can be almost any string, but we have prefix conventions to kee
 * ``Ge/`` for Geometry Components
 * ``So/`` for Particle Sources
 * ``Ph/`` for Physics
-* ``Ch/`` for Chemistry
+* ``Ch/`` for Chemistry  (introduced for TOPAS-nBio)
 * ``Vr/`` for Variance Reduction
 * ``Sc/`` for Scoring
 * ``Gr/`` for Graphics
@@ -37,6 +37,10 @@ The Parameter_Type tells TOPAS what type of data will be in this parameter:
 * ``dv`` for Dimensioned Double Vector
 * similarly for ``uv``, ``iv``, ``bv`` and ``sv``
  
+
+The Parameter_Name and Parameter_Value define what the line does. There are certain key parameters that will initiate the construction of, for example, a scorer or a geometry, which then causes TOPAS to look for necessary connected parameters, e.g. the size of the object. 
+
+Within TOPAS-nBio, many new components and options have been developed, the implementation and the required parameters are described on this site. For all other parameters covered by TOPAS, please refer to the TOPAS documentation: `TOPAS Parameter System`_.
 
 
 .. _TOPAS Parameter System: https://topas.readthedocs.io/en/latest/parameters/intro/index.html

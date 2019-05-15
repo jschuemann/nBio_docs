@@ -6,15 +6,16 @@
 
 .. note::
     This page is currently under construction. 
-    TOPAS-nBio is expected to be released this month after the next TOPAS release which includes essential updates required for TOPAS-nBio.
+    TOPAS-nBio is expected to be released this month (May 2019).
 
 
 Welcome to the documentation of TOPAS-nBio!
 =========================================================================================
 
-The TOPAS Monte Carlo (MC) system is used in radiation therapy and medical imaging research, having played a significant role in making Monte Carlo simulations widely available for proton therapy related research. While TOPAS provides detailed simulations of patient scale properties, the fundamental unit of the biological response to radiation is a cell. Thus, our goal was to develop TOPAS-nBio, an extension of TOPAS dedicated to advance understanding of radiobiological effects at the (sub-)cellular (i.e., the cellular and sub-cellular) scale. TOPAS-nBio was designed as a set of open source classes that extends TOPAS to model radiobiological experiments. TOPAS-nBio is based on and extends Geant4-DNA, which extends the Geant4 toolkit, the basis of TOPAS, to include very low-energy interactions of particles down to vibrational energies. TOPAS-nBio explicitly simulates every particle interaction (i.e., without using condensed histories) and propagates radiolysis products. To further facilitate the use of TOPAS-nBio, a graphical user interface was developed. TOPAS-nBio offers full track-structure Monte Carlo simulations, integration of chemical reactions within the first millisecond, an extensive catalogue of specialized cell geometries as well as sub-cellular structures such as DNA and mitochondria, and interfaces to mechanistic models of DNA repair kinetics. The TOPAS-nBio package was described in Radiation Research, 191(2), p.125 (also see Citations on the left).
+The TOPAS Monte Carlo (MC) system has played a significant role in making Monte Carlo simulations widely available for proton therapy related research and is further used in radiation therapy and medical imaging research. While TOPAS provides detailed simulations of patient scale properties, the fundamental unit of the biological response to radiation is a cell. Thus, we developed TOPAS-nBio, an extension of TOPAS dedicated to advance understanding of radiobiological effects at the (sub-)cellular (i.e., the cellular and sub-cellular) scale. TOPAS-nBio is designed as a set of open source classes that extends TOPAS to model radiobiological experiments. TOPAS-nBio is based on and extends Geant4-DNA, which extends the Geant4 toolkit, the basis of TOPAS, to include very low-energy interactions of particles down to vibrational energies. TOPAS-nBio explicitly simulates every particle interaction (i.e., without using condensed histories) and propagates radiolysis products. To further facilitate the use of TOPAS-nBio, a graphical user interface was developed. TOPAS-nBio offers full track-structure Monte Carlo simulations, integration of chemical reactions within the first millisecond, an extensive catalogue of specialized cell geometries as well as sub-cellular structures such as DNA and mitochondria. TOPAS-nBio provides the initially induced damage patterns and interfaces to mechanistic models of DNA repair kinetics. Thus, together with TOPAS, this extension offers access to accurate and detailed multiscale simulations, from a macroscopic description of the radiation field to microscopic description of biological outcome.
 
-The TOPAS-nBio extension to the TOPAS MC application offers access to accurate and detailed multiscale simulations, from a macroscopic description of the radiation field to microscopic description of biological outcome for selected cells. TOPAS-nBio offers detailed physics and chemistry simulations of radiobiological experiments on cells simulating the initially induced damage and links to models of DNA repair kinetics. By releasing TOPAS-nBio as an open source extension to TOPAS, we intend to encourage active involvement of the research community to continuously extend and improve the features of TOPAS-nBio.
+The TOPAS-nBio package was described in Radiation Research, 2019, 191(2), p.125 (also see :ref:`Citations`).
+By releasing TOPAS-nBio as an open source extension to TOPAS, we intend to encourage active involvement of the research community to continuously extend and improve the features of TOPAS-nBio. 
 
 
 .. toctree::
@@ -26,6 +27,7 @@ The TOPAS-nBio extension to the TOPAS MC application offers access to accurate a
     getting-started/ParameterFile
     getting-started/Members
     getting-started/Citations
+    getting-started/License
    
     
 .. toctree::
