@@ -47,6 +47,19 @@ Founding members of TOPAS-nBio
 External Collaborators
 ----------------------
 
++--------------------------------------+
+| .. image:: ../images/geant4-dna.jpg  |
+|    :scale: 8%                        |
+| .. image:: ../images/CENBG.jpeg      |
+|    :scale: 31%                       |
+| .. image:: ../images/CNRS.jpeg       |
+|    :scale: 22%                       |
++--------------------------------------+
+|  Sebastién Incerti, Ph.D.            |
+|                                      |
++--------------------------------------+
+
+
 University of Manchester
 
 Queens University Belfast
