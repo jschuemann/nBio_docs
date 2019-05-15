@@ -44,14 +44,14 @@ Founding members of TOPAS-nBio
 
 
 
-External Collaborators
-----------------------
+External Collaborators and Contributers
+---------------------------------------
 
 +--------------------------------------+
 | .. image:: ../images/geant4-dna.jpg  |
 |    :scale: 8%                        |
 | .. image:: ../images/CENBG.jpeg      |
-|    :scale: 31%                       |
+|    :scale: 33%                       |
 | .. image:: ../images/CNRS.jpeg       |
 |    :scale: 22%                       |
 +--------------------------------------+
@@ -62,7 +62,7 @@ External Collaborators
 
 +--------------------------------------+
 | .. image:: ../images/UManchester.png |
-|    :scale: 31%                       |
+|    :scale: 42%                       |
 +--------------------------------------+
 |  Michael Merchant, Ph.D.             |
 |                                      |
@@ -79,7 +79,7 @@ External Collaborators
 
 +--------------------------------------+
 | .. image:: ../images/QUB.png         |
-|    :scale: 31%                       |
+|    :scale: 34%                       |
 +--------------------------------------+
 |  Stephen McMahon, Ph.D.              |
 |                                      |
