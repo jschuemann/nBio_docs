@@ -11,15 +11,15 @@ The chemistry parameters provided in the first module are reported in
 [Karamitros2012]_ [Incerti2016]_. The chemistry parameters provided in
 the second module are reported in [RamosMendez2018]_.
  
-The activation of the chemical stage is then delegated to the following 
-parameter::
+The activation of the chemical stage is performed by including a chemistry model in 
+the modular physics list, for example using the following parameter::
 
  sv:Ph/Default/Modules = 2 "g4em-dna" "g4em-dna-chemistry"
 
 The order of these modules must be consistent with the occurrence of the 
-physical and chemical processes. Then, the module for the physical process
+physical and chemical processes. Thus, the module for the physical process
 must be followed by the module for the chemical process. By default, the 
-pre-chemical and chemical stages are activated, but not explicit step-by-step 
+pre-chemical and chemical stages are activated, but no explicit step-by-step 
 transport is performed. This is useful only for the scoring of the G-value 
 (the yield of chemical species per 100 eV of energy deposit) as a function 
 of time. A scorer that retrieves this quantity is the ``GValue`` scorer.
@@ -29,16 +29,16 @@ scorer.
 Explicit transport of chemical species
 ---------------------------------------------
 The explicit step-by-step transport of chemical species can be activated by
-using a set of parameters associated to a chemistry name (analogous to the physics list ``Ph/ListName``). Different sets of parameters can be 
-associated to different chemistry names, and only those assigned to the 
-chemistry name called by the following parameter will be used (e.g.
+using a set of parameters associated with a chemistry name (analogous to the physics list ``Ph/ListName``). 
+Different sets of parameters can be associated to different chemistry names, and only those assigned to the 
+chemistry name defined by the following parameter will be used (e.g.
 ``TOPASChemistry``::
 
  s:Ch/ChemistryName = "TOPASChemistry"
 
 The configuration of parameters for the step-by-step chemistry 
-stage requires the user to define end time and time resolution. The end time must be
-larger than 1 ps (time for the chemical stage). The time resolution can be 
+stage requires the user to define an end time and a time resolution. The end time must be
+larger than 1 ps (i.e. the time where the chemical stage begins). The time resolution can be 
 defined piecewise. For example, to set the transport of chemical species up to 15 ns with time step resolution of 1 ns from 1 ps to 10 ns and 10 ps from 10 ns to 15 ns,
 the following parameters must be set (assuming the chemistry name ``TOPASChemistry``)::
 
@@ -54,14 +54,14 @@ and chemical) is ``particleTuple.txt``. A graphics example to visualize the tran
 of chemical species is ``ActiveChemistryDefault.txt``.
 
 Configurable chemistry list
----------------------------
+----------------------------
 Simulation of the water radiolysis process requires the setup of a 
 large set of parameters: branching ratios, dissociation schemes, 
-reaction rates, type of chemical species  and diffusion coefficients. 
+reaction rates, types of chemical species and diffusion coefficients. 
 Advanced users that require to activate or deactivate reactions, change the 
 reaction rates or diffusion coefficients, etc., have that flexibility 
 provided by TOPAS-nBio. For that, one of the specialized modules ``TsEmDNAChemistry``
-and ``TsEmDNAChemistryExtended``  must to be 
+and ``TsEmDNAChemistryExtended``  must be 
 included instead of the Geant4DNA chemistry module as follows:: 
 
  sv:Ph/Default/Modules = 2 "g4em-dna" "TsEmDNAChemistry"
@@ -69,6 +69,9 @@ included instead of the Geant4DNA chemistry module as follows::
 or::
 
  sv:Ph/Default/Modules = 2 "g4em-dna" "TsEmDNAChemistryExtended"
+
+Instead of the ``g4em-dna`` physics module, one of the other options described in the
+:ref:`Physics Processes` can be used.
 
 In this way, a whole set of parameters can be customized by using the following 
 conventions. Chemical species are named using full names without separation 
@@ -104,7 +107,7 @@ shown in the following table:
 +--------------------------+--------------------+------------------------------------------------------+
 
 Prechemical stage
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 The dissociation schemes and branching ratios are inherit from Geant4-DNA. 
 In general, users do not need to change or set these values. If for any reason
 the users require customization of these parameters, then the following 
