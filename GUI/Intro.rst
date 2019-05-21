@@ -63,9 +63,7 @@ MyBox be included in this control area, specify it in the parameter control file
 ----------------------------------
 A set of buttons above the parameter control table support additional functions:
 
-- Save: saves the current set of parameters to a new file in your current directory. The file name will be displayed in the session console area on the lower right.
-The new file will NOT overwrite your original parameter file.
-Rather, it will create a new parameter file that includes only your changes, and that then uses the TOPAS inclueFile mechanism to bring in your original parameter file for the other, unchanged values.
+- Save: saves the current set of parameters to a new file in your current directory. The file name will be displayed in the session console area on the lower right. The new file will NOT overwrite your original parameter file. Rather, it will create a new parameter file that includes only your changes, and that then uses the TOPAS inclueFile mechanism to bring in your original parameter file for the other, unchanged values.
 
 - +Geom: Brings up a window to let you add a new Geometry Component
 
