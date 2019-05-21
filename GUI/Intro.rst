@@ -7,6 +7,11 @@ The GUI allows the user to easily manipulate graphics
 information about the selected geometry element or particle track)
 and inspect and adjust TOPAS parameters.
 
+The GUI is based on the Qt Toolkit. To activate the GUI,
+include the following parameter in your TOPAS Parameter Control File::
+
+  Ts/UseQt = "True"
+
 The GUI is intended as a rapid prototyping extension of TOPAS-nBio.
 It allows you to easily see and adjust geometry
 and review the behavior of a small set of particle histories.
@@ -22,11 +27,6 @@ Future developments will extend the system such that users will
 be able to directly launch cluster or cloud jobs from the GUI,
 with the GUI serving to monitor the progress of those jobs and
 display their results.
-
-The GUI is based on the Qt Toolkit. To activate the GUI,
-include the following parameter in your TOPAS Parameter Control File::
-
-  Ts/UseQt = "True"
 
 .. image:: GUI.png
 
