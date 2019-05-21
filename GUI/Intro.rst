@@ -23,6 +23,11 @@ be able to directly launch cluster or cloud jobs from the GUI,
 with the GUI serving to monitor the progress of those jobs and
 display their results.
 
+The GUI is based on the Qt Toolkit. To activate the GUI,
+include the following parameter in your TOPAS Parameter Control File::
+
+  Ts/UseQt = "True"
+
 .. image:: GUI.png
 
 **Mouse Control**
