@@ -31,16 +31,16 @@ display their results.
 The top row of icons determine the behavior of the mouse when
 one clicks in the graphics window. Going from left to right:
 
-* Pick to Translate the Image. Moving the mouse will move the image left right up or down
+- Pick to Translate the Image. Moving the mouse will move the image left right up or down
 
-* Pick to Inquire. A pop-up window will give details about the selected object within the image (name of geometry, material, density etc.,
+- Pick to Inquire. A pop-up window will give details about the selected object within the image (name of geometry, material, density etc.,
 or type of particle track, partile energy, etc.).
 
-* Pick to Zoom out
+- Pick to Zoom out
 
-* Pick to Zoom in
+- Pick to Zoom in
 
-* Pick to Rotate. Moving the mouse will rotate the image.
+- Pick to Rotate. Moving the mouse will rotate the image.
 
 **The Parameter Control Table**
 ----------------------------------
@@ -54,27 +54,27 @@ You choose which of your TOPAS parameters will be displayed here
 by adding the prefix character "c" (for "changeable") to the parameter type. So, for example, to have the Z Half Length of a component named
 MyBox be included in this control area, specify it in the parameter control file as::
 
-ic:Ge/MyBox/HLX = 2
+  ic:Ge/MyBox/HLX = 2
 
-Or to have this NOT be present in the control area::
+  Or to have this NOT be present in the control area::
 
-i:Ge/MyBox/HLX = 2
+  i:Ge/MyBox/HLX = 2
 
 **Additional Functions**
 ----------------------------------
 A set of buttons above the parameter control table support additional functions:
 
-Save: saves the current set of parameters to a new file in your current directory.
+- Save: saves the current set of parameters to a new file in your current directory.
 The file name will be displayed in the session console area on the lower right.
 The new file will NOT overwrite your original parameter file.
 Rather, it will create a new parameter file that includes only your changes, and that then uses the TOPAS inclueFile mechanism to bring in your original parameter file for the other, unchanged values.
 
-+Geom: Brings up a window to let you add a new Geometry Component
+- +Geom: Brings up a window to let you add a new Geometry Component
 
-+Scorer: Brings up a window to let you add a new Scorer. Note that due to constraints in the way Geant4 initializes various functions, you can only add scorers Before the first run.
+- +Scorer: Brings up a window to let you add a new Scorer. Note that due to constraints in the way Geant4 initializes various functions, you can only add scorers Before the first run.
 
-+Source: Brings up a window to let you add a new Particle Source. Note that due to constraints in the way Geant4 initializes various functions, you can only add scorers Before the first run.
+- +Source: Brings up a window to let you add a new Particle Source. Note that due to constraints in the way Geant4 initializes various functions, you can only add scorers Before the first run.
 
-Run: Runs your simulation. You can issue this as many times as you wish, changing parameters and re-running to see new results.
+- Run: Runs your simulation. You can issue this as many times as you wish, changing parameters and re-running to see new results.
 
-PDF: Saved the current graphics window to a PDF file in your current directory.
+- PDF: Saved the current graphics window to a PDF file in your current directory.
