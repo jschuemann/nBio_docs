@@ -1,10 +1,5 @@
-Introduction to GUI
-====================
-
-**The TOPAS-nBio Graphical User Interface**
-----------------------------------
-
-.. image:: GUI.png
+The TOPAS-nBio Graphical User Interface
+=======================================
 
 TOPAS-nBio includes an optional Graphical User Interface (GUI).
 The GUI allows the user to easily manipulate graphics
@@ -28,6 +23,7 @@ be able to directly launch cluster or cloud jobs from the GUI,
 with the GUI serving to monitor the progress of those jobs and
 display their results.
 
+.. image:: GUI.png
 
 **Mouse Control**
 ----------------------------------
