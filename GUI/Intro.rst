@@ -55,7 +55,7 @@ MyBox be included in this control area, specify it in the parameter control file
 
   ic:Ge/MyBox/HLX = 2
 
-  Or to have this NOT be present in the control area::
+Or to have this NOT be present in the control area::
 
   i:Ge/MyBox/HLX = 2
 
