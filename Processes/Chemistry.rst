@@ -108,10 +108,10 @@ shown in the following table:
 
 Prechemical stage
 ~~~~~~~~~~~~~~~~~~~
-The dissociation schemes and branching ratios are inherit from Geant4-DNA. 
+The dissociation schemes and branching ratios are inherited from Geant4-DNA. 
 In general, users do not need to change or set these values. If for any reason
-the users require customization of these parameters, then the following 
-will facilitate such task (assuming ``s:Ch/ChemistryName = "TOPASChemistry"``)::
+the users require customization of these parameters, the following parameters available
+in TOPAS-nBio will facilitate this task (assuming ``s:Ch/ChemistryName = "TOPASChemistry"``)::
 
  u:Ch/TOPASChemistry/IonizationState/DissociativeDecayProbability = 1.00
  u:Ch/TOPASChemistry/A1B1/DissociativeDecayProbability = 0.65 
@@ -125,26 +125,26 @@ will facilitate such task (assuming ``s:Ch/ChemistryName = "TOPASChemistry"``)::
 Chemical stage
 ~~~~~~~~~~~~~~~
 For the chemical stage, the number of reactions and reaction rates are also 
-inherit from Geant4-DNA. Additional reactions can be defined using the molecules 
-from the previous table, and the reaction rates can also be overided for the 
-existing reactions. The way the reactions are defined is the following, let 
-assume the two molecules named ``SolvatedElectron`` and ``Oxygen``. After 
-their reaction, they produce the products ``SuperoxideAnion``.Then, two 
+inherited from Geant4-DNA. Additional reactions can be defined using the molecules 
+from the previous table, and the reaction rates can also be overwritten for the 
+existing reactions. The way the reactions are defined is the following, let us
+assume we have two molecules named ``SolvatedElectron`` and ``Oxygen``. After 
+their reaction, they produce the product ``SuperoxideAnion``. Then, two 
 parameters are required to define that reaction: one parameter to 
 associate the pair of molecules and define the products, one parameter to
 assigns the reaction rate (with units of /M/s), e.g::
 
- # Define the products
+ # Define the products:
  sv:Ch/TOPASChemistry/BinaryReaction/SolvatedElectron/Oxygen/Products    = 1 "SuperoxideAnion"
 
- # Assign a reaction rate value
+ # Assign a reaction rate value:
  d:Ch/TOPASChemistry/BinaryReaction/SolvatedElectron/Oxygen/ReactionRate = 1.9e10  /M/s
 
 If the reaction does not produce any product or the product won't react further, for 
 example,  the product from :sup:`•`\ OH + H\ :sup:`•` –> H :sub:`2`\ O, then the name ``NoProduct`` 
 must be used, e.g::
 
- # Define the reaction without products 
+ # Define the reaction without products:
  sv:Ch/TOPASChemistry/BinaryReaction/Hydroxyl/Hydrogen/Products = 1 "NoProduct"
 
 TOPAS-nBio provides two sets of chemical parameters in the files ``TOPASChemistry.txt`` 
@@ -158,9 +158,9 @@ capability.
 Truncation transport for chemical stage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 An additional feature is the capability to terminate the transport of chemical species in volumes
-having a user defined material. In that case, the species are terminated once they enter in contact
-with the volume (at boundary or first step within the volume). To use that capability, a new
-material must be clone from the ``G4_WATER`` material::
+having a user defined material. In that case, the species are terminated once they come in contact
+with the volume (at the boundary or the first step within the volume). To use that capability, a new
+material must be cloned from the ``G4_WATER`` material::
 
  s:Ma/G4_WATER_MODIFIED/CloneFromMaterial = "G4_WATER"
  s:Ma/G4_WATER_MODIFIED/CloneWithDensity  = 1.0 g/cm3
