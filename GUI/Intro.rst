@@ -1,7 +1,7 @@
 Introduction to GUI
 ====================
 
-**The TOPAS-nBio Graphics User Interface**
+**The TOPAS-nBio Graphical User Interface**
 ----------------------------------
 
 .. image:: GUI.png
