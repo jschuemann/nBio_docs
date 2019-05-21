@@ -31,16 +31,16 @@ display their results.
 The top row of icons determine the behavior of the mouse when
 one clicks in the graphics window. Going from left to right:
 
-Pick to Translate the Image. Moving the mouse will move the image left right up or down
+* Pick to Translate the Image. Moving the mouse will move the image left right up or down
 
-Pick to Inquire. A pop-up window will give details about the selected object within the image (name of geometry, material, density etc.,
+* Pick to Inquire. A pop-up window will give details about the selected object within the image (name of geometry, material, density etc.,
 or type of particle track, partile energy, etc.).
 
-Pick to Zoom out
+* Pick to Zoom out
 
-Pick to Zoom in
+* Pick to Zoom in
 
-Pick to Rotate. Moving the mouse will rotate the image.
+* Pick to Rotate. Moving the mouse will rotate the image.
 
 **The Parameter Control Table**
 ----------------------------------
