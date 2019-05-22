@@ -14,7 +14,7 @@ The methodology behind DaMaRiS has been published in [Ingram2019]_, [Henthorn201
 McMahon
 --------
 The McMahon model propagates DSBs in a temporal fashion taking into account the three major repair processes, NHEJ, Homologous Recombination (HR) and Backup or Microhomology Mediated End Joining (MMEJ). Each break can either be correctly or incorrectly (misjoined) repaired. The model has been described in [McMahon2016]_ and [McMahon2017]_.
-
+The McMahon model takes DSB damage distribution as input, but is (currently) an external Python-based program that can be linked to TOPAS-nBio via the SDD.
 
 
 References
