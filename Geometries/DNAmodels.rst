@@ -5,15 +5,31 @@ Undeniably the nucleus and the genome it contains is the primary radiation targe
 
 Simple Cylindrical Targets
 --------------------------
+
+.. figure:: images/CylinderDNA.png
+   :width: 300
+   :align: center 
+
+
 DNA has been modeled with Monte Carlo simulations for the last three decades. Originally, energy depositions were modeled within simple cylindrical targets representing DNA stands, nucleosomes or chromatin fibers in order to compare to the experimental microdosimetry data. 
 
-Three simple cylindrical target geometries are available, these represent a chromatin fiber, nucleosome and DNA strand, respectively::
+Three simple cylindrical target geometries are available, these represent a chromatin fiber (yellow), nucleosome (red) and DNA strand (green), respectively::
 
-  s:Ge/MyChromatin/Type="TsChromatin"
-  s:Ge/MyNucleosome/Type="TsNucleosome"
-  s:Ge/MyDNA/Type="TsDNA"  
+  s:Ge/MyChromatin/Type="TsCylindericalChromatin"
+  s:Ge/MyNucleosome/Type="TsCylindericalNucleosome"
+  s:Ge/MyDNA/Type="TsCylindericalDNA"  
 
-The size of the cylinders are set to sizes representing each representative geometry. For the DNA strand this is a length of 2 nm with a diameter of 2 nm, the nucleosome has a length of 10 nm and diameter of 5 nm while the chromatin fiber has a length of 25 nm and diameter of 25 nm. Users have the option of specifying new dimensions for each component. 
+The size of the cylinders are set to fixed sizes of the representative geometry. For the DNA strand this is a length of 2 nm with a diameter of 2 nm, the nucleosome has a length of 10 nm and diameter of 5 nm while the chromatin fiber has a length of 25 nm and diameter of 25 nm. However, users do have the option of specifying new dimensions for each component with the following parameters::
+
+
+  d:Ge/MyChromatin/ChromatinHalfLength=12.5 nm
+  d:Ge/MyChromatin/ChromatinRadius=12.5 nm
+
+  d:Ge/MyNucleosome/NucleosomeHalfLength=5 nm
+  d:Ge/MyNucleosome/NucleosomeRadius=2.5 nm
+  	
+  d:Ge/MyDNA/DNAHalfLength=1 nm
+  d:Ge/MyDNA/DNARadius=1 nm
 
 
 Charlton DNA Model
