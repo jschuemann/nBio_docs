@@ -207,7 +207,39 @@ Neutrophil are white bloods cells with a multi-lobed nucleus (3-5 lobes). Users 
   d:Ge/MyCell/NeutrophilRadius=7.0 um
 
  
+Neurons
+-------
 
+.. figure:: images/Neuron.png
+   :width: 500
+   :align: center
+
+
+In order to model realistic representations of the numerous types of neurons and supporting glial cells in the central nervous system, TOPAS-nBio has an interface to the `NeuroMorpho neuron database`_. The database contains over 60,000 neuron and glial geometries in 40 different brain regions for several different species, including rodent and human. To model a cell structure from the database, users need to download the standardized ASCII data file (in the SWC open source format for storing neuron morphologies) of the specific neuron or glial cell they wish to simulate. The standard SWC format is a text file starting with a free-text header section (denoted by the symbol #) and contains a matrix of 7 columns below the header. The standard format defines four neuron components with an integer value (1 -- soma, 2 -- axon, 3 -- basal dendrite and 4 -- apical dendrite) while values of 5+ are used for custom parameters. Note some formats extend on the standard format (SWC++) and include fork and end points as values 5 and 6, respectively.
+
+To simulate the neuron, specify the name of the SWC file, for example::
+
+  s:Ge/Neuron/Type="TsNeuroMorpo"
+  s:Ge/Neuron/NeuroMorpoFileName="NMO_00943_prc.txt" 
+
+A ntuple scorer specifically for neuron structures is also available::
+
+  s:Sc/NeuronScorer/Quantity    = "NtupleForNeuron"
+
+This ntuple scorer is an extension that can be edited by the user to add additional output parameters, depending on the application. More information on how to design custom scorers and the n-tuple format can be found on the `TOPAS custom scorers readthedocs`_. The default output of the scorer is::
+
+  Columns of data are as follows:
+  1: Position X [cm]
+  2: Position Y [cm]
+  3: Position Z [cm]
+  4: Energy [MeV]
+  5: Energy Deposited [MeV]
+  6: Particle Type (in PDG Format)
+  7: Track ID
+  8: Run ID
+  9: Event ID
+ 10: Volume Name
+ 11: Replica Number
 
 
 
@@ -234,10 +266,11 @@ The scorer is compatible with all the cell models and outputs the following data
 
 Users may edit the NtupleForCell extension to edit or add additional output parameters. More information on how to design custom scorers and the n-tuple format can be found on the `TOPAS custom scorers readthedocs`_.
 
-
-Note: The DoseToWater and DoseToMaterial scorers do not work with the Geant4-DNA physics processes. Please use the DoseToMedium scorer. 
+.. warning::
+    Note: The DoseToWater and DoseToMaterial scorers do not work with the Geant4-DNA physics processes. Please use the DoseToMedium scorer. 
 
 .. _TOPAS custom scorers readthedocs: https://topas.readthedocs.io/en/latest/extension-docs/scoring.html?highlight=tuple
+.. _NeuroMorpho neuron database: http://neuromorpho.org
    
 
  
