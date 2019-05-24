@@ -34,18 +34,26 @@ The size of the cylinders are set to fixed sizes of the representative geometry.
 
 Charlton DNA Model
 ------------------
-The TsCharltonDNA model is based on a simple combination of cylinders. The inner cylinder has a diameter of 1 nm and length of 0.34 nm, representing the basepair of the DNA strand. Two surrounding half-cylinders represent the sugar phosphate backbone of the DNA; these are each rotated by 36 degrees on adjacent base-pairs:: 
 
-  s:Ge/MyDNA/Type="TsCharlton"
+.. figure:: images/Charlton.png
+   :width: 300
+   :align: center 
+
+
+The TsCharltonDNA model is based on a simple combination of cylinders. The inner cylinder has a diameter of 1 nm and length of 0.34 nm, representing the basepair of the DNA strand. Two surrounding half-cylinders represent the sugar phosphate backbone of the DNA; these are each rotated by 36 degrees on adjacent base-pairs. Users have the specify the number of base pairs to be simulated:: 
+
+  s:Ge/MyDNA/Type="TsCharltonDNA"
+  i:Ge/MyDNA/NumberofBasePairs=10
 
 
 Linear DNA Model
 -----------------
 
-A similar model to the Charlton DNA model called TsLinearDNA also models the DNA basepair as a cylinder of diameter 1 nm and length 0.34 nm, but models the sugar phosphate backbone as two quarter cylinders opposite each other with an outer diameter of 2.37 nm, rotated by 36 degrees on each subsequent basepair:: 
+A similar model to the above Charlton DNA model is called TsLinearDNA which also models the DNA basepair as a cylinder of diameter 1 nm and length 0.34 nm, but models the sugar phosphate backbone as two quarter cylinders opposite each other with an outer diameter of 2.37 nm, rotated by 36 degrees on each subsequent basepair:: 
 
   s:Ge/MyDNA/Type="TsLinearDNA"
- 
+  i:Ge/MyDNA/NumberofBasePairs=10
+
 
 
 Circular Plasmid
