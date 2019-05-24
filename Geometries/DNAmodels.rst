@@ -55,7 +55,6 @@ A similar model to the above Charlton DNA model is called TsLinearDNA which also
   i:Ge/MyDNA/NumberofBasePairs=10
 
 
-
 Circular Plasmid
 ----------------
 
@@ -68,4 +67,15 @@ TsPlasmid is a simple circular plasmid. The DNA has the same structure as the li
   s:Ge/CircularPlasmid/Type     = "tsplasmid"
   #Define the number of base pairs in the ring
   i:Ge/CircularPlasmid/NumberOfBasePairs = 2000
+
+
+Geant4-DNA Full Nuclear Model
+-----------------------------
+The Geant4-DNA model represents the whole genome (6 x 10^9 bps) within an ellipsoid nucleus for a cell in the G0/G1 phase and is further described in Dos Santos M et al. (2014) Progress in Nuclear Science and Technology 4, 449–453.
+
+The DNA double helix strands are composed of two separate strands built from the union of spheres. The sugar-phosphate backbone of the DNA has a total diameter of 2.16 nm and the DNA base, within the backbone structure, has a diameter of 0.34 nm. The double helix is used to form a nucleosome which consists of a core histone protein (cylinder with diameter 6.5 nm and length of 5.7 nm) wrapped by two turns of the DNA double helix (a total of 200 bps). The chromatin fibre is represented by a cylinder of diameter 30.8 nm and length 161 nm. Each fibre contains 90 nucleosomes which are placed on a helix. To represent the chromatin loops, 7 chromatin fibers are arranged in a "flower" shape. The flower has 7 "petals", with each composed of 4 fibers arranged in a diamond. The flower substructures fill 23 chromosome territories, each represented by a box of varying size. 
+
+
+
+
 
