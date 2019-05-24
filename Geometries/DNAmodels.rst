@@ -40,7 +40,7 @@ Charlton DNA Model
    :align: center 
 
 
-The TsCharltonDNA model is based on a simple combination of cylinders. The inner cylinder has a diameter of 1 nm and length of 0.34 nm, representing the basepair of the DNA strand. Two surrounding half-cylinders represent the sugar phosphate backbone of the DNA; these are each rotated by 36 degrees on adjacent base-pairs. Users have the specify the number of base pairs to be simulated:: 
+The TsCharltonDNA model is based on a simple combination of cylinders. The inner cylinder has a diameter of 1 nm and length of 0.34 nm, representing the basepair of the DNA strand. Two surrounding half-cylinders represent the sugar phosphate backbone of the DNA; these are each rotated by 36 degrees on adjacent base-pairs. Users have to specify the number of base pairs to be simulated:: 
 
   s:Ge/MyDNA/Type="TsCharltonDNA"
   i:Ge/MyDNA/NumberofBasePairs=10

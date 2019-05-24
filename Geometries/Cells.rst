@@ -271,7 +271,30 @@ Users may edit the NtupleForCell extension to edit or add additional output para
 
 .. _TOPAS custom scorers readthedocs: https://topas.readthedocs.io/en/latest/extension-docs/scoring.html?highlight=tuple
 .. _NeuroMorpho neuron database: http://neuromorpho.org
+
+Cell Culture
+------------
+
+.. figure:: images/CellCulture.png
+   :width: 100
+   :align: center
+
+TsCellCulture is a geometry extension for filling a rectangular volume with spherical cells, with a central nucleus. Users should specify the size of the container volume, the radius of the spherical cell and the radius of the spherical nucleus. The total number of cells also has to be specified::
+
+  s:Ge/MyCulture/Type="TsCellCulture"
+  s:Ge/MyCulture/Material="G4_WATER"
+  s:Ge/MyCulture/Parent="World"
+  d:Ge/MyCulture/Container_HLX= 100 um
+  d:Ge/MyCulture/Container_HLY= 100 um
+  d:Ge/MyCulture/Container_HLZ= 20 um
+  i:Ge/MyCulture/NbOfCells = 20
+  d:Ge/MyCulture/CellRadius=10 um
+  d:Ge/MyCulture/NuclRadius= 6 um
    
+
+An example scoring extension is also provided::
+
+  s:Sc/CultureScorer/Quantity = "NtupleForCulture"
 
  
    
