@@ -47,7 +47,7 @@ The TsCharltonDNA model is based on a simple combination of cylinders. The inner
 
 
 Linear DNA Model
------------------
+----------------
 
 A similar model to the above Charlton DNA model is called TsLinearDNA which also models the DNA basepair as a cylinder of diameter 1 nm and length 0.34 nm, but models the sugar phosphate backbone as two quarter cylinders opposite each other with an outer diameter of 2.37 nm, rotated by 36 degrees on each subsequent basepair:: 
 
@@ -57,18 +57,15 @@ A similar model to the above Charlton DNA model is called TsLinearDNA which also
 
 
 Circular Plasmid
------------------
+----------------
 
+.. figure:: images/Plasmid.png
+   :width: 300
+   :align: center 
 
-Non-circular Plasmid
----------------------
+TsPlasmid is a simple circular plasmid. The DNA has the same structure as the linear DNA model but arranged in a ring. Each DNA segment consists of a central cylindrical basepair (diameter 1 nm and length 0.34 nm) surrounded by two quarter cylinders (diameter 2.37 nm) for the sugar phosphate backbone. Users have to specify the number of basepairs::
 
-Solenoid Chromatin Fiber Model
--------------------------------
+  s:Ge/CircularPlasmid/Type     = "tsplasmid"
+  #Define the number of base pairs in the ring
+  i:Ge/CircularPlasmid/NumberOfBasePairs = 2000
 
-
-Fractal DNA model
------------------
-
-Full DNA model - Geant4-DNA
-----------------------------
