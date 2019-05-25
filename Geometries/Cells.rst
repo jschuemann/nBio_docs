@@ -269,8 +269,6 @@ Users may edit the NtupleForCell extension to edit or add additional output para
 .. warning::
     Note: The DoseToWater and DoseToMaterial scorers do not work with the Geant4-DNA physics processes. Please use the DoseToMedium scorer. 
 
-.. _TOPAS custom scorers readthedocs: https://topas.readthedocs.io/en/latest/extension-docs/scoring.html?highlight=tuple
-.. _NeuroMorpho neuron database: http://neuromorpho.org
 
 Cell Culture
 ------------
@@ -295,6 +293,11 @@ TsCellCulture is a geometry extension for filling a rectangular volume with sphe
 An example scoring extension is also provided::
 
   s:Sc/CultureScorer/Quantity = "NtupleForCulture"
+  
+  
+.. _TOPAS custom scorers readthedocs: https://topas.readthedocs.io/en/latest/extension-docs/scoring.html?highlight=tuple
+.. _NeuroMorpho neuron database: http://neuromorpho.org
+
 
  
    
