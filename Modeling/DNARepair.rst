@@ -11,10 +11,12 @@ DaMaRiS (DNA Mechanistic Repair Simulator) has been developed at the University 
 The methodology behind DaMaRiS has been published in [Ingram2019]_, [Henthorn2019]_, [Henthorn2018]_, [Henthorn2017]_.
 
 
-McMahon
+MEDRAS
 --------
-The McMahon model propagates DSBs in a temporal fashion taking into account the three major repair processes, NHEJ, Homologous Recombination (HR) and Backup or Microhomology Mediated End Joining (MMEJ). Each break can either be correctly or incorrectly (misjoined) repaired. The model has been described in [McMahon2016]_ and [McMahon2017]_.
-The McMahon model takes DSB damage distribution as input, but is (currently) an external Python-based program that can be linked to TOPAS-nBio via the SDD.
+
+The MEDRAS (Mechanistic DNA Repair And Survival) model has been developed at Queen's University, Belfast. Beginning from an initial distribution of DNA damage, it probabilistically models the interaction of free DSB ends, based on a spatially-dependent interaction probability. This is used to calculate rates of both correct rejoining and misrepair. This process models the kinetics of repair through each of the three major repair processes (NHEM, Homologous Recombination (HR) and Backup/Microhomologoy Mediated End Joining (MMEJ) ), allowing the simulation of cells with different repair capacities. MEDRAS can generate predictions of a range of biological endpoints, including DSB repair kinetics as well as rates of double strand break misrepair, mutation, and chromosome aberrations. Survival can also be modelled for a range of different cell backgrounds.
+
+The model has been described in [McMahon2016]_ and [McMahon2017]_. MEDRAS takes DSB damage distributions as input, but is (currently) an external Python-based program that can be linked to TOPAS-nBio via the SDD. The SDD-compatible MEDRAS model can be downloaded from https://github.com/sjmcmahon/Medras-MC.
 
 
 References
