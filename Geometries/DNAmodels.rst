@@ -49,6 +49,10 @@ The TsCharltonDNA model is based on a simple combination of cylinders. The inner
 Linear DNA Model
 ----------------
 
+.. figure:: images/LinearDNA.png
+   :width: 300
+   :align: center 
+
 A similar model to the above Charlton DNA model is called TsLinearDNA which also models the DNA basepair as a cylinder of diameter 1 nm and length 0.34 nm, but models the sugar phosphate backbone as two quarter cylinders opposite each other with an outer diameter of 2.37 nm, rotated by 36 degrees on each subsequent basepair:: 
 
   s:Ge/MyDNA/Type="TsLinearDNA"
