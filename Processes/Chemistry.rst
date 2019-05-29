@@ -152,7 +152,7 @@ and ``TOPASChemistry_Extended.txt`` to be used with ``TsEmDNAChemistry`` and ``T
 , respectively. These files (available in examples/processes) should be included in the usual way
 with ``includeFile = "TOPASChemistry.txt"``. The first set of reactions and reaction rates reproduces
 experimental data from the literature, as reported in [RamosMendez2018]_. The examples 
-``ActiveChemistryRevised.txt`` and ``ActiveChemistryExtended.txt`` show how to set the previous
+``ActiveChemistryRevised.txt`` and ``ActiveChemistryExtended.txt`` show how to define the new reaction
 capability.
 
 Truncation transport for chemical stage
