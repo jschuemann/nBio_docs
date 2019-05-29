@@ -2,11 +2,10 @@
 License
 ===========================
 
-TOPAS-nBio is an open-source extension layered on top of Geant4 and Geant4-DNA, following the same licensing as Geant4:
+TOPAS-nBio is an open-source extension to TOPAS that is layered on top of Geant4 and Geant4-DNA (for references see :ref:`Citations`). TOPAS-nBio follows the same licensing as Geant4:
 
 TOPAS-nBio Software License
-Version 1.0,  21 May 2019
-
+Version 1.0, 28 May 2019
  
 Copyright (c) Copyright Holders of the TOPAS-nBio Collaboration, 2015-2019.
 See :ref:`Collaboration` for details on the copyright holders. All rights not expressly granted under this license are reserved.
