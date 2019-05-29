@@ -6,7 +6,7 @@
 
 .. note::
     This page is currently under construction. 
-    TOPAS-nBio is expected to be released this month (May 2019).
+    TOPAS-nBio is expected to be released before PTCOG (June 13, 2019).
 
 
 Welcome to the documentation of TOPAS-nBio!
