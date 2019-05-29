@@ -171,6 +171,16 @@ Then call the following parameters (also, see example ``RemoveChemicalSpeciesInV
  sv:Ch/TOPASChemistry/RemoveInMaterialTheseMolecules = 2 "SolvatedElectron" "Hydrogen"
 
 
+Independent Reaction Times
+---------------------------------------------
+The independent reaction times [Clifford1986]_ approximation is implemented in TOPAS-nBio. The chemistry parameters 
+consisting on number of reactions, reaction types and reaction rates are those published in the 
+reference [Plante2017]_. Current implementation is limited to the calculation of chemical yields. The accuracy
+of the TOPAS-nBio implementation has been reported in [Schuemann2019]_. Users interested in to collaborate in testing
+and further development of this implementation are encourage to contact to the PI of the TOPAS-nBio collaboration
+Dr. Jan Schuemann.
+
+
 References
 -----------
 .. [Karamitros2012]  Karamitros M, Mantero A, Incerti S, Friedland W, Baldacchino G, Barberet P, 
@@ -185,4 +195,11 @@ References
 .. [RamosMendez2018] Ramos-Méndez J, Perl J, Schuemann J, McNamara A, Paganetti H and Faddegon B 
                      2018 Monte Carlo simulation of chemistry following radiolysis with TOPAS-nBio 
                      Phys. Med. Biol. 63 105014 `link <http://iopscience.iop.org/article/10.1088/1361-6560/aac04c>`_
+.. [Clifford1986]    Clifford P, Green N J B, Oldfield M J, Pilling M J and Pimblott S M 1986 
+                     Stochastic Models of Multi-species Kinetics in Radiation-induced Spurs J. Chem. Soc., Faraday Trans. 1 82 2673–89 `link <http://doi.org/10.1039/F19868202673>`_
+.. [Plante2017]      Plante I and Devroye L 2017 Considerations for the independent reaction times and step-by-step 
+                     methods for radiation chemistry simulations" Radiat. Phys. Chem. 139 157-172 `link <http://dx.doi.org/10.1016/j.radphyschem.2017.03.021>`_
+.. [Schuemann2019]   Schuemann, J, McNamara, A L, Ramos-Méndez, J, Perl, J, Held, K D, Paganetti, H, Incerti, S, 
+                     Faddegon, B 2019 TOPAS-nBio: An Extension to the TOPAS Simulation Toolkit for Cellular and 
+                     Sub-cellular Radiobiology Radiation Research, 191(2), 125–138 `link <https://wwwncbinlmnihgov/pubmed/30609382>`_
 
