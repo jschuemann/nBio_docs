@@ -74,7 +74,7 @@ TsPlasmid is a simple circular plasmid. The DNA has the same structure as the li
 
 
 Supercoiled Plasmid
-----------------
+-------------------
 
 .. figure:: images/SupercoiledPlasmid.png
    :width: 300
