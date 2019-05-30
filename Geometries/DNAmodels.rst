@@ -80,7 +80,7 @@ Supercoiled Plasmid
    :width: 300
    :align: center 
 
-TsSupercoiledPlasmid is a supercoiled plasmid defined from an ascii file that contains the vertex position (in nm) of a deformed polygon that forms the supercoiling path. Different configurations of DNA can be chosen: half of cylinders (halfCyl), quater of cylinders as the circular plasmid (QuartCyl) and spherical (Sphere). The DNA consist of the sugar phosphate backbone and base. Users have to specify the file name of the ascii file that contains the vertex of the deformed polygon that forms the supercoiling plasmid. We provide two files pBR322_a.xyz and pBR322_b.xyz. For these files, the supercoiling is achieved using Vologodovskii methodology.::
+TsSupercoiledPlasmid is a supercoiled plasmid defined from an ascii file that contains the vertex position (in nm) of a deformed polygon that forms the supercoiled path. Different configurations of DNA can be chosen: half cylinders (halfCyl), quarter cylinders - similar to the circular plasmid (QuartCyl) or spheres (Sphere). The DNA consists of the sugar phosphate backbone and base. Users have to specify the file name of the ascii file that contains the vertex of the deformed polygon forming the supercoiled plasmid. We provide two files pBR322_a.xyz and pBR322_b.xyz. For these files, supercoiling is achieved using the Vologodovskii methodology.::
 
   s:Ge/SupercoiledPlasmid/Type     = "tsplasmidsupercoiled"
   #Define the file name 
@@ -88,10 +88,17 @@ TsSupercoiledPlasmid is a supercoiled plasmid defined from an ascii file that co
   # Define the DNA model
   s:Ge/SupercoiledPlamid/DNA_Model = "QuartCyl" # HalfCyl or Sphere
 
-In case that  each coordinate in the ascii file belongs to a single base pair of the plasmid, then the following must be set:: 
+If each coordinate in the ascii file belongs to a single basepair of the plasmid, then the following must be set:: 
   b:Ge/SupercoiledPlamid/SegmentPlasmidPath = "False" # Default False
 
-Otherwise, the deformed polygon is semented using units of 0.34 nm and smoothed.
+Otherwise, the deformed polygon is segmented using units of 0.34 nm and smoothed.
+
+
+Solenoid Chromatin Fiber Model
+------------------------------
+
+ 
+
 
 Geant4-DNA Full Nuclear Model
 -----------------------------
