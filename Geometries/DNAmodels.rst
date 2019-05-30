@@ -11,7 +11,7 @@ Simple Cylindrical Targets
    :align: center 
 
 
-DNA has been modeled with Monte Carlo simulations for the last three decades. Originally, energy depositions were modeled within simple cylindrical targets representing DNA stands, nucleosomes or chromatin fibers in order to compare to the experimental microdosimetry data. Further details can be found in Nikjoo et al. (1989) and Nikjoo et al. (1991). 
+DNA has been modeled with Monte Carlo simulations for the last three decades. Originally, energy depositions were modeled within simple cylindrical targets representing DNA stands, nucleosomes or chromatin fibers in order to compare to the experimental microdosimetry data [1]_ [2]_. 
 
 Three simple cylindrical target geometries are available, these represent a chromatin fiber (yellow), nucleosome (red) and DNA strand (green), respectively::
 
@@ -32,11 +32,6 @@ The size of the cylinders are set to fixed sizes of the representative geometry.
   d:Ge/MyDNA/DNARadius=1 nm
 
 
-Nikjoo H, Goodhead D T, Charlton D E & Paretzke H G 1989 Energy deposition in small cylindrical targets by ultrasoft X-rays Phys. Med. Biol. 34(6), 691–705.
-
-Nikjoo H, Goodhead D T, Charlton D E & Paretzke H G 1991 Energy deposition in small cylindrical targets by monoenergetic electrons Int. J. Radiat. Biol. 60(5), 739–756.
-
-
 Charlton DNA Model
 ------------------
 
@@ -45,13 +40,12 @@ Charlton DNA Model
    :align: center 
 
 
-The TsCharltonDNA model is based on a simple combination of cylinders. More details can be found in Charlton, Nikjoo & Humm (1989). The inner cylinder has a diameter of 1 nm and length of 0.34 nm, representing the basepair of the DNA strand. Two surrounding half-cylinders represent the sugar phosphate backbone of the DNA; these are each rotated by 36 degrees on adjacent base-pairs. Users have to specify the number of base pairs to be simulated:: 
+The TsCharltonDNA model is based on a simple combination of cylinders. More details can be found in Charlton et al. (1989) [3]_. The inner cylinder has a diameter of 1 nm and length of 0.34 nm, representing the basepair of the DNA strand. Two surrounding half-cylinders represent the sugar phosphate backbone of the DNA; these are each rotated by 36 degrees on adjacent base-pairs. Users have to specify the number of base pairs to be simulated:: 
 
   s:Ge/MyDNA/Type="TsCharltonDNA"
   i:Ge/MyDNA/NumberofBasePairs=10
 
 
-Charlton D E, Nikjoo H & Humm J L 1989 Calculation of initial yields of single- and double-strand breaks in cell nuclei from electrons, protons and alpha particles Int. J. Radiat. Biol. 56(1), 1–19.
 
 Linear DNA Model
 ----------------
@@ -87,7 +81,7 @@ Supercoiled Plasmid
    :width: 300
    :align: center 
 
-TsSupercoiledPlasmid is a supercoiled plasmid defined from an ascii file that contains the vertex position (in nm) of a deformed polygon that forms the supercoiled path. Different configurations of DNA can be chosen: half cylinders (halfCyl), quarter cylinders - similar to the circular plasmid (QuartCyl) or spheres (Sphere). The DNA consists of the sugar phosphate backbone and base. Users have to specify the file name of the ascii file that contains the vertex of the deformed polygon forming the supercoiled plasmid. We provide two files pBR322_a.xyz and pBR322_b.xyz. For these files, supercoiling is achieved using the Vologodovskii methodology.::
+TsSupercoiledPlasmid is a supercoiled plasmid defined from an ascii file that contains the vertex position (in nm) of a deformed polygon that forms the supercoiled path. Different configurations of DNA can be chosen: half cylinders (halfCyl), quarter cylinders - similar to the circular plasmid (QuartCyl) or spheres (Sphere). The DNA consists of the sugar phosphate backbone and base. Users have to specify the file name of the ascii file that contains the vertex of the deformed polygon forming the supercoiled plasmid. We provide two files pBR322_a.xyz and pBR322_b.xyz. For these files, supercoiling is achieved using the Vologodskii methodology [4]_::
 
   s:Ge/SupercoiledPlasmid/Type     = "tsplasmidsupercoiled"
   #Define the file name 
@@ -104,9 +98,9 @@ Otherwise, the deformed polygon is segmented using units of 0.34 nm and smoothed
 
 Solenoid Chromatin Fiber Model
 ------------------------------
-TsSolenoidFiber is a chromatin fiber model, based on a solenoid geometry, described in `Henthorn et al. (2017)`_.
+TsSolenoidFiber is a chromatin fiber model, based on a solenoid geometry, described in Henthorn et al. (2017) [5]_.
 
-By default the model of the double helix has backbones and bases modeled as spheres wrapped around a cylindrical histone protein. The radius of the base sphere is 0.208 nm, while the backbone sphere had a radius of 0.240 nm. Users can also specify to build the DNA backbone and base volumes as half cylinders, described by Charlton, Nikjoo and Humm (1989), or as quarter cylinders, as described by Bernal and Liendo (Med. Phys. 2009). The histone radius is 3.3 nm with a length of 5.7 nm. The double helix structure is wrapped around cylindrical histones in 1.65 left-handed turns to form the nucleosome. These are arranged in a solenoid chromatin conformation, with 6 histones per turn of the fiber. Each fiber contains 61 histones and ~10.8 kbp of DNA.
+By default the model of the double helix has backbones and bases modeled as spheres wrapped around a cylindrical histone protein. The radius of the base sphere is 0.208 nm, while the backbone sphere had a radius of 0.240 nm. Users can also specify to build the DNA backbone and base volumes as half cylinders, described by Charlton, Nikjoo and Humm (1989) [3]_, or as quarter cylinders, as described by Bernal and Liendo (Med. Phys. 2009) [6]_. The histone radius is 3.3 nm with a length of 5.7 nm. The double helix structure is wrapped around cylindrical histones in 1.65 left-handed turns to form the nucleosome. These are arranged in a solenoid chromatin conformation, with 6 histones per turn of the fiber. Each fiber contains 61 histones and ~10.8 kbp of DNA.
  
 Users can set the fiber radius and length::
 
@@ -125,13 +119,6 @@ Users can change the DNA volume geometry, by including one of the below::
  
 
 
-Bernal & Liendo 2009 An investigation on the capabilities of the PENELOPE MC code in nanodosimetry Med. Phys. 36(2), 620-625.
-
-Charlton D E, Nikjoo H & Humm J L 1989 Calculation of initial yields of single- and double-strand breaks in cell nuclei from electrons, protons and alpha particles Int. J. Radiat. Biol. 56(1), 1–19.
-
-Henthorn N et al. (2017) Nanodosimetric Simulation of Direct Ion-Induced DNA Damage Using Different Chromatin Geometry Models. Radiation Research, 188, 770-783.
-
-
 Geant4-DNA Full Nuclear Model
 -----------------------------
 
@@ -139,7 +126,7 @@ Geant4-DNA Full Nuclear Model
    :width: 300
    :align: center
 
-The Geant4-DNA model represents the whole genome (6 x 10^9 bps) within an ellipsoid nucleus for a cell in the G0/G1 phase and is further described in Dos Santos M et al. (2014) Progress in Nuclear Science and Technology 4, 449–453.
+The Geant4-DNA model represents the whole genome (6 x 10^9 bps) within an ellipsoid nucleus for a cell in the G0/G1 phase and is further described in Dos Santos M et al. (2014) [7]_.
 
 The DNA double helix strands are composed of two separate strands built from the union of spheres. The sugar-phosphate backbone of the DNA has a total diameter of 2.16 nm and the DNA base, within the backbone structure, has a diameter of 0.34 nm. The double helix is used to form a nucleosome which consists of a core histone protein (cylinder with diameter 6.5 nm and length of 5.7 nm) wrapped by two turns of the DNA double helix (a total of 200 bps). The chromatin fibre is represented by a cylinder of diameter 30.8 nm and length 161 nm. Each fibre contains 90 nucleosomes which are placed on a helix. To represent the chromatin loops, 7 chromatin fibers are arranged in a "flower" shape. The flower has 7 "petals", with each composed of 4 fibers arranged in a diamond. The flower substructures fill 23 chromosome territories, each represented by a box of varying size. 
 
@@ -153,4 +140,20 @@ To build the full DNA hierarchy, the flags to specify the building of the chroma
 
 
 
-.. _Henthorn et al. (2017): https://www.rrjournal.org/doi/abs/10.1667/RR14755.1
+References
+~~~~~~~~~~
+
+.. [1] Nikjoo H, Goodhead DT, Charlton DE & Paretzke HG (1989) Energy deposition in small cylindrical targets by ultrasoft X-rays Phys. Med. Biol. 34(6), 691–705.
+
+.. [2] Nikjoo H, Goodhead DT, Charlton DE & Paretzke HG (1991) Energy deposition in small cylindrical targets by monoenergetic electrons Int. J. Radiat. Biol. 60(5), 739–756.
+
+.. [3] Charlton DE, Nikjoo H & Humm JL (1989) Calculation of initial yields of single- and double-strand breaks in cell nuclei from electrons, protons and alpha particles Int. J. Radiat. Biol. 56(1), 1–19.
+
+.. [4] Vologodskii AV & Cozzarelli NR (1994) Conformational and thermodynamic properties of supercoiled DNA Annu. Rev. Biophys. Biomol. Struct. 23, 609-643.
+
+.. [5] Henthorn NT, Warmenhoven JW, Sotiropoulos M, Mackay RI, Kirkby KJ & Merchant MJ (2017) Nanodosimetric simulation of direct ion-induced DNA damage using different chromatin geometry models. Radiation Research, 188, 770-783.
+
+.. [6] Bernal & Liendo (2009) An investigation on the capabilities of the PENELOPE MC code in nanodosimetry Med. Phys. 36(2), 620-625.
+
+.. [7] Dos Santos M, Villagrasa C, Clairand I & Incerti S (2014) Influence of the chromatin density on the number of direct clustered damages calculated for proton and alpha irradiations using a Monte Carlo code Progress in Nuclear Science and Technology 4, 449–453.
+
