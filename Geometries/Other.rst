@@ -68,19 +68,25 @@ Communication proteins consist of a single protein structure and are modeled as 
 
 
 
-
-
-
-
 Mitochondria
 ------------
 Mitochondria are the only sites of extra-nuclear DNA in eukaryotic cells. Mitochondrial DNA (mt-DNA) in humans contains ~ 16569 bps encoding 37 genes and unlike nuclear DNA, which is linear, mt-DNA is circular.
-Mitochondria are modeled as ellipsoids. Users need to specify the semi-axis lengths (a, b and c) of the ellipsoid. mt-DNA may be included in the model, modeled as either a circular or non-circular plasmid::
 
-  s:Ge/MyOrganelle/Type="TsMito"
-  d:Ge/MyOrganelle/a=0.5 um
-  d:Ge/MyOrganelle/b=0.3 um
-  d:Ge/MyOrganelle/c=0.9 um
+Mitochondria are generally ellipsoid shaped and can be modeled using the G4Ellipsoid geometry type. The semi-axis lengths (HLX, HLY and HLZ) of the ellipsoid must be specified. mt-DNA may be included in the model, modeled as either a circular or non-circular plasmid using the TsPlasmid extensions, for example::
+
+  # Mitochondria
+  s:Ge/MyMito/Type              = "G4Ellipsoid"
+  d:Ge/MyMito/HLX               = 0.5 um
+  d:Ge/MyMito/HLY               = 1 um
+  d:Ge/MyMito/HLZ               = 0.4 um
+
+  s:Ge/mDNA/Type     = "tsplasmid"
+  #Define the number of base pairs in the ring
+  i:Ge/mDNA/NumberOfBasePairs = 200
+  s:Ge/mDNA/Parent = "MyMito"
+  
+
+  
   
 
 
