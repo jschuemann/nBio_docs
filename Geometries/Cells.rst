@@ -22,7 +22,13 @@ Users have the option of including a nucleus. Specify the radius to add the nucl
 
   d:Ge/MyCell/Nucleus/NuclRadius=5. um
 
+The nucleus position within the cell can be edited using::
 
+  d:Ge/MyCell/Nucleus/translateX = 0.2 um
+  d:Ge/MyCell/Nucleus/translateY = 0.0 um
+  d:Ge/MyCell/Nucleus/translateZ = 0.1 um
+
+ 
 Mitochondria can also be placed randomly in the cell, the size and the number of mitochondria are specified in the parameter file::
 
   i:Ge/MyCell/Mitochondria/NumberbOfMitochondria=20
