@@ -20,7 +20,7 @@ To create the model specify the component name as well as the cell radius requir
 
 Users have the option of including a nucleus. Specify the radius to add the nucleus to the cell::
 
-  d:Ge/MyCell/Nucleus/NuclRadius=5. um
+  d:Ge/MyCell/Nucleus/NucleusRadius=5. um
 
 The nucleus position within the cell can be edited using::
 
@@ -166,7 +166,7 @@ Basophils are white blood cells that have 2-3 lobed nucleus and contain many gra
   d:Ge/MyCell/BasophilRadius=7.0 um
 
   #Optional: include granules
-  i:Ge/MyCell/Granule/NbOfGranules = 200
+  i:Ge/MyCell/Granule/NumberOfGranules = 200
 
 
 .. figure:: images/Eosinophil.png
@@ -290,9 +290,9 @@ TsCellCulture is a geometry extension for filling a rectangular volume with sphe
   d:Ge/MyCulture/Container_HLX= 100 um
   d:Ge/MyCulture/Container_HLY= 100 um
   d:Ge/MyCulture/Container_HLZ= 20 um
-  i:Ge/MyCulture/NbOfCells = 20
+  i:Ge/MyCulture/NumberOfCells = 20
   d:Ge/MyCulture/CellRadius=10 um
-  d:Ge/MyCulture/NuclRadius= 6 um
+  d:Ge/MyCulture/NucleusRadius= 6 um
    
 
 An example scoring extension is also provided::
