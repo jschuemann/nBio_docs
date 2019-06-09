@@ -43,7 +43,7 @@ Charlton DNA Model
 The TsCharltonDNA model is based on a simple combination of cylinders. More details can be found in Charlton et al. (1989) [3]_. The inner cylinder has a diameter of 1 nm and length of 0.34 nm, representing the basepair of the DNA strand. Two surrounding half-cylinders represent the sugar phosphate backbone of the DNA; these are each rotated by 36 degrees on adjacent base-pairs. Users have to specify the number of base pairs to be simulated:: 
 
   s:Ge/MyDNA/Type="TsCharltonDNA"
-  i:Ge/MyDNA/NumberofBasePairs=10
+  i:Ge/MyDNA/NumberOfBasePairs=10
 
 
 
@@ -57,7 +57,7 @@ Linear DNA Model
 A similar model to the above Charlton DNA model is called TsLinearDNA which also models the DNA basepair as a cylinder of diameter 1 nm and length 0.34 nm, but models the sugar phosphate backbone as two quarter cylinders opposite each other with an outer diameter of 2.37 nm, rotated by 36 degrees on each subsequent basepair:: 
 
   s:Ge/MyDNA/Type="TsLinearDNA"
-  i:Ge/MyDNA/NumberofBasePairs=10
+  i:Ge/MyDNA/NumberOfBasePairs=10
 
 
 Circular Plasmid
@@ -81,13 +81,13 @@ Supercoiled Plasmid
    :width: 300
    :align: center 
 
-TsSupercoiledPlasmid is a supercoiled plasmid defined from an ascii file that contains the vertex position (in nm) of a deformed polygon that forms the supercoiled path. Different configurations of DNA can be chosen: half cylinders (halfCyl), quarter cylinders - similar to the circular plasmid (QuartCyl) or spheres (Sphere). The DNA consists of the sugar phosphate backbone and base. Users have to specify the file name of the ascii file that contains the vertex of the deformed polygon forming the supercoiled plasmid. We provide two files pBR322_a.xyz and pBR322_b.xyz. For these files, supercoiling is achieved using the Vologodskii methodology [4]_::
+TsSupercoiledPlasmid is a supercoiled plasmid defined from an ascii file that contains the vertex position (in nm) of a deformed polygon that forms the supercoiled path. Different configurations of DNA can be chosen: half cylinders (HalfCylinder), quarter cylinders - similar to the circular plasmid (QuarterCylinder) or spheres (Sphere). The DNA consists of the sugar phosphate backbone and base. Users have to specify the file name of the ascii file that contains the vertex of the deformed polygon forming the supercoiled plasmid. We provide two files pBR322_a.xyz and pBR322_b.xyz. For these files, supercoiling is achieved using the Vologodskii methodology [4]_::
 
   s:Ge/SupercoiledPlasmid/Type     = "tsplasmidsupercoiled"
   #Define the file name 
   i:Ge/SupercoiledPlasmid/FileName = "pBR322_a.xyz"
   # Define the DNA model
-  s:Ge/SupercoiledPlamid/DNA_Model = "QuartCyl" # HalfCyl or Sphere
+  s:Ge/SupercoiledPlamid/DNA_Model = "QuarterCylinder" # HalfCylinder or Sphere
 
 If each coordinate in the ascii file belongs to a single basepair of the plasmid, then the following must be set:: 
   
@@ -104,18 +104,18 @@ By default the model of the double helix has backbones and bases modeled as sphe
  
 Users can set the fiber radius and length::
 
-  d:Ge/Fibre/FibreHalfLength = 80.0 nm
-  d:Ge/Fibre/FibreRadius = 18.5 nm
+  d:Ge/Fiber/FiberHalfLength = 80.0 nm
+  d:Ge/Fiber/FiberRadius = 18.5 nm
  
 Users can change the number of histones per turn::
 
-  i:Ge/Fibre/nb_HistPerTurn = 6
+  i:Ge/Fiber/NumberOfHistonesPerTurn = 6
  
 Users can change the DNA volume geometry, by including one of the below::
 
-  s:Ge/Fibre/DNA_Model = Sphere            #Described by Henthorn et al. (2017)
-  s:Ge/Fibre/DNA_Model = HalfCyl           #Described by Charlton, Nikjoo and Humm (1989)
-  s:Ge/Fibre/DNA_Model = QuartCyl          #Described by Bernal and Liendo (2009)
+  s:Ge/Fiber/DNA_Model = Sphere            #Described by Henthorn et al. (2017)
+  s:Ge/Fiber/DNA_Model = HalfCylinder      #Described by Charlton, Nikjoo and Humm (1989)
+  s:Ge/Fiber/DNA_Model = QuarterCylinder   #Described by Bernal and Liendo (2009)
  
 
 
@@ -128,7 +128,7 @@ Geant4-DNA Full Nuclear Model
 
 The Geant4-DNA model represents the whole genome (6 x 10^9 bps) within an ellipsoid nucleus for a cell in the G0/G1 phase and is further described in Dos Santos M et al. (2014) [7]_.
 
-The DNA double helix strands are composed of two separate strands built from the union of spheres. The sugar-phosphate backbone of the DNA has a total diameter of 2.16 nm and the DNA base, within the backbone structure, has a diameter of 0.34 nm. The double helix is used to form a nucleosome which consists of a core histone protein (cylinder with diameter 6.5 nm and length of 5.7 nm) wrapped by two turns of the DNA double helix (a total of 200 bps). The chromatin fibre is represented by a cylinder of diameter 30.8 nm and length 161 nm. Each fibre contains 90 nucleosomes which are placed on a helix. To represent the chromatin loops, 7 chromatin fibers are arranged in a "flower" shape. The flower has 7 "petals", with each composed of 4 fibers arranged in a diamond. The flower substructures fill 23 chromosome territories, each represented by a box of varying size. 
+The DNA double helix strands are composed of two separate strands built from the union of spheres. The sugar-phosphate backbone of the DNA has a total diameter of 2.16 nm and the DNA base, within the backbone structure, has a diameter of 0.34 nm. The double helix is used to form a nucleosome which consists of a core histone protein (cylinder with diameter 6.5 nm and length of 5.7 nm) wrapped by two turns of the DNA double helix (a total of 200 bps). The chromatin fiber is represented by a cylinder of diameter 30.8 nm and length 161 nm. Each fiber contains 90 nucleosomes which are placed on a helix. To represent the chromatin loops, 7 chromatin fibers are arranged in a "flower" shape. The flower has 7 "petals", with each composed of 4 fibers arranged in a diamond. The flower substructures fill 23 chromosome territories, each represented by a box of varying size. 
 
 Users need to include the files of data specifying the position of the chromosome territories within the nucleus. These files are named chromo*.dat (24 files total). 
 

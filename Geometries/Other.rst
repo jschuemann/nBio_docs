@@ -36,7 +36,7 @@ For the ring geometry the number of lipids forming the ring should be specified:
 A membrane layer configuration is also available using the TsMembraneLayer extension geometry. This forms a grid of the lipid unit and the number of rows and columns should be specified::
 
   i:Ge/MyCell/NumberOfRows=20
-  i:Ge/MyCell/NumberOfCols=30
+  i:Ge/MyCell/NumberOfColumns=30
 
 Transmembrane proteins, which represent ion channels or communication proteins can also be included in the membrane layers. 
 
