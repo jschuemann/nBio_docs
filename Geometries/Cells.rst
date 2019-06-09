@@ -25,7 +25,7 @@ Users have the option of including a nucleus. Specify the radius to add the nucl
 
 Mitochondria can also be placed randomly in the cell, the size and the number of mitochondria are specified in the parameter file::
 
-  i:Ge/MyCell/Mitochondria/NbOfMito=20
+  i:Ge/MyCell/Mitochondria/NumberbOfMitochondria=20
   d:Ge/MyCell/Mitochondria/a=0.5 um
   d:Ge/MyCell/Mitochondria/b=0.3 um
   d:Ge/MyCell/Mitochondria/c=0.9 um
@@ -131,8 +131,8 @@ Osteoclasts are large cells (50 - 120 um) with multiple nuclei. Users should spe
   d:Ge/MyCell/CellRadius=50. um
 
   #Nuclei
-  d:Ge/MyCell/Nucleus/NuclRadius=5. um
-  i:Ge/MyCell/Nucleus/NbOfNucl=5
+  d:Ge/MyCell/Nucleus/NucleusRadius=5. um
+  i:Ge/MyCell/Nucleus/NumberOfNuclei=5
 
 
 Blood Cells
@@ -174,7 +174,7 @@ Eosinophils are white blood cells that are bi-lobed, also containing granules. T
   d:Ge/MyCell/EosinophilRadius=8.0 um
 
   #Optional: include granules
-  i:Ge/MyCell/Granule/NbOfGranules = 200
+  i:Ge/MyCell/Granule/NumberOfGranules = 200
 
 .. figure:: images/Lymphocyte.png
    :width: 300
@@ -185,7 +185,7 @@ Lymphocytes are small white blood cells (leukocyte) with a single large nucleus.
   s:Ge/MyCell/Type="TsLymphocyte"
   d:Ge/MyCell/LymphocyteRadius=5.0 um
 
-  s:Ge/MyCell/Nucleus/NuclRadius=4.5 um
+  s:Ge/MyCell/Nucleus/NucleusRadius=4.5 um
 
 .. figure:: images/Monocyte.png
    :width: 300
