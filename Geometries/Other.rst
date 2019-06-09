@@ -49,7 +49,7 @@ Ion channels are generally formed by three or more protein subunits. The TsIonCh
   s:Ge/MyCell/Type="TsIonChannel"
 
   i:Ge/MyCell/NumberOfRows=50
-  i:Ge/MyCell/NumberOfCols=50
+  i:Ge/MyCell/NumberOfColumns=50
 
 .. figure:: images/Channel.png
    :width: 300
