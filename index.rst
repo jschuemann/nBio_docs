@@ -61,4 +61,11 @@ By releasing TOPAS-nBio as an open source extension to TOPAS, we intend to encou
     :caption: GUI
 	
     GUI/Intro	
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Scorers
+
+    Scorers/Intro
+    
   
