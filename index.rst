@@ -67,5 +67,6 @@ By releasing TOPAS-nBio as an open source extension to TOPAS, we intend to encou
     :caption: Scorers
 
     Scorers/Intro
+    Scorers/Cells
     
   
