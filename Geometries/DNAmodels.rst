@@ -141,7 +141,7 @@ To build the full DNA hierarchy, the flags to specify the building of the chroma
 
 
 References
-~~~~~~~~~~
+----------
 
 .. [1] Nikjoo H, Goodhead DT, Charlton DE & Paretzke HG (1989) Energy deposition in small cylindrical targets by ultrasoft X-rays Phys. Med. Biol. 34(6), 691–705.
 
