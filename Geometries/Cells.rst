@@ -1,5 +1,5 @@
-Cells
-=====
+Cell Models
+===========
 
 A common end point of measurement for cells cultured *in vitro* in radiobiology is clonogenic cell survival. Single cell Monte Carlo simulations can provide insight into the total dose received by the cell or the distribution of dose within sub-regions of the cell (e.g., dose to the cell nucleus). This may be correlated with experimental measurements of the loss of a specific function or cell death. Single cell models can also form the geometric boundary for more complex studies, for example, calculating the energy deposited in other sub-cellular components (e.g., organelles, cell membranes) or investigating DNA damage in the nucleus. 
 
@@ -231,24 +231,6 @@ To simulate the neuron, specify the name of the SWC file, for example::
 A ntuple scorer specifically for neuron structures is also available::
 
   s:Sc/NeuronScorer/Quantity    = "NtupleForNeuron"
-
-This ntuple scorer is an extension that can be edited by the user to add additional output parameters, depending on the application. More information on how to design custom scorers and the n-tuple format can be found on the `TOPAS custom scorers readthedocs`_. The default output of the scorer is::
-
-  Columns of data are as follows:
-  1: Position X [cm]
-  2: Position Y [cm]
-  3: Position Z [cm]
-  4: Energy [MeV]
-  5: Energy Deposited [MeV]
-  6: Particle Type (in PDG Format)
-  7: Track ID
-  8: Run ID
-  9: Event ID
- 10: Volume Name
- 11: Replica Number
-
-
-
 
 
 Cell Culture
