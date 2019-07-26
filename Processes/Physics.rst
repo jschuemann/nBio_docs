@@ -92,7 +92,7 @@ Geant4-DNA physics is activated in the region of
 interest (`DetailedTransport` in this example) by the following parameter::
 
  sv:Ph/Default/Modules = 1 "g4em-penelope"
- s:Ph/Default/ForRegion/DetailedTransport/ActiveG4EmModelNamed = "g4em-dna"
+ s:Ph/Default/ForRegion/DetailedTransport/ActiveG4EmModelFromModule = "g4em-dna"
 
 The example ``G4DNAModelPerRegion.txt`` shows a complete implementation of this capability.
 
