@@ -100,6 +100,10 @@ Solenoid Chromatin Fiber Model
 ------------------------------
 TsSolenoidFiber is a chromatin fiber model, based on a solenoid geometry, described in Henthorn et al. (2017) [5]_.
 
+.. figure:: images/SolenoidFiber1.png
+   :width: 300
+   :align: center 
+
 By default the model of the double helix has backbones and bases modeled as spheres wrapped around a cylindrical histone protein. The radius of the base sphere is 0.208 nm, while the backbone sphere had a radius of 0.240 nm. Users can also specify to build the DNA backbone and base volumes as half cylinders, described by Charlton, Nikjoo and Humm (1989) [3]_, or as quarter cylinders, as described by Bernal and Liendo (Med. Phys. 2009) [6]_. The histone radius is 3.3 nm with a length of 5.7 nm. The double helix structure is wrapped around cylindrical histones in 1.65 left-handed turns to form the nucleosome. These are arranged in a solenoid chromatin conformation, with 6 histones per turn of the fiber. Each fiber contains 61 histones and ~10.8 kbp of DNA.
  
 Users can set the fiber radius and length::
