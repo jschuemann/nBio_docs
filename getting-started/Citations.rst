@@ -28,7 +28,7 @@ Ramos-Méndez, J., Perl, J., Schuemann, J., McNamara, A., Paganetti, H., & Fadde
 
 Ramos-Méndez, J., Burigo, L. N., Schulte, R., Chuang, C, & Faddegon, B. (2018). Fast calculation of nanodosimetric quantities in treatment planning of proton and ion therapy. Physics in Medicine and Biology 63(23), 235015-14 pp. PMID: 30484432. http://iopscience.iop.org/article/10.1088/1361-6560/aaeeee
 
-Zhu H., Chen Y., Sung W., McNamara A. L., Linh T. T., Burigo L. N., Rosenfeld A. B., Li J., Faddegon B., Schuemann J., Paganetti H. (2019). The microdosimetric extension in TOPAS: Development and comparison with published data. Physics in Medicine and Biology (in print)
+Zhu H., Chen Y., Sung W., McNamara A. L., Linh T. T., Burigo L. N., Rosenfeld A. B., Li J., Faddegon B., Schuemann J., Paganetti H. (2019). The microdosimetric extension in TOPAS: Development and comparison with published data. Physics in Medicine and Biology Physics in Medicine and Biology; 64(14):145004. PMID: 31117056. http://doi.org/10.1088/1361-6560/ab23a3 
 
 
 The Standard for DNA Damage (SDD)
