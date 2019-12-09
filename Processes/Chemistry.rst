@@ -163,7 +163,7 @@ with the volume (at the boundary or the first step within the volume). To use th
 material must be cloned from the ``G4_WATER`` material::
 
  s:Ma/G4_WATER_MODIFIED/CloneFromMaterial = "G4_WATER"
- s:Ma/G4_WATER_MODIFIED/CloneWithDensity  = 1.0 g/cm3
+ d:Ma/G4_WATER_MODIFIED/CloneWithDensity  = 1.0 g/cm3
 
 Then call the following parameters (also, see example ``RemoveChemicalSpeciesInVolume.txt``)::
  
