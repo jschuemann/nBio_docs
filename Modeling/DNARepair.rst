@@ -8,7 +8,7 @@ DaMaRiS
 --------
 DaMaRiS (DNA Mechanistic Repair Simulator) has been developed at the University of Manchester. DaMaRiS uses a distribution of DNA damage as input to model Non-Homologous End Joining (NHEJ) DNA repair kinetics. The input can be supplied via the SDD standard ([Schuemann2019]_). In addition, DaMaRiS has been integrated into the TOPAS-nBio framework, thus a single TOPAS-nBio simulation can include the entire process from initial cell irradiation to final outcome. The SDD-compatible DaMaRiS framework can be downloaded from https://gitlab.com/PRECISE-RT/releases/damaris_topas-nbio.
 
-The methodology behind DaMaRiS has been published in [Ingram2019]_, [Henthorn2019]_, [Henthorn2018]_, [Henthorn2017]_.
+The methodology behind DaMaRiS has been published in [Warmenhoven2020]_, [Ingram2019]_, [Henthorn2019]_, [Henthorn2018]_, [Henthorn2017]_.
 
 
 MEDRAS
@@ -21,6 +21,8 @@ The model has been described in [McMahon2016]_ and [McMahon2017]_. MEDRAS takes 
 
 References
 ----------
+
+.. [Warmenhoven2020] Warmenhoven, J.W., Henthorn, N.T., Ingram, S.P., Chadwick, A.L., Sotiropoulos, M., Korabel, N., et al. (2020). Insights into the non-homologous end joining pathway and double strand break end mobility provided by mechanistic in silico modelling. DNA repair, 85, 102743. https://doi.org/10.1016/j.dnarep.2019.102743
 
 .. [Ingram2019] Ingram, S. P., Warmenhoven, J. W., Henthorn, N. T., Smith, E. A. K., Chadwick, A. L., Burnet, N. G., et al. (2019). Mechanistic modelling supports entwined rather than exclusively competitive DNA double-strand break repair pathway. Scientific Reports, 9(1), 6359. http://doi.org/10.1038/s41598-019-42901-8
 
