@@ -6,7 +6,7 @@ The biological modeling within TOPAS-nBio has been developed by our external col
 
 DaMaRiS
 --------
-DaMaRiS (DNA Mechanistic Repair Simulator) has been developed at the University of Manchester. DaMaRiS uses a distribution of DNA damage as input to model Non-Homologous End Joining (NHEJ) DNA repair kinetics. The input can be supplied via the SDD standard ([Schuemann2019]_). In addition, DaMaRiS has been integrated into the TOPAS-nBio framework, thus a single TOPAS-nBio simulation can include the entire process from initial cell irradiation to final outcome. 
+DaMaRiS (DNA Mechanistic Repair Simulator) has been developed at the University of Manchester. DaMaRiS uses a distribution of DNA damage as input to model Non-Homologous End Joining (NHEJ) DNA repair kinetics. The input can be supplied via the SDD standard ([Schuemann2019]_). In addition, DaMaRiS has been integrated into the TOPAS-nBio framework, thus a single TOPAS-nBio simulation can include the entire process from initial cell irradiation to final outcome. The SDD-compatible DaMaRiS framework can be downloaded from https://gitlab.com/PRECISE-RT/releases/damaris_topas-nbio.
 
 The methodology behind DaMaRiS has been published in [Ingram2019]_, [Henthorn2019]_, [Henthorn2018]_, [Henthorn2017]_.
 
