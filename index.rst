@@ -5,6 +5,9 @@
 
 
 .. note:: 
+    TOPAS-nBio currently works with TOPAS release 3.3 and 3.4, not yet with 3.5 (or Geant4.10.6), we are working on a new release. 
+
+.. note:: 
     TOPAS-nBio has been released as version v1.0-beta.1. 
     The code is available at:
     https://github.com/topas-nbio/TOPAS-nBio/releases/tag/1.0_beta
