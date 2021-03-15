@@ -44,8 +44,8 @@ the following parameters must be set (assuming the chemistry name ``TOPASChemist
 
  b:Ch/TOPASChemistry/ChemicalStageTransportActive     = "True" 
  d:Ch/TOPASChemistry/ChemicalStageTimeEnd             = 15.0 ns
- dv:Ch/TOPASChemistry/ChemicalStageTimeStep           = 2 10.0  15.0 ns
- dv:Ch/TOPASChemistry/ChemicalStageTimeStepResolution = 2  1.0  10.0 ps 
+ dv:Ch/TOPASChemistry/ChemicalStageTimeStepsHighEdges   = 2 10.0  15.0 ns
+ dv:Ch/TOPASChemistry/ChemicalStageTimeStepsResolutions = 2  1.0  10.0 ps 
 
 After these parameters have been set, the spatio-temporal information of the 
 chemical species is available and can be visualized using the
