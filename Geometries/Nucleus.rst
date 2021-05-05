@@ -35,8 +35,14 @@ Hilbert curve and geometry information
 These cylindrical fibers are linked using the `Hilbert curve`_ to fill the space with linked DNA structures. The files 'supportFiles/HilbertPoints_iteration*.dat' are provided, containing the position of the vertices of several iterations of the Hilbert curve to connect different fibers. For example, the first iteration is represented by
 
 .. figure:: images/HilbertIt1.gif
+   :width: 50
 
-The Hilbert curve can be repeated through different layers -generating a voxel- and then repeated this voxel in the 3D space to fill the whole nucleus. Users can control these features through the parameters::
+The Hilbert curve can be fractally repeated through different layers, generating a voxel like the following one:
+
+.. figure:: images/HilbertCurve2.gif
+   :width: 100
+
+Then, this voxel can be repeated into the 3D space to fill the whole nucleus. Users can control these features through the parameters::
 
   s:Ge/Nucleus/HilbertCurveFileName       = "supportFiles/HilbertPoints_iteration1.dat"
   i:Ge/Nucleus/HilbertCurveLayer          = 4
