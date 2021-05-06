@@ -62,14 +62,6 @@ where the probability of damage is set to 0 for energies lower than or equal to 
 The probability for an hydroxil to cause damage once interacting with a backbone is controlled by the parameter::
 
   u:Sc/DNAScorer/ProbabilityForOHToCauseDamage = 0.4
-
-The propagation of the damage to the hydration shell can be deactivated by the user through the parameter::
-
-  b:Sc/DNAScorer/ScoreOnHydrationShell = "false"
-  
-Also, one can decide whether to include or not damage to bases in the results by the parameter::
-
-  b:Sc/DNAScorer/ScoreOnBases = "true"
   
 Finally, one can exclude direct and/or indirect damages from the results with the parameters::
 
