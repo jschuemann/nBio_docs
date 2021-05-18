@@ -65,16 +65,16 @@ Members of TOPAS-nBio
 
 
 +--------------------------------------+
-| .. image:: ../images/QUB.png         |
+| .. image:: ../images/escudo_logotipo_buap.pdf         |
 |    :scale: 34%                       |
 +--------------------------------------+
-|  Naoki Dominguez, Ph.D.              |
+|  Naoki Dominguez, MSc                |
 |                                      |
 +--------------------------------------+
 
 
 +--------------------------------------+
-| .. image:: ../images/QUB.png         |
+| .. image:: ../images/NotreDame.gif   |
 |    :scale: 34%                       |
 +--------------------------------------+
 |  Jay LaVerne, Ph.D.                  |
