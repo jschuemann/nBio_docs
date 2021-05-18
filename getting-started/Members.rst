@@ -65,7 +65,7 @@ Members of TOPAS-nBio
 
 
 +--------------------------------------+
-| .. image:: ../images/escudo_logotipo_buap.pdf         |
+| .. image:: ../images/escudo_logotipo_buap.png  |
 |    :scale: 34%                       |
 +--------------------------------------+
 |  Naoki Dominguez, MSc                |
