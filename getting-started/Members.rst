@@ -75,7 +75,7 @@ Members of TOPAS-nBio
 
 +--------------------------------------+
 | .. image:: ../images/ND.png          |
-|    :scale: 104%                      |
+|    :scale: 42%                      |
 +--------------------------------------+
 |  Jay LaVerne, Ph.D.                  |
 |                                      |
