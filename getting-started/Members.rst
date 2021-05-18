@@ -3,7 +3,7 @@
 Members of the TOPAS-nBio Collaboration
 =======================================
 
-Founding members of TOPAS-nBio
+Members of TOPAS-nBio
 -------------------------------
 
 +--------------------------------------+
@@ -15,6 +15,10 @@ Founding members of TOPAS-nBio
 |  Jan Schuemann, Ph.D. (PI)           |
 |                                      |
 |  Aimee McNamara, Ph.D.               |
+|                                      |
+|  DoHyeon Yoo, Ph.D.                  |
+|                                      |
+|  Alejandro Bertolet, Ph.D.           |
 |                                      |
 |  Harald Paganetti, Ph.D.             |
 |                                      |
@@ -43,23 +47,6 @@ Founding members of TOPAS-nBio
 +--------------------------------------+
 
 
-
-External Collaborators and Contributers
----------------------------------------
-
-+--------------------------------------+
-| .. image:: ../images/geant4-dna.jpg  |
-|    :scale: 8%                        |
-| .. image:: ../images/CENBG.jpeg      |
-|    :scale: 33%                       |
-| .. image:: ../images/CNRS.jpeg       |
-|    :scale: 22%                       |
-+--------------------------------------+
-|  Sebastién Incerti, Ph.D.            |
-|                                      |
-+--------------------------------------+
-
-
 +--------------------------------------+
 | .. image:: ../images/UManchester.png |
 |    :scale: 42%                       |
@@ -81,9 +68,44 @@ External Collaborators and Contributers
 | .. image:: ../images/QUB.png         |
 |    :scale: 34%                       |
 +--------------------------------------+
+|  Naoki Dominguez, Ph.D.              |
+|                                      |
++--------------------------------------+
+
+
++--------------------------------------+
+| .. image:: ../images/QUB.png         |
+|    :scale: 34%                       |
++--------------------------------------+
+|  Jay LaVerne, Ph.D.                  |
+|                                      |
++--------------------------------------+
+
+
+
+External Collaborators and Contributers
+---------------------------------------
+
++--------------------------------------+
+| .. image:: ../images/QUB.png         |
+|    :scale: 34%                       |
++--------------------------------------+
 |  Stephen McMahon, Ph.D.              |
 |                                      |
 +--------------------------------------+
+
++--------------------------------------+
+| .. image:: ../images/geant4-dna.jpg  |
+|    :scale: 8%                        |
+| .. image:: ../images/CENBG.jpeg      |
+|    :scale: 33%                       |
+| .. image:: ../images/CNRS.jpeg       |
+|    :scale: 22%                       |
++--------------------------------------+
+|  Sebastién Incerti, Ph.D.            |
+|                                      |
++--------------------------------------+
+
 
 
 
