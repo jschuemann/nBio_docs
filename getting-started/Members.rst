@@ -65,7 +65,7 @@ Members of TOPAS-nBio
 
 
 +--------------------------------------+
-| .. image:: ../images/escudo_logotipo_buap.png  |
+| .. image:: ../images/buap.png        |
 |    :scale: 34%                       |
 +--------------------------------------+
 |  Naoki Dominguez, MSc                |
@@ -75,7 +75,7 @@ Members of TOPAS-nBio
 
 +--------------------------------------+
 | .. image:: ../images/NotreDame.gif   |
-|    :scale: 34%                       |
+|    :scale: 104%                       |
 +--------------------------------------+
 |  Jay LaVerne, Ph.D.                  |
 |                                      |
