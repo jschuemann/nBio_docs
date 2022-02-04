@@ -57,14 +57,15 @@ NtupleForSpatial is another option for scoring damage within the Fiber structure
   s:Sc/MyScorer/Quantity = "NtupleForSpatial"
 
 Similarly to the previous scorer the damage mode should be set, with the same options "Range"=energy range, "Threshold"=energy threshold and "Ionisation"=ionisations. 
-This scorer will output the number of DSBs in a DSB.dat output file. The scorer also provides output in the SDD (Standard for DNA Damage) format [1]_. All the fields included in the SDD format is on the `SDD readthedocs`_. 
+This scorer will output the number of DSBs in a DSB.dat output file. The scorer also provides output in the SDD (Standard for DNA Damage) format [Schuemann2019]_. All the fields included in the SDD format is on the `SDD readthedocs`_. 
 
 .. _SDD readthedocs: https://standard-for-dna-damage.readthedocs.io/en/latest/
 
 
 References
 ----------
-.. [1] Schuemann, J., McNamara, A. L., Warmenhoven, J. W., Henthorn, N. T., Kirkby, K. J., Merchant, M. J., et al. (2019). A New Standard DNA Damage (SDD) Data Format. Radiation Research, 191(1), 76
+.. [Schuemann2019] Schuemann J, McNamara A L, Warmenhoven J W, Henthorn N T, Kirkby K J, Merchant M J, et al. 2019. 
+       A New Standard DNA Damage (SDD) Data Format. Radiation Research, 191(1), 76
 
  
  

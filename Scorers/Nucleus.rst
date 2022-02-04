@@ -80,7 +80,7 @@ Outputs
 
 Our scorer offers three different outputs. 
 * Firstly, the regular output for nTuple scorers in TOPAS is produced, including an event-by-event description of the energy and dose imparted to the nucleus; the track-averaged LET computed as the energy divided by the track length of the primary particle inside the nucleus; and a complete list of damages (SSB, DSB, SSB+, DSB+, more complex), classified by either direct, indirect or hybrid (in the case of DSB).
-* Secondly, the Standard for DNA Damage (SDD) can be produced [1]_. All the fields included in the SDD format is on the `SDD readthedocs`_. Whether to use the minimal SDD output or the complete specification is controlled by the parameter::
+* Secondly, the Standard for DNA Damage (SDD) can be produced [Schuemann2019]_. All the fields included in the SDD format is on the `SDD readthedocs`_. Whether to use the minimal SDD output or the complete specification is controlled by the parameter::
 
   b:Sc/DNAScorer/MinimalSDDOutput = "false"
   
@@ -108,4 +108,5 @@ where the thresholds refer to the number of base pairs in each fragment.
 
 References
 ----------
-.. [1] Schuemann, J., McNamara, A. L., Warmenhoven, J. W., Henthorn, N. T., Kirkby, K. J., Merchant, M. J., et al. (2019). A New Standard DNA Damage (SDD) Data Format. Radiation Research, 191(1), 76
+.. [Schuemann2019] Schuemann J, McNamara A L, Warmenhoven J W, Henthorn N T, Kirkby K J, Merchant, M J, et al. 2019. 
+       A New Standard DNA Damage (SDD) Data Format. Radiation Research, 191(1), 76

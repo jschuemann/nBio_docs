@@ -67,7 +67,6 @@ Communication proteins consist of a single protein structure and are modeled as 
   d:Ge/MyCell/ChannelHalfLength = 20 nm
 
 
-
 Mitochondria
 ------------
 
@@ -89,10 +88,6 @@ Mitochondria are generally ellipsoid shaped and can be modeled using the G4Ellip
   #Define the number of base pairs in the ring
   i:Ge/mDNA/NumberOfBasePairs = 200
   s:Ge/mDNA/Parent = "MyMito"
-  
-
-  
-  
 
 
 Proteins
@@ -101,3 +96,32 @@ The `protein data bank`_ (PDB) contains over 130,000 biological macromolecular 3
 
 
 .. _protein data bank: https://www.rcsb.org
+
+IRT Supercoiled Plasmid Setup
+-----------------------------
+IRT plasmid Strand Break simulations need the information of the chemical species in order to properly simulate indirect
+Strand Breaks. Such information is provided using a ``Plasmid.xyz`` file, while the physical information for direct 
+Strand Breaks is handled by Geant4, only needing the location and rotation of the plasmid geometries in the form of an ``Envelope.xyz`` file.
+The user can create both files by hand or by using an external tool, however, TOPAS-nBio provides a tool to automatize this process 
+in a pre-simulation using the TsIRTPlasmidSupercoiledSetup geometry. The example ``TsDNAPlasmidSetup.txt`` illustrates the use this tool.
+The following parameters must be given to the TsIRTPlasmidSupercoiledSetup component::
+
+  # Water Envelope Size
+  d:Ge/plasmid/R = 0.5 um
+
+  # Number of Plasmids
+  i:Ge/plasmid/NumberOfPlasmids = 5
+
+  # The DnaFabric file with the plasmid information
+  s:Ge/plasmid/InputFile  = "pUC19_20C_3Sigma_ALP_Corrected.fab2g4dna"
+
+  # The output file
+  s:Ge/plasmid/OutputFile = "Plasmid_50ugg_Sphere_1um_diameter"
+
+The TsPlasmidSupercoiledSetup component will generate two files: ``Output_plasmids.xyz`` and ``Output_envelopes.xyz`` which can
+be used in a TsIRTSupercoiledPlasmid geometry and TsIRTStrandBreaks scorer.
+It is recomended that when using the TsPlasmidSupercoiledSetup tool, the following parameters should be set as follows::
+
+  i:So/Demo/NumberOfHistoriesInRun = 0
+  Ts/NumberOfThreads = 1
+
