@@ -59,14 +59,31 @@ Another option is to consider a probability for direct damage linearly increasin
 
 where the probability of damage is set to 0 for energies lower than or equal to the "LinearProbability_lower_limit"; to 1 for energies greater than or equal to "LinearProbability_upper_limit" and increases linearly between those two values.
 
-The probability for an hydroxil to cause damage once interacting with a backbone is controlled by the parameter::
+Since v1.1, there are two methods available to score indirect damage, either (a) specifying a single probability for a hydroxyl radical to cause damage once they encounter a backbone or a base; or (b) specifying a distinct probability for the hydroxyl radical to interact once they encounter backbones or bases, and then another distinct probability to produce a break only if the radical interacts with the DNA component. In the first option, radicals are always removed scavenged when they face a DNA component, whereas in the second option radicals are allowed to continue on their way if they happen not to interact. Details and the reasoning behind these two methods can be found in [1]_. Users can select one method or the other with the boolean parameter::
+
+  b:Sc/DNAScorer/UseSeparateProbabilitiesForInteractionAndDamage = "true"
+
+If it is set to "false", the probability for an hydroxyl to cause damage once interacting with a backbone is controlled by the parameter::
 
   u:Sc/DNAScorer/ProbabilityForOHToCauseDamage = 0.4
-  
-Finally, one can exclude direct and/or indirect damages from the results with the parameters::
 
-  b:Sc/DNAScorer/ScoreDirectDamages = "false"
-  b:Sc/DNAScorer/ScoreIndirectDamages = "false"
+If it is set to "true", the probability for a radical to interact with (being scavenged by) a backbone, and the probabilities for a radical to cause damage once it interacts with backbone and bases are controlled by:: 
+
+  u:Sc/DNAScorer/ProbabilityForOHToInteractWithBackbone = 0.1
+  u:Sc/DNAScorer/ProbabilityForOHToCauseDamageInBase    = 1.0
+  u:Sc/DNAScorer/ProbabilityForOHToCauseDamageInBackbone  = 0.55
+  
+Note that the probability for a radical to be scavenged by a base is always 1. 
+
+Since v1.1, a new parameter to handle quasi-direct damage (i.e., damage as a consequence of charge transfer from the solvated water shell to the backbone) can be controlled by the parameter::
+
+  u:Sc/DNAScorer/ProbabilityOfTransferFromHydrationShellToBackbone = 0.3333333
+
+Finally, one can exclude direct, quasi-direct and/or indirect damages from the results with the parameters::
+
+  b:Sc/DNAScorer/ScoreDirectDamages               = "true"
+  b:Sc/DNAScorer/ScoreIndirectDamages             = "true"
+  b:Sc/DNAScorer/ScoreQuasiDirectDamages          = "true"
   
 A double strand break (DSB) is defined as two SB in complementary strands separated by less than a given number of base pairs. This separation is set to 10 by default but can be controlled by the parameter::
 
@@ -80,7 +97,7 @@ Outputs
 
 Our scorer offers three different outputs. 
 * Firstly, the regular output for nTuple scorers in TOPAS is produced, including an event-by-event description of the energy and dose imparted to the nucleus; the track-averaged LET computed as the energy divided by the track length of the primary particle inside the nucleus; and a complete list of damages (SSB, DSB, SSB+, DSB+, more complex), classified by either direct, indirect or hybrid (in the case of DSB).
-* Secondly, the Standard for DNA Damage (SDD) can be produced [1]_. All the fields included in the SDD format is on the `SDD readthedocs`_. Whether to use the minimal SDD output or the complete specification is controlled by the parameter::
+* Secondly, the Standard for DNA Damage (SDD) can be produced [2]_. All the fields included in the SDD format is on the `SDD readthedocs`_. Whether to use the minimal SDD output or the complete specification is controlled by the parameter::
 
   b:Sc/DNAScorer/MinimalSDDOutput = "false"
   
@@ -108,4 +125,5 @@ where the thresholds refer to the number of base pairs in each fragment.
 
 References
 ----------
-.. [1] Schuemann, J., McNamara, A. L., Warmenhoven, J. W., Henthorn, N. T., Kirkby, K. J., Merchant, M. J., et al. (2019). A New Standard DNA Damage (SDD) Data Format. Radiation Research, 191(1), 76
+.. [1] Bertolet, A., Ramos-Mendez, J., McNamara, A., Yoo, D., Ingram, S., Henthorn, N., Warmenhoven, J. W., Faddegon, B., Merchant, M., McMahon S. J. (2022). Impact of DNA geometry and scoring on Monte Carlo track-structure simulations of initial radiation induced damage. Radiation Research, Submitted.
+.. [2] Schuemann, J., McNamara, A. L., Warmenhoven, J. W., Henthorn, N. T., Kirkby, K. J., Merchant, M. J., et al. (2019). A New Standard DNA Damage (SDD) Data Format. Radiation Research, 191(1), 76

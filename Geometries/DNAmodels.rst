@@ -117,10 +117,11 @@ Users can change the number of histones per turn::
  
 Users can change the DNA volume geometry, by including one of the below::
 
-  s:Ge/Fiber/DNA_Model = Sphere            #Described by Henthorn et al. (2017)
+  s:Ge/Fiber/DNA_Model = Sphere            #Described by Bertolet et al. (2022)
   s:Ge/Fiber/DNA_Model = HalfCylinder      #Described by Charlton, Nikjoo and Humm (1989)
   s:Ge/Fiber/DNA_Model = QuarterCylinder   #Described by Bernal and Liendo (2009)
 
+Note that as of v1.1, the sphere model is slightly different from the one in v1.0. Also, different models for the hydration shell around these three DNA models have been added. See Bertolet et al. 2022 [7]_ for more details. Also,  
 
 Two different scorers are provided for the TsSolenoidFiber; NtupleForBasePair and NtupleForSpatial. Both of these are described in more detail here.
  
@@ -133,7 +134,7 @@ Geant4-DNA Full Nuclear Model
    :width: 300
    :align: center
 
-The Geant4-DNA model represents the whole genome (6 x 10^9 bps) within an ellipsoid nucleus for a cell in the G0/G1 phase and is further described in Dos Santos M et al. (2014) [7]_.
+The Geant4-DNA model represents the whole genome (6 x 10^9 bps) within an ellipsoid nucleus for a cell in the G0/G1 phase and is further described in Dos Santos M et al. (2014) [8]_.
 
 The DNA double helix strands are composed of two separate strands built from the union of spheres. The sugar-phosphate backbone of the DNA has a total diameter of 2.16 nm and the DNA base, within the backbone structure, has a diameter of 0.34 nm. The double helix is used to form a nucleosome which consists of a core histone protein (cylinder with diameter 6.5 nm and length of 5.7 nm) wrapped by two turns of the DNA double helix (a total of 200 bps). The chromatin fiber is represented by a cylinder of diameter 30.8 nm and length 161 nm. Each fiber contains 90 nucleosomes which are placed on a helix. To represent the chromatin loops, 7 chromatin fibers are arranged in a "flower" shape. The flower has 7 "petals", with each composed of 4 fibers arranged in a diamond. The flower substructures fill 23 chromosome territories, each represented by a box of varying size. 
 
@@ -162,5 +163,7 @@ References
 
 .. [6] Bernal & Liendo (2009) An investigation on the capabilities of the PENELOPE MC code in nanodosimetry Med. Phys. 36(2), 620-625.
 
-.. [7] Dos Santos M, Villagrasa C, Clairand I & Incerti S (2014) Influence of the chromatin density on the number of direct clustered damages calculated for proton and alpha irradiations using a Monte Carlo code Progress in Nuclear Science and Technology 4, 449–453.
+.. [7] Bertolet, A., Ramos-Mendez, J., McNamara, A., Yoo, D., Ingram, S., Henthorn, N., Warmenhoven, J. W., Faddegon, B., Merchant, M., McMahon S. J. (2022). Impact of DNA geometry and scoring on Monte Carlo track-structure simulations of initial radiation induced damage. Radiation Research, Submitted.
+
+.. [8] Dos Santos M, Villagrasa C, Clairand I & Incerti S (2014) Influence of the chromatin density on the number of direct clustered damages calculated for proton and alpha irradiations using a Monte Carlo code Progress in Nuclear Science and Technology 4, 449–453.
 
