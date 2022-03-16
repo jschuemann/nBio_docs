@@ -79,5 +79,6 @@ By releasing TOPAS-nBio as an open source extension to TOPAS, we intend to encou
     Scorers/Cells
     Scorers/DNA
     Scorers/Nucleus
+    Scorers/Chem
     
   
