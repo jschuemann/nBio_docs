@@ -1,6 +1,6 @@
 Chemical Scorers
 ================
-Chemical scorers are those that utilize either the :ref:`Step-By-Step` or the :ref:`Independent Reaction Times` 
+Chemical scorers are those that utilize either the :ref:`Step-By-Step` (SBS) or the :ref:`Independent Reaction Times` (IRT)
 algorithms to simulate the diffusion and reaction of chemical species. TOPAS-nBio provides six chemical scorers, 
 two for SBS and four for IRT. These scorers are:
 
@@ -20,46 +20,45 @@ two for SBS and four for IRT. These scorers are:
 |             | TsIRTStrandBreaks       |
 +-------------+-------------------------+
 
-Chemical scorers provide a user a way to terminate the tracks based on total primary energy loss, total primary track length or 
+Chemical scorers provide a way to terminate the tracks based on total primary energy loss, total primary track length or 
 number of primary particle steps. This is implemented as both, a way to control the particle track size 
-for more control of the G-values and as a way to reduce the total number of chemical species produced by a certain particle track.
+for more control of the G-values, and as a way to reduce the total number of chemical species produced by a certain particle track.
 
 Step-By-Step Scorers
 --------------------
 
 SBS GValues
 ~~~~~~~~~~~
-The Step-By-Step G-Values scorer. It was the first chemical scorer, available since the first release of 
-TOPAS-nBio. Overall, It remained the same from its past version, however the naming convention was changed 
+The Step-By-Step G-Values scorer was the first chemical scorer available since the first release of 
+TOPAS-nBio. It remained the same from its previous versions, however the naming convention was changed 
 in order to fall in line with the rest of the chemical scorers. The TOPAS-nBio parameter name for this scorer 
 component changed from ``GValue`` to ``TsSBSGValue``. An example of the usage of this scorer can be found at
 ``/examples/scorers/TsSBSGValues/`` with TOPAS-nBio defined reactions ``GvalueRevisedPhysicsChemistry.txt`` and 
-Geant4-DNA default reactions ``GvalueG4DNADefault.txt``. The main parameter to setup this scorer is::
+Geant4-DNA default reactions ``GvalueG4DNADefault.txt``. The parameters to setup this scorer are::
 
  # The times at which to report the GValues
  dv:Sc/SSBGvalue/TimeToRecord = 7 1 10 100 1e3 1e4 1e5 1e6 ps
 
-Alongside this parameter, the scorer also needs the following particle track kill options::
+And the following particle track kill options::
 
  # Total Energy Loss to Kill the primary track
- # Preferably some percentage of total energy
  d:Sc/SSBGvalue/KillPrimaryIfEnergyLossExceeds = 10 eV
 
- # If total energy loss by primary exceeds this value the track will be aborted
- # And no chemistry will be conducted
+ # Total energy loss by the primary particle after which the track will be aborted
+ # and no chemistry will be conducted
  d:Sc/SSBGvalue/AbortEventIfPrimaryEnergyLossExceeds = 100 eV
 
  # Total track length to kill the primary track
  d:Sc/SSBGvalue/KillPrimaryBasedOnTrackLength = 1 um
 
 The rest of the parameters will be handled by the ``Ch`` chemistry parameters. Most of the chemical scorers 
-share these same particle track kill options. This scorer has been used to calculate G-values with relatively 
+share the same particle track kill options. This scorer has been used to calculate G-values with relatively 
 good agreement as published in [Ramos-Méndez2018]_.
 
 
 Number of Molecules At Time
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The ``TsSBSMoleculesAtTime`` scorer is a way to obtain the total number of a chemical specie instead of 
+The ``TsSBSMoleculesAtTime`` scorer is a way to obtain the total number of a chemical species instead of 
 its G-value (species per 100 eV of energy deposit). It shares the same particle track kill options from the 
 ``TsSBSGValue`` scorer. An example of such scorer can be found in the folder ``examples/scorers/TsSBSMoleculesAtTime/``, 
 with the file name ``TsSpeciesAtTime.txt``. Instead of providing the explicit 
@@ -75,7 +74,7 @@ the following four parameters::
  # The upper time limit
  d:Sc/MoleculesAtTime/TimeBinMax = 1e6 ps
 
- # True for logarithmic bins, false for lineal
+ # True for logarithmic binning, false for linear binning
  b:Sc/MoleculesAtTime/TimeBinLog = "True"
 
 Independent Reaction Times Scorers
@@ -85,7 +84,7 @@ IRT GValues
 ~~~~~~~~~~~
 The ``TsIRTGValue`` scorer is the IRT version of ``TsSBSGValue``. The necessary parameters to setup the 
 scorer are similar to those from the ``TsSBSMoleculesAtTime`` scorer. Alongside the particle track kill 
-options the necesary parameters are::
+options the parameters are::
 
  # Scorer Cutoff time
  d:Sc/IRTGValue/CutoffTime = 1 us
@@ -98,7 +97,7 @@ options the necesary parameters are::
 
 DeltaG values are an optional part of this scorer, they report the number of times a certain reaction 
 is performed during the simulation per 100 eV of energy deposit (same units as the G-values). The output 
-file of the DeltaG values is goin to have the same name from the ``OutputFile`` parameter from the scorer with a ``_DeltaG.phsp`` at the end.
+file of the DeltaG values will have the same name from the ``OutputFile`` parameter from the scorer with a ``_DeltaG.phsp`` added at the end.
 
 Apart from this parameters, all IRT scorers take additional parameters from the ``/procesess/TsIRT.cc`` 
 file in order to create the time bins to report the G-values::
@@ -115,32 +114,30 @@ file in order to create the time bins to report the G-values::
  # Use High Time Scavenger: Defaults to False
  b:Sc/IRTGValue/HighTimeScavenger = "False"
 
-The ``TimeLower``, ``TimeUpper`` and ``TimeBins`` are optional and defaults to the same values shown here. 
-The ``HighTimeScavenger`` parameter is used to limit the scavenging reaction to 1 micro second, this is done 
-in order to avoid long simulation times between cycling reactions of the form::
+The ``TimeLower``, ``TimeUpper`` and ``TimeBins`` are optional and defaults to the values shown here. 
+The ``HighTimeScavenger`` parameter is used to limit the scavenging reaction to 1 micro second, this is done to avoid long simulation times between cycling reactions of the form::
 
  ReactantA + ScavengerA = ReactantB
  ReactantB + ScavengerB = ReactantA
 
-By having this limiter, those reactions won’t be performed after 1 micro second. However some applications may 
+By having this limiter, no type VI reaction will be performed after 1 micro second. However some applications may 
 depend on higher simulations times with the need of special scavengers like the Fricke dosimeter in which case 
-users can opt to remove this limiter in exchange of simulation time. 
+users can opt to remove this limiter. 
 
 An example of the usage of this scorer can be found at ``/examples/scorers/TsIRTGvalue/TsIRTGvalue.txt``. TOPAS-nBio 
-IRT simulations accuracy has been most recently reported in [Ramos-Méndez2021]_. The Fricke dosimeter has been 
+IRT simulations accuracy has been reported in [Ramos-Méndez2021]_. The Fricke dosimeter has been 
 implemented alongside a way to automatically change reaction times by pH as explained in :ref:`Independent Reaction Times`, 
 the ``/examples/scorers/TsFricke/FrickeIRT.txt`` example shows the implementation of the results published in [Ramos-Méndez2020]_.
 
 
 IRT GValues Inter-Track
 ~~~~~~~~~~~~~~~~~~~~~~~
-TOPAS-nBio allows users to quantify the effect of multiple particles track on the chemical yields, in what is known 
-as inter track effects. These effects don't appear unless two or more tracks happen to interact with the medium very 
-closely considering both the space and time of ionization and excitation of the medium. Specifically speaking, 
+TOPAS-nBio allows users to quantify the effect of multiple particle tracks on chemical yields, in what is known 
+as inter track effects. These effects don't appear unless two or more tracks happen to interact with the medium in close proximity considering both the space and the time of ionization and excitation of the medium. Specifically speaking, 
 two particle tracks must happen with a time separation of at least 1 micro second and a separation of a few tens 
 of nano meters apart.
 
-The ``TsIRTInterTrack`` scorer was made to quantify this effect in a track-by-track basis. It allows the use of 
+The ``TsIRTInterTrack`` scorer was made to quantify this effect on a track-by-track basis. It allows the use of 
 as many tracks as the user specifies distributed in the space and time which the user can manually specify with::
 
  # Set to True to allow multiple tracks per IRT run: Defaults to False
@@ -159,16 +156,16 @@ it is possible to recreate the results reported in [Kreipl2009]_.
 
 IRT GValues Inter-Pulse
 ~~~~~~~~~~~~~~~~~~~~~~~
-Experimentally, a track-by-track inter-track effect is unlikely to be conducted, instead we rely in the use of a pulse irradiation.
-By using pulse irradiation, high radiation dose rates can be achieved in what is called FLASH irradiation. 
-TOPAS-nBio includes a scorer that allows such uses named ``TsIRTInterPulse``. This scorer was used in the published paper 
+Experimentally, determining a track-by-track inter-track effect is not available, instead we rely on the use of a pulsed irradiation.
+By using pulsed irradiation, high radiation dose rates can be achieved in what is called FLASH irradiation. 
+TOPAS-nBio includes a scorer that allows to simulate inter track effects called ``TsIRTInterPulse``. This scorer was used in the paper 
 [Ramos-Méndez2020]_. It completely removes the particle track kill options while providing additional options for the 
 pulse distributions with the parameters::
 
  # Total Dose used per IRT run
  d:Sc/IRTCummulative/PrescribedDose = 5 Gy
 
- # Pulse Distribution it can be: 
+ # The Pulse Distribution can be: 
  # "Gaussian", "Uniform", "None", "Discrete" and "Exponential"
  s:Sc/IRTCummulative/PulseDistribution = "Gaussian"
 
@@ -196,29 +193,27 @@ If the pulses are "Exponential" only the mean time of the pulse is needed with::
  d:Sc/IRTCummulative/PulseTimeMean = 1 us
 
 Chemical simulations always start at 1 pico second, taking into account the physical and pre-chemical stages. 
-Due to the behaviour the time sampling when using pulse distributions it is possible to have chemical species 
+Due to the behaviour of the time sampling when using pulse distributions it is possible to have chemical species 
 created and diffusing before the chemical stage. To avoid this, users can use the following parameter::
 
  b:Sc/IRTCummulative/ForceLowTimeCutTo1ps = True
 
-The default value of such parameter is ``False``.
+The default value of this parameter is ``False``.
 
 TOPAS-nBio provides an example of this scorer in ``/examples/scorers/TsIRTCummulative/TsIRTCummulative.txt``. 
-The effect of FLASH radiation on chemical yields using this scorer in TOPAS-nBio has been published [Ramos-Méndez2020]_, 
-the user can check such reference for more information regarding the expected results and details about FLASH.
+The effect of FLASH radiation on chemical yields using this scorer in TOPAS-nBio was published [Ramos-Méndez2020]_, for more information regarding the expected results and details about FLASH please refer to this paper.
 
-
-The user must take care to not overload the IRT of TOPAS-nBio by sending either a high number of pulses or a high dose. 
-The use of this scorer may consume all the memory available in a computer causing it to freeze or crash, user discretion is advised.
+.. note:: 
+     The user must take care to not overload the IRT of TOPAS-nBio by sending either a high number of pulses or a high dose, otherwise this scorer may consume all the memory available, causing the computer to freeze or crash, user discretion is advised.
 
 
 IRT DNA Strand Breaks
 ~~~~~~~~~~~~~~~~~~~~~
-Both the SBS and IRT scorers can be used for DNA strand breaks simulations. The specific implementation of such simulations 
-can be very complex depending on the reaction-diffusion algorithm. The TOPAS-nBio code provides a way to simulate DNA strand 
-breaks in plasmid DNA using the IRT method. In order to properly run plasmid DNA strand breaks simulations, the user must do 
+Both the SBS and IRT scorers can be used for DNA strand break simulations. The specific implementation of such simulations 
+can be very complex depending on the reaction-diffusion algorithm. TOPAS-nBio provides a way to simulate DNA strand 
+breaks in plasmid DNA using the IRT method. In order to properly run plasmid DNA strand break simulations, the user must perform 
 some pre-simulation setup either by hand or by using the :ref:`IRT Supercoiled Plasmid Setup` provided in the TOPAS-nBio code. 
-The ``TsIRTStrandBreaks`` scorer assumes the user has already done the necessary steps and has the necessary files to properly 
+The ``TsIRTStrandBreaks`` scorer assumes the user has already performed the necessary steps and has the necessary files to properly 
 score de DNA strand breaks by using:: 
 
  d:Sc/DNAStrandBreak/PrescribedDose = 50 Gy
@@ -226,20 +221,22 @@ score de DNA strand breaks by using::
  iv:Sc/DNAStrandBreak/OnlyUseDNAMoleculesWithID = 1 104
 
 Where the ``InputFile`` refers to the file containing the position of the DNA molecules. ``OnlyUseDNAMoleculesWithID`` 
-allows to filter DNA molecules prior to entering the IRT and save time. An example of this scorer can be found at 
+allows to filter DNA molecules prior to entering the IRT simulation and save time. An example of this scorer can be found at 
 ``/examples/scorers/TsScoreDNADamage/PlasmidIrradiation/TsScoreDNADamage.txt``. For more information regarding the 
-performance and setup of this example can be found in [Ramos-Méndez2021]_.
+performance and setup of this example, see [Ramos-Méndez2021]_.
 
-This scorer will produce three different files, a ``phsp`` file with the number of molecules at a given time of the current simulation, 
-a header file for such file and finally a ``.dnadamage`` file. The ``.dnadamage`` file contains the ``Base Pair ID`` and ``Strand ID`` of 
+This scorer will produce three different files, a ``phsp`` file with the number of molecules at a given time of the simulation, 
+a header file for this file and a ``.dnadamage`` file. The ``.dnadamage`` file contains the ``Base Pair ID`` and ``Strand ID`` of 
 each break. It is up to the user to work around this information to obtain the number of Single Strand Breaks and Double Strand Breaks. 
 The ``Base Pair ID`` will be a number between 1 and the number of plasmids multiplied by the number of base pair per plasmid. 
 The user will need to obtain the ``Plasmid ID`` by dividing the ``Base Pair ID`` by the number of base pairs of the specific 
 plasmid used.
 
-It is important to mention that this scorer is not ``Multithread`` compatible and must be used with a thread number of 1. 
-Future releases may address this limitation.
+.. note:: 
+     It is important to mention that this scorer is not ``Multithread`` compatible and must be used with a thread number of 1. Future releases may address this limitation.
 
+.. note:: 
+     Other DNA damage scorers are available and are compatible with the SBS method, see the appropriate sections in this documentation for more detail.
 
 References
 ----------

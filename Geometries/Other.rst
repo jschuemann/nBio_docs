@@ -99,10 +99,10 @@ The `protein data bank`_ (PDB) contains over 130,000 biological macromolecular 3
 
 IRT Supercoiled Plasmid Setup
 -----------------------------
-IRT plasmid Strand Break simulations need the information of the chemical species in order to properly simulate indirect
-Strand Breaks. Such information is provided using a ``Plasmid.xyz`` file, while the physical information for direct 
-Strand Breaks is handled by Geant4, only needing the location and rotation of the plasmid geometries in the form of an ``Envelope.xyz`` file.
-The user can create both files by hand or by using an external tool, however, TOPAS-nBio provides a tool to automatize this process 
+IRT plasmid Strand Break simulations need the information of the chemical species within the DNA that react in order to properly simulate indirect
+Strand Breaks. Such information is provided using a ``Plasmid.xyz`` file. The physical information for direct 
+Strand Breaks is handled by Geant4, which only needs the location and rotation of the plasmid geometries in the form of an ``Envelope.xyz`` file.
+The user can create both files by hand or by using an external tool. TOPAS-nBio provides a tool to automatize this process 
 in a pre-simulation using the TsIRTPlasmidSupercoiledSetup geometry. The example ``TsDNAPlasmidSetup.txt`` illustrates the use this tool.
 The following parameters must be given to the TsIRTPlasmidSupercoiledSetup component::
 

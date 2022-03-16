@@ -13,7 +13,16 @@ If working on a Mac, I recommend installing Python with Homebrew to avoid messin
 To build and view the docs locally (recommended for substantial editing), you will need to have Spinx version 1.4.2 or newer and do:
 
 pip install sphinx sphinx-autobuild sphinx_rtd_theme
+
+To install TOPAS pygments:
 pip install -e git://github.com/davidchall/topas-pygments.git#egg=topas_pygments
+
+Or in newer versions do:
+mkdir src
+cd src
+git clone https://github.com/davidchall/topas-pygments
+cd topas-pygments
+python3 setup.py install
 
 then, after your edits
 
