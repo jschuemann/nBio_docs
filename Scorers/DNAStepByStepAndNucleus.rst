@@ -5,7 +5,7 @@ TOPAS-nBio provides a scorer for the damage induced to several DNA structures us
 
   s:Sc/DNADamageScorer/Quantity = "DNADamageStepByStep"
   
-We provide another parameter file with all the options for the scorer and explanations about these. This file is located at the path: 'examples/scorers/DNAScorerStepByStep.txt'. To use it, please include this file in your parameter file with the adequate path reference. For example, in the example 'FullDNADamageInPlasmid.txt' at the path 'examples/scorers/DNADamageInPlasmid/', the following parameter is included::
+We provide another parameter file with all the options for the scorer and explanations about these. This file is located at the path: 'examples/scorers/DNAScorerStepByStep.txt'. To use it, please include this file in your parameter file with the adequate path reference. For example, in the example 'FullDNADamageInPlasmid.txt' at the path 'examples/scorers/SBSDamageToDNAPlasmid/', the following parameter is included::
  
   includeFile = ../DNAScorerStepByStep.txt
 
@@ -153,7 +153,7 @@ where these materials need to be defined and assigned to each subcomponent in th
 
 Nucleus
 =======
-Damage to the fractal DNA in a nucleus can be scored using the geometry component TsNucleus. This scorer is a sub-version of the more general DNADamageStepByStep component, and it still uses the same auxiliary parameter file, 'DNAScorerStepByStep.txt'. The quantity and the component for the scorer need to be specified as follows (assuming that TsNucleus class is named as "Nucleus")::
+Damage to the fractal DNA in a nucleus can be scored using the geometry component TsNucleus. This scorer is a sub-version of the more general DNADamageStepByStep component, and it still uses the same auxiliary parameter file, 'DNAScorerStepByStep.txt'. Check example on 'examples/scorers/SBSDamageToDNANucleus'. The quantity and the component for the scorer need to be specified as follows (assuming that TsNucleus class is named as "Nucleus")::
 
   s:Sc/DNADamageScorer/Quantity = "DNADamageNucleusStepByStep"
   s:Sc/DNADamageScorer/Component = "Nucleus"
