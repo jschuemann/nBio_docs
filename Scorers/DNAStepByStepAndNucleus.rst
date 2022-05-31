@@ -45,7 +45,7 @@ If it is set to "true", the probability for a radical to interact with (being sc
   u:Sc/DNADamageScorer/ProbabilityOfIndirectDamageToBackbone = 0.55 # If always scavenging in DNA components, the recommended value is 0.4
   u:Sc/DNADamageScorer/ProbabilityOfIndirectDamageToBase = 1.0 # If always scavenging in DNA components, the recommended value is 0.4
   
-Note that these parameters should be adapted to the DNA geometry model employed.
+Note that these parameters should be adapted to the DNA geometry model employed (see [1]_).
 
 Since v1.1, a new parameter to handle quasi-direct damage (i.e., damage as a consequence of charge transfer from the solvated water shell to the backbone) can be controlled by the parameter::
 
@@ -93,33 +93,34 @@ Outputs
 -------
 
 Our scorer offers four different outputs. 
-* Firstly, the regular output for nTuple scorers in TOPAS is produced, including an event-by-event description of the energy and dose imparted to the nucleus; the track-averaged LET computed as the energy divided by the track length of the primary particle inside the nucleus; and a complete list of damages (SSB, DSB, SSB+, DSB+, more complex and foci), classified by either direct, indirect or hybrid (in the case of DSB). However, one can decide whether to include damages classified by their origin by means of::
 
-  b:Sc/DNADamageScorer/BreakDownOutputPerDamageOrigin	= "true"
+1. The regular output for nTuple scorers in TOPAS is produced, including an event-by-event description of the energy and dose imparted to the nucleus; the track-averaged LET computed as the energy divided by the track length of the primary particle inside the nucleus; and a complete list of damages (SSB, DSB, SSB+, DSB+, more complex and foci), classified by either direct, indirect or hybrid (in the case of DSB). However, one can decide whether to include damages classified by their origin by means of::
 
-* Secondly, the Standard for DNA Damage (SDD) can be produced [2]_. All the fields included in the SDD format is on the `SDD readthedocs`_. Whether to use the minimal SDD output or the complete specification is controlled by the parameter::
+    b:Sc/DNADamageScorer/BreakDownOutputPerDamageOrigin	= "true"
 
-  b:Sc/DNADamageScorer/MinimalSDDOutput = "false"
+2. The Standard for DNA Damage (SDD) can be produced [2]_. All the fields included in the SDD format is on the `SDD readthedocs`_. Whether to use the minimal SDD output or the complete specification is controlled by the parameter::
+
+    b:Sc/DNADamageScorer/MinimalSDDOutput = "false"
   
 Also, the user can only include those damages including a DSB using the parameter::
 
   b:Sc/DNADamageScorer/IncludeDSBDamageSitesOnlyinSDD = "true"
   
-* An exhaustive list of the damage produced in each backbone and base can be obtained in CSV format by setting::
+3. An exhaustive list of the damage produced in each backbone and base can be obtained in CSV format by setting::
   
-  b:Sc/DNADamageScorer/WriteCSVOutputWithAllDamageSpecification = "true"
+    b:Sc/DNADamageScorer/WriteCSVOutputWithAllDamageSpecification = "true"
   
 This list includes all the base pairs affected in each chromosome, with 'D' meaning direct damage; 'I' indirect damage; 'M' multiple damage (direct+indirect); and '*' meaning that some energy has been imparted to that element but not enough to consider a direct damage.
 
-* Finally, a visual output of 3D and 2D foci images can be provided. These images are obtained by locating all the DSBs and convolving them with a Point Spread Function (PSF), which blurs each one of the DSBs in all directions. In v2.0, only an isotropic Gaussian function can be used as PSF, although the width (sigma parameter) of the Gaussian function can be specified. Users can select what 2D planes to obtain, and the spatial resolution for the calculated images. For the 2D images, several images with different resolutions can be obtained after a single simulation. This is controlled by the following set of parameters (by default at the DNAScorerStepByStep.txt auxiliary file)::
+4. A visual output of 3D and 2D foci images can be provided. These images are obtained by locating all the DSBs and convolving them with a Point Spread Function (PSF), which blurs each one of the DSBs in all directions. In v2.0, only an isotropic Gaussian function can be used as PSF, although the width (sigma parameter) of the Gaussian function can be specified. Users can select what 2D planes to obtain, and the spatial resolution for the calculated images. For the 2D images, several images with different resolutions can be obtained after a single simulation. This is controlled by the following set of parameters (by default at the DNAScorerStepByStep.txt auxiliary file)::
 
-  b:Sc/DNADamageScorer/Get3DFociImage	= "true"
-  b:Sc/DNADamageScorer/Get2DFociImages = "true"
-  sv:Sc/DNADamageScorer/2DFociImagePlanes = 3 "X" "Y" "Z"
-  s:Sc/DNADamageScorer/MicroscopePSFShape = "Gaussian"
-  d:Sc/DNADamageScorer/MicroscopePSFWidth = 400 nm
-  dv:Sc/DNADamageScorer/Foci2DImageResolutions = 2 25 100 nm
-  d:Sc/DNADamageScorer/Foci3DImageResolution = 400 nm
+    b:Sc/DNADamageScorer/Get3DFociImage	= "true"
+    b:Sc/DNADamageScorer/Get2DFociImages = "true"
+    sv:Sc/DNADamageScorer/2DFociImagePlanes = 3 "X" "Y" "Z"
+    s:Sc/DNADamageScorer/MicroscopePSFShape = "Gaussian"
+    d:Sc/DNADamageScorer/MicroscopePSFWidth = 400 nm
+    dv:Sc/DNADamageScorer/Foci2DImageResolutions = 2 25 100 nm
+    d:Sc/DNADamageScorer/Foci3DImageResolution = 400 nm
 
 Images are given in csv files, in which the first columns indicate the indexes of the image matrix (i, j, k for 3D images; i, j for 2D images) and the last column provides the pixel value for the correspondent indexes. The extent of the 2D images on each plane can be specified by the parameters::
 
