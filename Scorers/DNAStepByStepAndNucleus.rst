@@ -130,6 +130,8 @@ Images are given in csv files, in which the first columns indicate the indexes o
   d:Sc/DNADamageScorer/ImageYMaxPosition = Ge/Nucleus/NucleusRadius um
   d:Sc/DNADamageScorer/ImageZMinPosition = 0 um - Ge/Nucleus/NucleusRadius
   d:Sc/DNADamageScorer/ImageZMaxPosition = Ge/Nucleus/NucleusRadius um
+  
+A python-based script is accompanying the example at 'examples/scorers/SBSDamageToDNANucleus' to visualize the 3D and 2D images generated.
 
 Excluding fragments
 -------------------
