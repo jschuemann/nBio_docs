@@ -81,6 +81,14 @@ In order for the scorer to account hits in the desired structures of the DNA, th
   s:Ge/Nucleus/HydrationShell1/Material   = "G4_WATER_MODIFIED"
   s:Ge/Nucleus/HydrationShell2/Material   = "G4_WATER_MODIFIED"
 
+Rotating nucleus
+-----------------
+As of v1.1, users can rotate the nucleus arbitrarily for different runs. This can be controlled by the parameter::
+
+  b:Ge/Nucleus/RotateNucleusForEachRun        = "false"
+
+Note that nucleus will keep the same position for all the events in the same run.
+
 .. _DNAModels readthedocs: https://topas-nbio.readthedocs.io/en/latest/Geometries/DNAmodels.html
 .. _Hilbert curve: https://en.wikipedia.org/wiki/Hilbert_curve
 .. _Nucleus Scorer readthedocs: https://topas-nbio.readthedocs.io/en/latest/Scorers/Nucleus.html
