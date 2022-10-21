@@ -145,10 +145,11 @@ Users can change the number of histones per turn::
  
 Users can change the DNA volume geometry, by including one of the below::
 
-  s:Ge/Fiber/DNA_Model = Sphere            #Described by Henthorn et al. (2017)
+  s:Ge/Fiber/DNA_Model = Sphere            #Described by Bertolet et al. (2022)
   s:Ge/Fiber/DNA_Model = HalfCylinder      #Described by Charlton, Nikjoo and Humm (1989)
   s:Ge/Fiber/DNA_Model = QuarterCylinder   #Described by Bernal and Liendo (2009)
 
+Note that as of v1.1, the sphere model is slightly different from the one in v1.0. Also, different models for the hydration shell around these three DNA models have been added. See Bertolet et al. 2022 [7]_ for more details. Also,  
 
 Two different scorers are provided for the TsSolenoidFiber; NtupleForBasePair and NtupleForSpatial. Both of these are described in more detail here.
  
@@ -208,3 +209,4 @@ References
        density on the number of direct clustered damages calculated for proton and alpha 
        irradiations using a Monte Carlo code Progress in Nuclear Science and Technology 4, 449–453.
 
+.. [Bertolet2022] Bertolet, A., Ramos-Mendez, J., McNamara, A., Yoo, D., Ingram, S., Henthorn, N., Warmenhoven, J. W., Faddegon, B., Merchant, M., McMahon S. J. (2022). Impact of DNA geometry and scoring on Monte Carlo track-structure simulations of initial radiation induced damage. Radiation Research, 2022;198(3):207-220.  PMID: 35767729  PMCID: PMC9458623.
