@@ -5,7 +5,7 @@ TOPAS-nBio facilitates the use of the physical and chemical processes available 
 
 TOPAS-nBio further provides additional capabilities:
  
- 1. New physics and chemistry lists designed to match experimental G-values as described in out publications :ref:`Citations`
+ 1. New physics and chemistry lists designed to match experimental G-values as described in our publications :ref:`Citations`
  2. The possibility to customize physical models using modules involved in the pre-defined physics list.
  3. Definition of regions to activate different physics lists, e.g. Geant4-DNA.
  4. The use of a variance reduction techniques.

@@ -21,6 +21,7 @@ A Parameter_Name can be almost any string, but we have prefix conventions to kee
 * ``So/`` for Particle Sources
 * ``Ph/`` for Physics
 * ``Ch/`` for Chemistry  (introduced for TOPAS-nBio)
+* ``Mo/`` for Chemical Molecules (introduced for TOPAS-nBio IRT)
 * ``Vr/`` for Variance Reduction
 * ``Sc/`` for Scoring
 * ``Gr/`` for Graphics
