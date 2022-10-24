@@ -5,10 +5,27 @@
 
 
 .. note:: 
-    TOPAS-nBio currently works with TOPAS release 3.6.1 and newer release. 
+    New Release, v2.0!
 
 .. note:: 
-    TOPAS-nBio is now released as version v1.0! 
+    TOPAS-nBio is now released as version v2.0! 
+    TOPAS-nBio currently works with TOPAS release 3.8 and newer release. 
+    Important updates:
+        Geometry:
+            - New geometries added
+            - DNA has been updated
+            - Hi-C geometry for nucleus available
+        Scoring:
+            - New scoring system
+            - New method to score indirect damage to bases
+        Chemistry:
+            - IRT has been included
+            - Additional scorers for G-values were added
+        Biology:
+            - DaMaRiS has been integrated.
+
+        In addition, this release includes several fixes and improvements.
+
     The code is available at:
     https://github.com/topas-nbio/TOPAS-nBio/releases/tag/v1.0
     
