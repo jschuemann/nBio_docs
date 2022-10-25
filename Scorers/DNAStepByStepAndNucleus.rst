@@ -112,7 +112,7 @@ Also, the user can only include those damages including a DSB using the paramete
   
 This list includes all the base pairs affected in each chromosome, with 'D' meaning direct damage; 'I' indirect damage; 'M' multiple damage (direct+indirect); and '*' meaning that some energy has been imparted to that element but not enough to consider a direct damage.
 
-4. A visual output of 3D and 2D foci images can be provided. These images are obtained by locating all the DSBs and convolving them with a Point Spread Function (PSF), which blurs each one of the DSBs in all directions. In v2.0, only an isotropic Gaussian function can be used as PSF, although the width (sigma parameter) of the Gaussian function can be specified. Users can select what 2D planes to obtain, and the spatial resolution for the calculated images. For the 2D images, several images with different resolutions can be obtained after a single simulation. This is controlled by the following set of parameters (by default at the DNAScorerStepByStep.txt auxiliary file)::
+4. A visual output of 3D and 2D fluorescence focus assay-like images can be provided. These images are obtained by locating all the DSBs and convolving them with a Point Spread Function (PSF), which blurs each one of the DSBs in all directions. In v2.0, only an isotropic Gaussian function can be used as PSF, although the width (sigma parameter) of the Gaussian function can be specified. Users can select what 2D planes to obtain, and the spatial resolution for the calculated images. For the 2D images, several images with different resolutions can be obtained after a single simulation. This is controlled by the following set of parameters (by default at the DNAScorerStepByStep.txt auxiliary file)::
 
     b:Sc/DNADamageScorer/Get3DFociImage	= "true"
     b:Sc/DNADamageScorer/Get2DFociImages = "true"
@@ -153,8 +153,8 @@ A single element of a DNA strand is composed of three different components: base
 
 where these materials need to be defined and assigned to each subcomponent in the Nucleus parameter section. Note that "G4_WATER_MODIFIED" is assigned to the hydration shell in our example.
 
-Nucleus
-=======
+Scoring in the Nucleus
+-----------------------
 Damage to the fractal DNA in a nucleus can be scored using the geometry component TsNucleus. This scorer is a sub-version of the more general DNADamageStepByStep component, and it still uses the same auxiliary parameter file, 'DNAScorerStepByStep.txt'. Check example on 'examples/scorers/SBSDamageToDNANucleus'. The quantity and the component for the scorer need to be specified as follows (assuming that TsNucleus class is named as "Nucleus")::
 
   s:Sc/DNADamageScorer/Quantity = "DNADamageNucleusStepByStep"
@@ -173,49 +173,6 @@ Geometrical information about the nucleus is also needed to correctly locate the
   s:Sc/DNADamageScorer/GeometryInfo = "supportFiles/Geoinfo.txt"
   s:Sc/DNADamageScorer/CopyNoTable = "supportFiles/CopyNoTable.txt"
   s:Sc/DNADamageScorer/signedCHVoxel = "supportFiles/signedCHVoxel.txt"
-
-Solenoid Fiber
-==============
-
-As an additional scorer independent of the DNADamageStepByStep scorer, two ntuple scorers are provided for the TsSolenoidFiber geometry. 
-
-NtupleForBasePair scores energy deposition quantities within the DNA structure. The scorer is initialized::
-
-  s:Sc/MyScorer/Quantity = "NtupleForBasePair" 
-  s:Sc/MyScorer/Component = Fiber
-
-Within the scorer, users can also specify the damage mode::
-
-  s:DamageMode = "Range"              
-  d:MinEneRange = 5.0 eV              #Min energy for damage range (Default = 5 eV)
-  d:MaxEneRange = 37.5 eV             #Max energy for damage range (Default = 37.5 eV)
-  d:MinEneThresh = 17.5 eV            #Min energy for damage threshold (Default = 17.5 eV)
-  
-Other options for damage mode are "Range"=energy range, "Threshold"=energy threshold, "Ionisation"=ionisations.
-
-Output columns are::
-
-  Columns of data are as follows:
-  1: Position X [nm]
-  2: Position Y [nm]
-  3: Position Z [nm]
-  4: Energy [eV]
-  5: Event ID
-  6: Run ID
-  7: Strand Num
-  8: IsIonisation
-  9: BP
-  10: IsBack
-  11: IsBase
-
-NtupleForSpatial is another option for scoring damage within the Fiber structure::
-
-  s:Sc/MyScorer/Quantity = "NtupleForSpatial"
-
-Similarly to the previous scorer the damage mode should be set, with the same options "Range"=energy range, "Threshold"=energy threshold and "Ionisation"=ionisations. 
-This scorer will output the number of DSBs in a DSB.dat output file. The scorer also provides output in the SDD (Standard for DNA Damage) format [2]_. All the fields included in the SDD format is on the `SDD readthedocs`_. 
-
-.. _SDD readthedocs: https://standard-for-dna-damage.readthedocs.io/en/latest/
 
 References
 ----------
