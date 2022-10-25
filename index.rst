@@ -5,7 +5,7 @@
 
 
 .. note:: 
-    New Release, v2.0 (actually not yet, but preparing for it)!
+    New Release, v2.0 (Oct. 2022)!
 
 .. note:: 
     TOPAS-nBio is now released as version v2.0! 
