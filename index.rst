@@ -9,7 +9,9 @@
 
 .. note:: 
     TOPAS-nBio is now released as version v2.0! 
+
     TOPAS-nBio currently works with TOPAS release 3.8 and newer release. 
+    
     Important updates:
         Geometry:
             - New geometries added
