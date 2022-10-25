@@ -19,7 +19,7 @@
             - Hi-C geometry for nucleus available
             - new cell + nanoparticle + organelles provided by Marc Hahn
         Scoring:
-            - New scoring system
+            - New DNA damage scoring system
             - New method to score indirect damage to bases
         Chemistry:
             - IRT has been included
