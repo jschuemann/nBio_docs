@@ -1,8 +1,25 @@
 Chemistry
 ==========
-Default chemistry list
+
+TOPAS-nBio Default chemistry list
 ---------------------------------------------
-TOPAS-nBio inherits the parameters (reactions, reaction rates, etc.) provided 
+We recommend the following chemistry parameters which include changes that 
+allowed to reconcile the experimental and simulated yields of chemical species 
+at the picosecond level as shown in [RamosMendez2021]_.
+
+The default chemistry list for TOPAS-nBio can be found at ``topas-nBio/examples/processes/TOPASDefaultReactions.txt``.
+
+To use the default chemistry parameters from TOPAS-nBio, users had to use the topas chemistry modules, either 
+``TsEmDNAChemistry`` or ``TsEmDNAChemistryExtended``. In addition, add the following parameter::
+
+ includeFile = TOPASDefaultReactions.txt
+
+The example ``topas-nBio/examples/scorers/IRTGetGValue/TsIRTGvalue.txt`` shows how to properly use this chemistry list 
+and recreate the validation results from [RamosMendez2021]_.
+
+Geant4 Default chemistry list
+---------------------------------------------
+TOPAS-nBio can inherit the parameters (reactions, reaction rates, etc.) provided 
 by the Geant4-DNA toolkit to perform radiolysis simulations via the modules 
 `g4em-dna-chemistry <https://topas.readthedocs.io/en/latest/parameters/physics/modular.html#list-of-available-modules>`_ 
 and 
@@ -23,7 +40,7 @@ pre-chemical and chemical stages are activated, but no explicit step-by-step
 transport is performed. This is useful only for the scoring of the G-value 
 (the yield of chemical species per 100 eV of energy deposit) as a function 
 of time. A scorer that retrieves this quantity is the ``GValue`` scorer.
-The example ``GvalueG4DNADefault.txt`` shows a complete implementation of this
+The example ``topas-nBio/examples/scorers/SBSGetGValue/GvalueG4DNADefault.txt`` shows a complete implementation of this
 scorer.
 
 Actvating the Chemistry of TOPAS-nBio
@@ -37,23 +54,19 @@ chemistry name defined by the following parameter will be used (e.g.
  s:Ch/ChemistryName = "TOPASChemistry"
 
 The configuration of parameters for the chemistry stage requires the user to define an end time 
-and a time resolution. The end time must be larger than 1 ps (i.e. the time where the chemical 
-stage begins). The time resolution can be defined piecewise. 
+and (in the case of the Step-By-Step method) a time resolution. The end time must be larger 
+than 1 ps (i.e. the time where the chemical stage begins). The time resolution can be defined piecewise. 
 For example, to set the transport of chemical species up to 15 ns with time step resolution of 
 1 ns from 1 ps to 10 ns and 10 ps from 10 ns to 15 ns, the following parameters must be set 
 (assuming the chemistry name ``TOPASChemistry``)::
 
+ # Activate Chemistry and Set Chemistry End Time
  b:Ch/TOPASChemistry/ChemicalStageTransportActive     = "True" 
  d:Ch/TOPASChemistry/ChemicalStageTimeEnd             = 15.0 ns
+
+ # Only for Step-By-Step Chemistry
  dv:Ch/TOPASChemistry/ChemicalStageTimeStepsHighEdges   = 2 10.0  15.0 ns
  dv:Ch/TOPASChemistry/ChemicalStageTimeStepsResolutions = 2  1.0  10.0 ps 
-
-Users may opt to controll the end of their chemistry simulations by using the following parameter instead of ``d:Ch/TOPASChemistry/ChemicalStageTimeEnd``::
-
- i:Ch/TOPASChemistry/ChemicalStageMaximumStepNumber = 1000
-
-Which will terminate the chemistry simulation when the desired number of steps have been met.
-
 
 After these parameters have been set, the spatio-temporal information of the 
 chemical species is available and can be visualized using the
@@ -72,13 +85,13 @@ provided by TOPAS-nBio. For that, one of the specialized modules ``TsEmDNAChemis
 and ``TsEmDNAChemistryExtended``  must be 
 included instead of the Geant4DNA chemistry module as follows:: 
 
- sv:Ph/Default/Modules = 2 "g4em-dna" "TsEmDNAChemistry"
+ sv:Ph/Default/Modules = 2 "TsEmDNAPhysics" "TsEmDNAChemistry"
 
 or::
 
- sv:Ph/Default/Modules = 2 "g4em-dna" "TsEmDNAChemistryExtended"
+ sv:Ph/Default/Modules = 2 "TsEmDNAPhysics" "TsEmDNAChemistryExtended"
 
-Instead of the ``g4em-dna`` physics module, one of the other options described in the
+Instead of the ``TsEmDNAPhysics`` physics module, one of the other options described in the
 :ref:`Physics Processes` can be used.
 
 In this way, a whole set of parameters can be customized by using the following 
@@ -199,17 +212,20 @@ Then call the following parameters (also, see example ``RemoveChemicalSpeciesInV
 
 Chemical Diffusion-Reaction Algorithms
 --------------------------------------------
-TOPAS-nBio incorporates two different algorithms for the diffusion and reaction of chemical species, the Step-By-Step (SBS) [Turner1983]_ and Independent Reaction Times (IRT) [Clifford1986]_ algorithms.
-The scorer is going to determine which one of the two algorithms to choose from. Expected differences between the two algorithms are as follows:
- * SBS is slower but more accurate than IRT.
- * The gain in speed of IRT provides a mean to simulate a higher number of reactions (compared against SBS).
- * Only SBS is capable of chemical evolution visualization.
- * IRT can make use of the ‘’Mo’’ parameters to declare more chemical species.
- * Both algorithms have their own way of declaring background reactions (type VI).
+TOPAS-nBio incorporates two different methods for the diffusion and reaction of chemical species, the Step-By-Step (SBS) [Turner1983]_ 
+and Independent Reaction Times (IRT) [Clifford1986]_ methods. Either method can be invoked by means of specific scorers. 
+Main differences between both methods are the following:
+ * SBS simulates the spatial and temporal evolution of the chemical species and thus is slower than IRT.
+ * SBS allows to visualize chemical evolution.
+ * IRT can reach up to two or three orders of magnitude shorter times than SBS.
+ * Further chemical species can be defined only in IRT using parameters starting with ‘’Mo’’, see below.
+ * Reactions between chemical species and background are defined in a different way between both methods.
+ * Products from background reactions can be simulated only with IRT.
 
 Step-By-Step
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-For the SBS algorithm, TOPAS-nBio borrows the methods from Geant4-DNA as well as their molecule definitions. To incorporate background reactions in TOPAS-nBio, the following structure must be used::
+For the SBS method, TOPAS-nBio inherits the reactions and molecules from Geant4-DNA. 
+To incorporate reactions with the background (scavenging) in TOPAS-nBio, the following structure must be used::
 
  # The Reactant: Scavenged Molecules
  sv:Sc/SBSGValue/Scavenger/Molecules = 2 "SolvatedElectron" "Hydroxyl"
@@ -223,16 +239,17 @@ For the SBS algorithm, TOPAS-nBio borrows the methods from Geant4-DNA as well as
  # Confirm if there are products: Must be set to False.
  bv:Sc/SBSGValue/Scavenger/HasProducts = 2 "False" "False"
 
-The previous example will scavenge all the solvated electrons and Hydroxyl molecules using a scavenging capacity of :math:`5 \times 10^{8} s^{-1}` for the solvated electrons and :math:`2.7 \times 10^{7} s^{-1}` for the hydroxyl.
-Currently SBS chemistry simulations does not allow for any background production of chemical species. This will be added in a future release of TOPAS-nBio.
+where M = 1 mol/dm3.
+
+In the previous example solvated electrons and Hydroxyl radicals will be scavenged at a rate (scavenging capacity) of :math:`5 \times 10^{8} s^{-1}` for the solvated electrons and :math:`2.7 \times 10^{7} s^{-1}` for the hydroxyl radical, respectively.
+Current version of TOPAS-nBio does not produces any product from background reaction. This capability will be added in a future release of TOPAS-nBio.
 
 Independent Reaction Times
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The second option for chemistry is the independent reaction times approximation implemented in TOPAS-nBio. 
-The chemistry parameters consisting of the number of reactions, reaction types and reaction rates were taken from [Plante2017]_. 
-The accuracy of the TOPAS-nBio implementation has been reported in [Schuemann2019]_.
-For the TOPAS-nBio IRT simulations, the user can extend the number of molecules allowed in the simulation using the new
-``Mo`` parameters implemented as follows::
+For IRT we provide a revisited reaction kinetics model (reaction and reaction rates) reported in [RamosMendez2021]_ which reconciliated simulated and measured 
+G values at the picosecond range. This model is provided in the example TOPAS-nBio/examples/scorers/GetIRTGvalues.
+
+The user can define new molecules by using the parameter system by using the ``Mo`` prefix as follows::
 
  # Define the internal Symbol of the Molecule
  s:Mo/DMSO/Symbol = "DMSO^0"
@@ -247,26 +264,20 @@ For the TOPAS-nBio IRT simulations, the user can extend the number of molecules 
  d:Mo/DMSO/Radius = 0.3 nm
 
 
-Afterwards the molecule is available for use in any reaction that is not StepByStep compatible. 
+New molecules defined with the previous method are not compatible with the StepByStep method. 
 In IRT, the declaration of background reactions follows the same convention from the regular reactions::
 
  sv:Ch/TOPASChemistry/BackgroundReaction/hydroxyl/DMSO/Products = 1 "OHDMSOProduct^0"
  d:Ch/TOPASChemistry/BackgroundReaction/hydroxyl/DMSO/ReactionRate = 7.1e9 /M/s
  d:Ch/TOPASChemistry/BackgroundReaction/hydroxyl/DMSO/Concentration = 1e-1 M
 
+Two models for simulating background reactions are provided, and can be selected as follows:
+
  # Either ExponentialSingleFactor or ExponentialDoubleFactor
  s:Ch/TOPASChemistry/BackgroundReaction/hydroxyl/DMSO/ScavengingModel = "ExponentialSingleFactor" 
 
-Where ``ExponentialSingleFactor`` refers to method for sampling the independent reaction time of type VI reactions
-described in [Plante2017]_ and ``ExponentialDoubleFactor`` is the method described in [Pimblott1991]_.
-
-When using any scorer that makes use of the IRT algorithm of TOPAS-nBio, there must be at least one SBS 
-compatible reaction in order to be avoid problems with the internal Geant4-DNA chemistry classes. Altough TOPAS-nBio
-IRT isn't part of Geant4-DNA, it still requires the pre-chemical stage provided by Geant4-DNA which can only be used
-if a reaction table exists, hence the need of having one SBS compatible reaction. Reactions that are compatible
-with SBS are also compatible with IRT, the only reason a reaction might be incompatible with SBS is due to their
-chemical reactives not being present in the chemistry list used. Users can overcome this limitation by creating their
-own chemistry lists using the ``TsEmDNAChemistry`` as base.
+Where ``ExponentialSingleFactor`` refers to method described in [Plante2017]_ and ``ExponentialDoubleFactor`` 
+is the method described in [Pimblott1991]_.
 
 TOPAS-nBio IRT allows for the activation and deactivation of reactions. This allows users to define a list of 
 chemical reactions and pick and choose which ones of them will be active during the simulation without 
@@ -278,7 +289,7 @@ the need to introduce or delete the whole reaction::
  # Deactivate an already existing Background Reaction
  b:Ch/TOPASChemistry/BackgroundReaction/hydroxyl/DMSO/Active = "False"
 
-IRT Automatic pH Reaction Rate Scalling
+Simulations considering pH
 ---------------------------------------
 The IRT method of TOPAS-nBio allows the user to scale the pH value of the medium. This can be usefull to model the physical conditions of experimental setups in more detail. The pH scalling was developed following the work of [Autsavapromporn2007]_ and [Plante2011]_. To change the pH of the medium the following parameters are used::
 
@@ -293,9 +304,10 @@ The IRT method of TOPAS-nBio allows the user to scale the pH value of the medium
  s:Ch/TOPASChemistry/ModelAcidPropertiesWithpH = 4.6
 
 The last two parameters; ``ModelAcidPropertiesWithConcentration`` and ``ModelAcidPropertiesWithpH`` canot be 
-used at the same time, if the user attemps to do so TOPAS will exit and an error message displayed to explaining this. TOPAS-nBio will 
+used at the same time, if the user attemps to do so TOPAS will exit and an error message displayed. TOPAS-nBio will 
 automatically scale reaction rates for reactions between two charged chemical species based on the ionic strength 
-of the medium.
+of the medium. An example is provide shown this capability throught the Fricke dosimeter, see example TOPAS-nBio/example/scorers/FrickeIRT
+
 
 IRT Automatic Temperature Scalling
 ----------------------------------
@@ -320,6 +332,9 @@ References
 .. [RamosMendez2018] Ramos-Méndez J, Perl J, Schuemann J, McNamara A, Paganetti H and Faddegon B 
                      2018 Monte Carlo simulation of chemistry following radiolysis with TOPAS-nBio 
                      Phys. Med. Biol. 63 105014 `link <http://iopscience.iop.org/article/10.1088/1361-6560/aac04c>`_
+.. [RamosMendez2021] Ramos-Méndez J, LaVerne J, D-Kondo J, et. al. 2021
+                     TOPAS-nBio validation for simulating water radiolysis and DNA damage under low-LET irradiation. 
+                     Phys. Med. Biol. `link <10.1088/1361-6560/ac1f39>`_
 .. [Clifford1986]    Clifford P, Green N J B, Oldfield M J, Pilling M J and Pimblott S M 1986 
                      Stochastic Models of Multi-species Kinetics in Radiation-induced Spurs J. Chem. Soc., Faraday Trans. 1 82 2673–89 `link <http://doi.org/10.1039/F19868202673>`_
 .. [Turner1983]      Turner JE, Magee JL, Wright HA, Chatterjee A, Hamm RN, RitchieRH 1983 
