@@ -19,7 +19,7 @@
             - Hi-C geometry for nucleus available
             - new cell + nanoparticle + organelles provided by Marc Hahn
         Scoring:
-            - New scoring system
+            - New DNA damage scoring system
             - New method to score indirect damage to bases
         Chemistry:
             - IRT has been included
@@ -97,8 +97,7 @@ By releasing TOPAS-nBio as an open source extension to TOPAS, we intend to encou
 
     Scorers/Intro
     Scorers/Cells
-    Scorers/DNA
-    Scorers/Nucleus
+    Scorers/DNAScorers
     Scorers/Chem
     
   
