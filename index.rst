@@ -30,7 +30,7 @@
         In addition, this release includes several fixes and improvements.
 
     The code is available at:
-    https://github.com/topas-nbio/TOPAS-nBio/releases/tag/v1.0
+    https://github.com/topas-nbio/TOPAS-nBio/releases/tag/v2.0
     
     Please use the code as much as possible and report any issues to the TOPAS-nBio forum:
     https://groups.google.com/forum/#!forum/topas-nbio-users
