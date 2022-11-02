@@ -8,8 +8,8 @@ The nanoparticles can be distributed randomly within the cytosol, or being addit
 Background
 ----------
 The dose enhancement by metallic nanoparticles can increase the biological effectiveness of radiation damage in biomolecules and tissue. To apply them effectively as radiosensitizer during cancer therapy their influence on the locally delivered dose has to be determined. Hereby, the locations of the nanoparticles within an irradiated cell influence the energy deposit in the different cell organelles, e.g. the nucleus, mitochondria, membrane and the cytosol.
-TOPAS-nBio provides users with a unique framework for simulating cells including their organelle together with nanoparticles.
-Details can be found in the related publication https://doi.org/10.1038/s41598-021-85964-2
+TOPAS-nBio provides users with a framework for simulating cells including their organelle together with nanoparticles.
+Further details can be found in the related publication https://doi.org/10.1038/s41598-021-85964-2
 
 
 Spherical Cell
@@ -20,7 +20,7 @@ The TsSphericalCellSphericalNP component is a model of a spherical cell with the
    :width: 300
    :align: center 
 
-To create the model specify the component name as well as the radius of the cell:: 
+To create the cell model specify the component name as well as the radius of the cell by defining:: 
 
     s:Ge/MyCell/Type="TsSphericalCellSphericalNP"
     s:Ge/MyCell/Parent="World"
@@ -76,7 +76,7 @@ These nanoparticles are not overlapping and always placed outside of the nucleus
     
     
 
-Nucleus targeting Nanoparticles
+Nanoparticles targeting the Nucleus
 -------------------------------
 .. figure:: images/SphericalCellsNucleusNanoparticles.png
    :width: 300
@@ -89,8 +89,8 @@ Nanoparticles located at the surface of the nucleus can be added by::
 
   
   
-Mitochondria targeting Nanoparticles
----------------------- ---------------
+Nanoparticles targeting the Mitochondria
+----------------------------------------
 
 Nanoparticles located at the surface of different mitochondria can be added by::
 
@@ -128,8 +128,11 @@ An example scoring extension is provided which scores individual energy deposit 
     
 Literature
 ------------
-If you use this extension please cite the following article which provides additional details::
-    Hahn, M.B., Zutta Villate, J.M. (2021). Combined cell and nanoparticle models for TOPAS to study radiation dose enhancement in cell organelles. Sci Rep 11(1): 6721. PMID: 33762596. PMCID: PMC7990972. https://doi.org/10.1038/s41598-021-85964-2
+If you use this extension please cite the following article which provides additional details:
+
+    Hahn, M.B., Zutta Villate, J.M. (2021). Combined cell and nanoparticle models for TOPAS to study radiation dose enhancement in cell organelles. 
+    Sci Rep 11(1): 6721. PMID: 33762596. PMCID: PMC7990972. 
+    https://doi.org/10.1038/s41598-021-85964-2
     
  
    
