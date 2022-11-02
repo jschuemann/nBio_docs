@@ -1,12 +1,14 @@
 Cell Models with Organelles and targeted Nanoparticles
 ======================================================
 
-The dose enhancement by metallic nanoparticles can increase the biological effectiveness of radiation damage in biomolecules and tissue. To apply them effectively as radiosensitizer during cancer therapy their influence on the locally delivered dose has to be determined. Hereby, the locations of the nanoparticles within an irradiated cell influence the energy deposit in the different cell organelles, e.g. the nucleus, mitochondria, membrane and the cytosol.
-
-TOPAS-nBio provides users with a unique framework for simulating cells including their organelle together with nanoparticles.
-
 The TsSphericalCellSphericalNP model allows to simulate nanoparticles  within cells together with their nucleus, mitochondria, and the cell membrane.
 The nanoparticles can be distributed randomly within the cytosol, or being additionally located at the surface of different cell organelles. 
+
+
+Background
+----------
+The dose enhancement by metallic nanoparticles can increase the biological effectiveness of radiation damage in biomolecules and tissue. To apply them effectively as radiosensitizer during cancer therapy their influence on the locally delivered dose has to be determined. Hereby, the locations of the nanoparticles within an irradiated cell influence the energy deposit in the different cell organelles, e.g. the nucleus, mitochondria, membrane and the cytosol.
+TOPAS-nBio provides users with a unique framework for simulating cells including their organelle together with nanoparticles.
 Details can be found in the related publication https://doi.org/10.1038/s41598-021-85964-2
 
 
@@ -55,7 +57,6 @@ A membrane can be added to the cell by defining the thickness::
   d:Ge/MyCell/Membrane/Thickness = 10.0 nm
 
 
-
   
 Randomly distributed Nanoparticles
 ----------------------------------
@@ -97,7 +98,7 @@ Nanoparticles located at the surface of different mitochondria can be added by::
     
 
     
-Combination of different Nanoparticlelocations
+Combination of different Nanoparticle locations
 ----------------------------------------------
 
 The amount nanoparticles within the cytosol, the nucleus and at the mitochondria can be defined independently. The following example would create 1000 nanoparticles randomly distributed within the cytosol, 2000 at the surface of the nucleus, and 5000 at the surfaces randomly distributed over all mitochondria::
@@ -125,9 +126,10 @@ An example scoring extension is provided which scores individual energy deposit 
     s:Sc/OrganelleScorer/Quantity = "OrganelleScorer"
     s:Sc/OrganelleScorer/Component = "MyCell"
     
-Literature::
+Literature
 ------------
-Details can be found in::
+If you use this extension please cite the following article which provides additional details::
     Hahn, M.B., Zutta Villate, J.M. (2021). Combined cell and nanoparticle models for TOPAS to study radiation dose enhancement in cell organelles. Sci Rep 11(1): 6721. PMID: 33762596. PMCID: PMC7990972. https://doi.org/10.1038/s41598-021-85964-2
+    
  
    
