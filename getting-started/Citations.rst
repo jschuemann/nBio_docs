@@ -36,6 +36,11 @@ The Standard for DNA Damage (SDD)
 Schuemann J., McNamara A. L., Warmenhoven J., et al. (55 authors). (2019). A new Standard DNA Damage (SDD) data format. Radiation Research; 191(1):76. PMID: 30407901. PMCID: PMC6407706. https://doi.org/10.1667/RR15209.1
 
 
+Cell models with organelles and targeted nanoparticles
+------------------------------
+Hahn, M.B., Zutta Villate, J.M. (2021). Combined cell and nanoparticle models for TOPAS to study radiation dose enhancement in cell organelles. Sci Rep 11(1): 6721. PMID: 33762596. PMCID: PMC7990972. https://doi.org/10.1038/s41598-021-85964-2
+
+
 A few publications where TOPAS-nBio was used
 --------------------------------------------
 McNamara A. L., Kam W. W., Scales N., McMahon S. J., Bennett J. W., Byrne H. L., Schuemann J., Paganetti H., Banati R., Kuncic Z. (2016). Dose enhancement effects to the nucleus and mitochondria from gold nanoparticles in the cytosol. Physics in Medicine and Biology 61(16):5993-6010. PMID: 27435339; PMCID: PMC4993038. https://doi.org/10.1088/0031-9155/61/16/5993
