@@ -30,6 +30,8 @@ Ramos-Méndez, J., Burigo, L. N., Schulte, R., Chuang, C, & Faddegon, B. (2018).
 
 Zhu H., Chen Y., Sung W., McNamara A. L., Linh T. T., Burigo L. N., Rosenfeld A. B., Li J., Faddegon B., Schuemann J., Paganetti H. (2019). The microdosimetric extension in TOPAS: Development and comparison with published data. Physics in Medicine and Biology; 64(14):145004. PMID: 31117056. http://doi.org/10.1088/1361-6560/ab23a3 
 
+Hahn, M.B. (2023). Accessing radiation damage to biomolecules on the nanoscale by particle-scattering simulations. Journal of Physics Communications; 7(4):042001. http://doi.org/10.1088/2399-6528/accb3f
+
 
 The Standard for DNA Damage (SDD)
 ---------------------------------
