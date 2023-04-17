@@ -122,7 +122,7 @@ shown in the following table:
 +--------------------------+--------------------+------------------------------------------------------+
 | O\ :sub:`2–`             | SuperoxideAnion    |  1.75      (only in TsEmDNAChemistryExtended for SBS)|
 +--------------------------+--------------------+------------------------------------------------------+
-| HO\ :sub:`2`             | HydroPeroxide      |  2.3       (only in TsEmDNAChemistryExtended for SBS)|
+| HO\ :sub:`2`             | HydroPeroxy        |  2.3       (only in TsEmDNAChemistryExtended for SBS)|
 +--------------------------+--------------------+------------------------------------------------------+
 | HO\ :sub:`–2`            | Dioxidanide        |  1.4       (only in TsEmDNAChemistryExtended for SBS)|
 +--------------------------+--------------------+------------------------------------------------------+
@@ -311,10 +311,15 @@ of the medium. An example is provide shown this capability throught the Fricke d
 
 IRT Automatic Temperature Scalling
 ----------------------------------
-TOPAS-nBio is currently working on an automatic interface to allow users to change the temperature using one single
-parameter. The implementation will follow the work of [Elliot1994]_ and [DuPenhoat200]_. Due to the current user interface of TOPAS-nBio
-it is possible to simulate the temperature dependence on chemical yields by changing the diffusion coefficients and
-reaction rates of each individual reaction if needed.
+TOPAS-nBio provides its users with a built-in temperature scalling algorithm compatible with IRT. 
+It is based on the work of [Elliot1994]_ and [DuPenhoat200]_.
+Specif details regarding the implementation can be found in [RamosMendez2022]_. To use the temperature scaling of reaction rates and
+diffusion coefficients, the users must the parameter ``u:Ch/TOPASChemistry/Temperature`` and setting it to the temperature in Celsius.
+
+For the best results, it is recommended to also change the water density to the value that corresponds with the desired temperature.
+We provide users with two examples that showcase this TOPAS-nBio IRT feature in the folder ``/examples/scorers/Temperatures``: ``TemperatureExample_20C.txt`` and ``TemperatureExample_90C.txt``.
+
+We remind users that this specific implementation is only valid between 0 and 90 degrees Celsius.
 
 
 References
@@ -335,6 +340,9 @@ References
 .. [RamosMendez2021] Ramos-Méndez J, LaVerne J, D-Kondo J, et. al. 2021
                      TOPAS-nBio validation for simulating water radiolysis and DNA damage under low-LET irradiation. 
                      Phys. Med. Biol. `link <10.1088/1361-6560/ac1f39>`_
+.. [RamosMendez2022] Ramos-Méndez, J., García-García, O., Domínguez-Kondo, J., Laverne, J. A., Schuemann, J., Moreno-Barbosa, E.,
+                     Faddegon, B. (2022). TOPAS-nBio simulation of temperature-dependent indirect DNA strand break yields. Physics in
+                     Medicine and Biology. https://doi.org/10.1088/1361-6560/ac79f9
 .. [Clifford1986]    Clifford P, Green N J B, Oldfield M J, Pilling M J and Pimblott S M 1986 
                      Stochastic Models of Multi-species Kinetics in Radiation-induced Spurs J. Chem. Soc., Faraday Trans. 1 82 2673–89 `link <http://doi.org/10.1039/F19868202673>`_
 .. [Turner1983]      Turner JE, Magee JL, Wright HA, Chatterjee A, Hamm RN, RitchieRH 1983 
