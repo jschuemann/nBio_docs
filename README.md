@@ -7,17 +7,21 @@ The documentation is written in reStructuredText format (reST). It is hosted by 
 
 If working on a Mac, I recommend installing Python with Homebrew to avoid messing up your system Python.
 
-To build and view the docs locally (recommended for substantial editing), you will need to have Spinx version 1.4.2 or newer and do:
+	brew install python
+	brew install git
 
-pip3 install sphinx sphinx-autobuild sphinx_rtd_theme
+To build and view the docs locally (recommended for substantial editing), you will need to have Sphinx version 1.4.2 or newer and do:
+
+	pip3 install sphinx sphinx-autobuild sphinx_rtd_theme
 
 To install TOPAS pygments:
-pip3 install git+https://github.com/tmasilela/topas-pygments.git
+
+	pip3 install git+https://github.com/tmasilela/topas-pygments.git
 
 then, after your edits
 
-make clean
-make html
-open .build/html/index.html
+	make clean
+	make html
+	open .build/html/index.html
 
 If you need a .rst renderer you can use http://rst.ninjs.org/ for quick visualisation.
