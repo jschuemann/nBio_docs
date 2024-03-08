@@ -1,3 +1,5 @@
+.. _SDDRTD: https://standard-for-dna-damage.readthedocs.io/en/latest/
+
 DNA Scorers
 ============
 
@@ -98,7 +100,7 @@ Our scorer offers four different outputs.
 
     b:Sc/DNADamageScorer/BreakDownOutputPerDamageOrigin	= "true"
 
-2. The Standard for DNA Damage (SDD) can be produced [2]_. All the fields included in the SDD format is on the `SDD readthedocs`_. Whether to use the minimal SDD output or the complete specification is controlled by the parameter::
+2. The Standard for DNA Damage (SDD) can be produced [2]_. All the fields included in the SDD format is on the SDDRTD_. Whether to use the minimal SDD output or the complete specification is controlled by the parameter::
 
     b:Sc/DNADamageScorer/MinimalSDDOutput = "false"
   
@@ -178,3 +180,4 @@ References
 ----------
 .. [1] Bertolet, A., Ramos-Mendez, J., McNamara, A., Yoo, D., Ingram, S., Henthorn, N., Warmenhoven, J. W., Faddegon, B., Merchant, M., McMahon S. J. (2022). Impact of DNA geometry and scoring on Monte Carlo track-structure simulations of initial radiation induced damage. Radiation Research, Submitted.
 .. [2] Schuemann, J., McNamara, A. L., Warmenhoven, J. W., Henthorn, N. T., Kirkby, K. J., Merchant, M. J., et al. (2019). A New Standard DNA Damage (SDD) Data Format. Radiation Research, 191(1), 76
+
