@@ -26,9 +26,9 @@ copyright = '2019,The TOPAS-nBio Collaboration'
 author = 'The TOPAS-nBio Collaboration'
 
 # The short X.Y version
-version = '1.0'
+version = '2.0'
 # The full version, including alpha/beta/rc tags
-release = '1.0'
+release = '2.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -88,22 +88,6 @@ highlight_language = 'topas'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
-
-
-# -- General information about the project ---------------------------------------------------
-project = 'TOPAS-nBio'
-copyright = '2019, The TOPAS-nBio Collaboration'
-author = 'The TOPAS-nBio Collaboration'
-
-# The version info for the project you're documenting, acts as replacement for
-# |version| and |release|, also used in various other places throughout the
-# built documents.
-#
-# The short X.Y version.
-version = '1.0'
-# The full version, including alpha/beta/rc tags.
-release = '1.0'
-
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -228,6 +212,7 @@ epub_copyright = copyright
 # The language of the text. It defaults to the language option
 # or 'en' if the language is not set.
 #epub_language = ''
+language = 'en'
 
 # The scheme of the identifier. Typical schemes are ISBN or URL.
 #epub_scheme = ''
@@ -278,7 +263,7 @@ epub_exclude_files = ['search.html']
 #epub_use_index = True
 
 def setup(app):
-    app.add_stylesheet('pygments.css')
-    app.add_stylesheet('dark_background.css')
+    app.add_css_file('pygments.css')
+    app.add_css_file('dark_background.css')
 
 # -- Extension configuration -------------------------------------------------
