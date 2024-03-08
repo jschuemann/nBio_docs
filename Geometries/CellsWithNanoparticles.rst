@@ -77,7 +77,7 @@ These nanoparticles are not overlapping and always placed outside of the nucleus
     
 
 Nanoparticles targeting the Nucleus
--------------------------------
+-----------------------------------
 .. figure:: images/SphericalCellsNucleusNanoparticles.png
    :width: 300
    :align: center 
@@ -99,7 +99,7 @@ Nanoparticles located at the surface of different mitochondria can be added by::
 
     
 Combination of different Nanoparticle locations
-----------------------------------------------
+-----------------------------------------------
 
 The amount nanoparticles within the cytosol, the nucleus and at the mitochondria can be defined independently. The following example would create 1000 nanoparticles randomly distributed within the cytosol, 2000 at the surface of the nucleus, and 5000 at the surfaces randomly distributed over all mitochondria::
 

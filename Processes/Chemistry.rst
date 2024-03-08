@@ -215,6 +215,7 @@ Chemical Diffusion-Reaction Algorithms
 TOPAS-nBio incorporates two different methods for the diffusion and reaction of chemical species, the Step-By-Step (SBS) [Turner1983]_ 
 and Independent Reaction Times (IRT) [Clifford1986]_ methods. Either method can be invoked by means of specific scorers. 
 Main differences between both methods are the following:
+
  * SBS simulates the spatial and temporal evolution of the chemical species and thus is slower than IRT.
  * SBS allows to visualize chemical evolution.
  * IRT can reach up to two or three orders of magnitude shorter times than SBS.

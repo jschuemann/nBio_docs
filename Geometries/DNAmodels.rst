@@ -149,7 +149,7 @@ Users can change the DNA volume geometry, by including one of the below::
   s:Ge/Fiber/DNA_Model = HalfCylinder      #Described by Charlton, Nikjoo and Humm (1989)
   s:Ge/Fiber/DNA_Model = QuarterCylinder   #Described by Bernal and Liendo (2009)
 
-Note that as of v1.1, the sphere model is slightly different from the one in v1.0. Also, different models for the hydration shell around these three DNA models have been added. See Bertolet et al. 2022 [7]_ for more details. Also,  
+Note that as of v1.1, the sphere model is slightly different from the one in v1.0. Also, different models for the hydration shell around these three DNA models have been added. See Bertolet et al. 2022 [Bertolet2022]_ for more details. Also,  
 
 Two different scorers are provided for the TsSolenoidFiber; NtupleForBasePair and NtupleForSpatial. Both of these are described in more detail here.
  
