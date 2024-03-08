@@ -1,4 +1,4 @@
-.. _SDDRTD: https://standard-for-dna-damage.readthedocs.io/en/latest/
+.. _SDD ReadtheDocs: https://standard-for-dna-damage.readthedocs.io/en/latest/
 
 DNA Scorers
 ============
@@ -100,7 +100,7 @@ Our scorer offers four different outputs.
 
     b:Sc/DNADamageScorer/BreakDownOutputPerDamageOrigin	= "true"
 
-2. The Standard for DNA Damage (SDD) can be produced [2]_. All the fields included in the SDD format is on the SDDRTD_. Whether to use the minimal SDD output or the complete specification is controlled by the parameter::
+2. The Standard for DNA Damage (SDD) can be produced [2]_. All the fields included in the SDD format is on the `SDD ReadtheDocs`_. Whether to use the minimal SDD output or the complete specification is controlled by the parameter::
 
     b:Sc/DNADamageScorer/MinimalSDDOutput = "false"
   
