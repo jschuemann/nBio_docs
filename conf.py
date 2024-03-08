@@ -26,9 +26,9 @@ copyright = '2019,The TOPAS-nBio Collaboration'
 author = 'The TOPAS-nBio Collaboration'
 
 # The short X.Y version
-version = '2.0'
+version = 'latest'
 # The full version, including alpha/beta/rc tags
-release = '2.0'
+release = 'latest'
 
 
 # -- General configuration ---------------------------------------------------
