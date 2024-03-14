@@ -28,7 +28,7 @@ author = 'The TOPAS-nBio Collaboration'
 # The short X.Y version
 version = 'latest'
 # The full version, including alpha/beta/rc tags
-release = 'latest'
+release = '2.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -152,8 +152,9 @@ latex_elements = {
     # Additional stuff for the LaTeX preamble.
     'preamble': r'''
     \setcounter{tocdepth}{2}
-    \definecolor{VerbatimColor}{rgb}{0.15,0.16,0.13}
+    \fvset{formatcom=\fontseries{ul}\selectfont}
     ''',
+    'sphinxsetup': 'VerbatimColor={rgb}{0.15, 0.16, 0.13}',
 
     # Latex figure (float) alignment
     #
@@ -263,7 +264,6 @@ epub_exclude_files = ['search.html']
 #epub_use_index = True
 
 def setup(app):
-    app.add_css_file('pygments.css')
     app.add_css_file('dark_background.css')
 
 # -- Extension configuration -------------------------------------------------
