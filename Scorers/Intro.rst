@@ -11,4 +11,4 @@ Many of our scorers are based on the ntuple scorer of TOPAS, which allows quanti
 .. warning::
     Note: The DoseToWater and DoseToMaterial scorers do not work with the Geant4-DNA physics processes. Please use the DoseToMedium scorer.
 
-.. _here: https://topas.readthedocs.io/en/latest/extension-docs/scoring.html
+.. _here: https://opentopas.readthedocs.io/en/latest/extension-docs/scoring.html

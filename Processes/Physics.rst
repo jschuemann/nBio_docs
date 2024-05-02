@@ -26,7 +26,7 @@ models are condensed into several Geant4 constructors as shown
 correspondence between the Geant4-DNA physics constructors and the TOPAS modules is shown 
 in the table below. Users who are advanced experts in Geant4 physics can also write 
 their own Geant4 physics modules and plug these into TOPAS through the extensions 
-interface, see `TOPAS physics list <https://topas.readthedocs.io/en/latest/extension-docs/physics.html>`_.
+interface, see `OpenTOPAS physics list <https://opentopas.readthedocs.io/en/latest/extension-docs/physics.html>`_.
 
 
 +-----------------------------+--------------------------------+----------------------------------------------------------------------------------------+

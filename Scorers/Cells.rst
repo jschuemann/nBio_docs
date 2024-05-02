@@ -23,7 +23,7 @@ The scorer is compatible with all the cell models and outputs the following data
   9: Event ID
  10: Volume Name
 
-Users may edit the NtupleForCell extension to edit or add additional output parameters. More information on how to design custom scorers and the n-tuple format can be found on the `TOPAS custom scorers readthedocs`_.
+Users may edit the NtupleForCell extension to edit or add additional output parameters. More information on how to design custom scorers and the n-tuple format can be found on the `OpenTOPAS custom scorers readthedocs`_.
 
 
 Neuron Scorer
@@ -33,7 +33,7 @@ A ntuple scorer specifically for neuron structures is also available::
 
   s:Sc/NeuronScorer/Quantity    = "NtupleForNeuron"
 
-This ntuple scorer is an extension that can be edited by the user to add additional output parameters, depending on the application. More information on how to design custom scorers and the n-tuple format can be found on the `TOPAS custom scorers readthedocs`_. The default output of the scorer is::
+This ntuple scorer is an extension that can be edited by the user to add additional output parameters, depending on the application. More information on how to design custom scorers and the n-tuple format can be found on the `OpenTOPAS custom scorers readthedocs`_. The default output of the scorer is::
 
   Columns of data are as follows:
   1: Position X [cm]
@@ -50,6 +50,6 @@ This ntuple scorer is an extension that can be edited by the user to add additio
 
 Here, replica number applies to the components comprising the dendrites and axons.
 
-.. _TOPAS custom scorers readthedocs: https://topas.readthedocs.io/en/latest/extension-docs/scoring.html?highlight=tuple
+.. _OpenTOPAS custom scorers readthedocs: https://opentopas.readthedocs.io/en/latest/extension-docs/scoring.html?highlight=tuple
 
  

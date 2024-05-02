@@ -61,10 +61,10 @@ Original TOPAS paper
 Perl, J., Shin, J., Schuemann, J., Faddegon, B., & Paganetti, H. (2012). TOPAS: an innovative proton Monte Carlo platform for research and clinical applications. Medical Physics, 39(11), 6818–6837. PMID: 23127075. PMCID: PMC3493036. http://doi.org/10.1118/1.4758060
 |
 
-**TOPAS**
+**OpenTOPAS**
 
-TOPAS can be downloaded from http://www.topasmc.org and the TOPAS documentation can be found at:
-https://topas.readthedocs.io
+OpenTOPAS can be downloaded from https://opentopas.github.io/index.html and the OpenTOPAS documentation can be found at:
+https://opentopas.readthedocs.io
 
 
 **The Geant4-DNA project**

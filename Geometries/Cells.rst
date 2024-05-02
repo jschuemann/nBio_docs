@@ -258,12 +258,12 @@ An example scoring extension is also provided::
   s:Sc/CultureScorer/Quantity = "NtupleForCulture"
   
   
-.. _TOPAS custom scorers readthedocs: https://topas.readthedocs.io/en/latest/extension-docs/scoring.html?highlight=tuple
+.. _OpenTOPAS custom scorers readthedocs: https://opentopas.readthedocs.io/en/latest/extension-docs/scoring.html?highlight=tuple
 .. _NeuroMorpho neuron database: http://neuromorpho.org
 
 
 
-.. _TOPAS custom scorers readthedocs: https://topas.readthedocs.io/en/latest/extension-docs/scoring.html?highlight=tuple
+.. _OpenTOPAS custom scorers readthedocs: https://opentopas.readthedocs.io/en/latest/extension-docs/scoring.html?highlight=tuple
 .. _NeuroMorpho neuron database: http://neuromorpho.org
 
  

@@ -5,29 +5,15 @@
 
 
 .. note:: 
-    New Release, v2.0 (Oct. 2022)!
+    We plan a new release within the month. The new release will be built on the new TOPAS version available at the OpenTOPAS GitHub. Version 4.0 of OpenTOPAS is available at:
+    https://opentopas.github.io/index.html. 
+    Version numbers continue in sequence from previous versions of TOPAS. For more information, see below.
+
 
 .. note:: 
     TOPAS-nBio is now released as version v2.0! 
 
     TOPAS-nBio currently works with TOPAS release 3.8 and newer release. 
-    
-    Important updates:
-        Geometry:
-            - New geometries added
-            - DNA has been updated
-            - Hi-C geometry for nucleus available
-            - new cell + nanoparticle + organelles provided by Marc Hahn
-        Scoring:
-            - New DNA damage scoring system
-            - New method to score indirect damage to bases
-        Chemistry:
-            - IRT has been included
-            - Additional scorers for G-values were added
-        Biology:
-            - DaMaRiS has been integrated.
-
-        In addition, this release includes several fixes and improvements.
 
     The code is available at:
     https://github.com/topas-nbio/TOPAS-nBio/releases/tag/v2.0
@@ -36,6 +22,48 @@
     https://groups.google.com/forum/#!forum/topas-nbio-users
     
   
+
+An important update about OpenTOPAS!
+=========================================================================================
+
+This is an important announcement for our users on the release of OpenTOPAS. 
+
+The TOPAS team has moved to a full open-source approach with major upgrades. This new version of OpenTOPAS is a continuation of the TOPAS development. The past principal investigators, Drs. Harald Paganetti and Bruce Faddegon, and the new principal investigators, Drs. José Ramos and Jan Schuemann are committed to continuing TOPAS's development and long-term sustainment through OpenTOPAS.
+
+1. Version 4,0 of OpenTOPAS is available through a new GitHub at https://opentopas.github.io/index.html. Version numbers continue in sequence from previous versions of TOPAS.
+
+2. Major improvements include:
+    - Update to Geant4.11.1.3 -  rigorous testing completed
+    - A wholly new, doubly diverging MLC to replace the past defective one
+    - A new second cancer model
+    - A new mesh phantom model for mice
+    - The first imaging extension to allow modeling of basic CT, SPECT, and PET imaging detectors (to be expanded)
+    - A new module for photo-neutron simulation in X-ray therapy
+    - Support for all optical material properties provided by Geant4
+
+3. For the TOPAS-nBio extension, all new releases of TOPAS-nBio will be tested exclusively for compatibility with OpenTOPAS. A new OpenTOPAS-nBio release is planned for the end of May.
+
+4. A new user guide with improved search capabilities and all new features will soon be available at the OpenTOPAS GitHub and  https://opentopas.readthedocs.io/en/latest/.
+
+5. A quick start procedure for installing OpenTOPAS may be found on GitHub (OpenTOPAS_quickstart_Debian.md or OpenTOPAS_quickstart_forMacOS.md)
+
+6. Our development team will address all questions on OpenTOPAS through the OpenTOPAS user forum, which can be accessed through GitHub at https://github.com/OpenTOPAS/OpenTOPAS/discussions. 
+
+7. Various other improvements are listed on our GitHub website. 
+We are already working on the next release, which will include Geant4 version 11.2, a new interface compatible with DICOM-RT for x-ray and electron therapy, and a new example for multi-scale SARRP simulations.
+
+8. The OpenTOPAS team is working on long-term sustainment plans with the help of NIH/NCI. 
+ 
+
+We can't wait to see our users advancing medical uses of ionizing radiation with OpenTOPAS. Please take advantage of the OpenTOPAS user forum and its refined capabilities.
+ 
+
+We look forward to seeing you there.
+
+José Ramos, Jan Schuemann, Harald Paganetti, Bruce Faddegon, and the entire OpenTOPAS team
+
+ 
+
 
 Welcome to the documentation of TOPAS-nBio!
 =========================================================================================

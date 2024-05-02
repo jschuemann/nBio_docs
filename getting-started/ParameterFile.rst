@@ -1,7 +1,7 @@
 Parameter File System
 ======================
 
-TOPAS-nBio is an extension to TOPAS, which follows a consistent set of design paradigms. TOPAS is controlled by a simple text file which is used to specify the all the simulation parameters.  
+TOPAS-nBio is an extension to OpenTOPAS, which follows a consistent set of design paradigms. OpenTOPAS (from here on simply TOPAS) is controlled by a simple text file which is used to specify the all the simulation parameters.  
 
 Detailed documentation is provided on the `TOPAS Parameter System`_. Here we provide a brief summary of the parameter syntax.
 
@@ -41,7 +41,7 @@ The Parameter_Type tells TOPAS what type of data will be in this parameter:
 
 The Parameter_Name and Parameter_Value define what the line does. There are certain key parameters that will initiate the construction of, for example, a scorer or a geometry, which then causes TOPAS to look for necessary connected parameters, e.g. the size of the object. 
 
-Within TOPAS-nBio, many new components and options have been developed, the implementation and the required parameters are described on this site. For all other parameters covered by TOPAS, please refer to the TOPAS documentation: `TOPAS Parameter System`_.
+Within TOPAS-nBio, many new components and options have been developed, the implementation and the required parameters are described on this site. For all other parameters covered by TOPAS, please refer to the OpenTOPAS documentation: `TOPAS Parameter System`_.
 
 
-.. _TOPAS Parameter System: https://topas.readthedocs.io/en/latest/parameters/intro/index.html
+.. _TOPAS Parameter System: https://opentopas.readthedocs.io/en/latest/parameters/intro/index.html

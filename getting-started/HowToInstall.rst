@@ -1,19 +1,14 @@
 How to Install TOPAS-nBio
 =========================
 
-Installing TOPAS
+Installing OpenTOPAS
 -----------------
 
-TOPAS-nBio is an extension to the TOPAS toolkit. In order to install TOPAS-nBio, users must first install TOPAS. 
+TOPAS-nBio is an extension to the TOPAS toolkit, using the OpenTOPAS version. In order to install TOPAS-nBio, users must first install OpenTOPAS. 
 
-TOPAS-nBio requires TOPAS version 3.2.0 or newer. 
+TOPAS-nBio (starting with version 3.0) requires OpenTOPAS version 4.0 or newer. 
 
-TOPAS can be downloaded from `topasmc.org <http://topasmc.org>`_. Installation instructions for TOPAS can be found bundled the following README.txt: 
-
-.. highlight:: plain
-.. literalinclude:: README.txt
-
-An updated README.txt file is distributed with every new TOPAS version.
+OpenTOPAS can be downloaded from `OpenTOPAS <https://opentopas.github.io/index.html>`_. Installation instructions for OpenTOPAS can be found on the OpenTOPAS GitHub in the "quickStart" files.
 
 
 Installing TOPAS-nBio

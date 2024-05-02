@@ -21,9 +21,9 @@ Geant4 Default chemistry list
 ---------------------------------------------
 TOPAS-nBio can inherit the parameters (reactions, reaction rates, etc.) provided 
 by the Geant4-DNA toolkit to perform radiolysis simulations via the modules 
-`g4em-dna-chemistry <https://topas.readthedocs.io/en/latest/parameters/physics/modular.html#list-of-available-modules>`_ 
+`g4em-dna-chemistry <https://opentopas.readthedocs.io/en/latest/parameters/physics/modular.html#list-of-available-modules>`_ 
 and 
-`g4em-dna-chemistry_opt1 <https://topas.readthedocs.io/en/latest/parameters/physics/modular.html#list-of-available-modules>`_. 
+`g4em-dna-chemistry_opt1 <https://opentopas.readthedocs.io/en/latest/parameters/physics/modular.html#list-of-available-modules>`_. 
 The chemistry parameters provided in the first module are reported in 
 [Karamitros2012]_ [Incerti2016]_. The chemistry parameters provided in
 the second module are reported in [RamosMendez2018]_.
