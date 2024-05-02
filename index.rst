@@ -11,20 +11,21 @@
 
 
 .. note:: 
-    TOPAS-nBio is now released as version v2.0! 
+    TOPAS-nBio version v2.0! 
 
     TOPAS-nBio currently works with TOPAS release 3.8 and newer release. 
 
     The code is available at:
     https://github.com/topas-nbio/TOPAS-nBio/releases/tag/v2.0
-    
-    Please use the code as much as possible and report any issues to the TOPAS-nBio forum:
-    https://groups.google.com/forum/#!forum/topas-nbio-users
+    Please use the code as much as possible and report any issues to the TOPAS-nBio forum.    
+
+.. note::
+    The forum is currently moving and will soon be available at a different site. No posts on the old TOPAS and TOPAS-nBio forums will be answered by the TOPAS team anymore.
     
   
 
-An important update about OpenTOPAS!
-=========================================================================================
+BIG News, release of OpenTOPAS!
+===============================
 
 This is an important announcement for our users on the release of OpenTOPAS. 
 
