@@ -93,7 +93,7 @@ todo_include_todos = False
 
 # on_rtd is whether we are on readthedocs.org
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-html_logo = 'images/TOPAS_nBio_Combined.png'
+html_logo = 'images/TOPAS-nBio_Combined.png'
 html_theme = 'sphinx_rtd_theme' # explicitly setting theme on RTD
 
 if not on_rtd:  # only import and set the theme if we're building docs locally
