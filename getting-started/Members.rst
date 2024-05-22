@@ -37,6 +37,8 @@ Members of TOPAS-nBio
 |                                      |
 |  Naoki D. Kondo, Ph.D.               |
 |                                      |
+|  Thongchai Masilela, Ph.D.           |
+|                                      |
 +--------------------------------------+
 
 
@@ -67,7 +69,7 @@ Members of TOPAS-nBio
 
 
 
-External Collaborators and Contributers
+External Collaborators and Contributors
 ---------------------------------------
 
 +--------------------------------------+
@@ -89,18 +91,4 @@ External Collaborators and Contributers
 |  Sebastién Incerti, Ph.D.            |
 |                                      |
 +--------------------------------------+
-
-
-Previous Contributors
----------------------
-
-+--------------------------------------+
-| .. image:: ../images/SLAC-logo.png   |
-|    :scale: 31%                       |
-+--------------------------------------+
-|  Joseph Perl, M.S.                   |
-|                                      |
-+--------------------------------------+
-
-
 
