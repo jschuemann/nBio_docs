@@ -7,6 +7,10 @@ these modules in the modular physics list, e.g.::
 
  sv:Ph/Default/Modules = 1 "g4em-dna_opt2"
 
+We provide a tested physics list, which also can be configurable::
+
+ sv:Ph/Default/Modules = 1 "TsEmDNAPhysics"
+
 List of Available Modules
 -------------------------
 It is not trivial to set a default physics list for track-structure Monte Carlo simulations. The lack
@@ -117,6 +121,24 @@ available in ``g4em-dna_opt4``::
 This feature is supported for mainly for electrons and in a restricted way for protons 
 (only the elastic scattering model WentzelVI can be chosen instead of the default one). The
 example ``ActiveCustomizablePhysics.txt`` shows a complete implementation of this capability.
+
+Physics models for Gold material
+---------------------------------
+The Geant4-DNA physics process for interactions of electrons and gammas with Gold can be activated 
+with ``TsEmDNAPhysics``. It requires the creation of a geometry region for the components made of gold
+material::
+
+ s:Ge/MyGNP/AssignToRegionNamed = "goldregion"
+
+Current implementation is case-sensitive, and is preferable to use lower-case naming for the region.
+The next step is to activate the processes::
+
+ sv:Ph/Default/Modules = 1 "TsEmDNAPhysics"
+ b:Ph/Default/PhysicsForGold/Active = "True"
+ s:Ph/Default/PhysicsForGold/Region = "goldregion"
+
+.. note:: Only electrons and gammas are supported.
+
 
 Variance reduction for e- ionization events
 -------------------------------------------
