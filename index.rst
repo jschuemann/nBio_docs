@@ -2,18 +2,21 @@
    sphinx-quickstart on Thu Apr 12 01:24:56 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-
-.. note::
-    The forum is currently moving and will soon be available at a different site. No posts on the old TOPAS and TOPAS-nBio forums will be answered by the TOPAS team anymore.
-    
   
-OpenTOPAS v3.0 released!!!
+OpenTOPAS v3.0 released
 ===============================
 The new TOPAS-nBio v3.0 has been released and is based on OpenTOPAS v4.0.
 Please see the release notes for (some of) the new features that are available:
 https://github.com/topas-nbio/TOPAS-nBio/releases/tag/latest
 
 The release comes with a new forum, please use the discussions on the TOPAS-nBio GitHub for an integrated experience.
+
+
+New TOPAS-nBio forum
+===============================
+Please use the Discussions option in the TOPAS-nBio GitHub for any new threads of the forum, go to:
+https://github.com/topas-nbio/TOPAS-nBio/discussions
+
 
 BIG News, release of OpenTOPAS!
 ===============================
