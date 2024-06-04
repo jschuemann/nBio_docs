@@ -18,7 +18,7 @@ Please use the Discussions option in the TOPAS-nBio GitHub for any new threads o
 https://github.com/topas-nbio/TOPAS-nBio/discussions
 
 
-BIG News, release of OpenTOPAS!
+OpenTOPAS version v4.0 released
 ===============================
 
 This is an important announcement for our users on the release of OpenTOPAS. 
