@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
   
-OpenTOPAS v3.0 released
+TOPAS-nBio v3.0 released
 ===============================
 The new TOPAS-nBio v3.0 has been released and is based on OpenTOPAS v4.0.
 Please see the release notes for (some of) the new features that are available:
