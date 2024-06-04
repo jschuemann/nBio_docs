@@ -13,5 +13,11 @@ TOPAS has been successfully applied to research in radiation therapy physics and
 
 The goal of this work was to lay the foundation to a deeper understanding of the biological effects of radiation in order to facilitate new research at the boundary between physics, chemistry and biology. By providing detailed physics and chemistry simulations in combination with detailed representations of biological systems, such as cells and their nuclei, we aim to promote a mechanistic description connecting sub-cellular energy deposition phenomena to observable biological outcomes. We have thus developed TOPAS-nBio, an extension to TOPAS specifically aimed at the simulation of radiobiological experiments by modeling detailed biological effects at the nanometer scale. By taking advantage of the simplicity and reliability engineered into TOPAS while providing nanometer-scale Monte Carlo simulations, we have made complex code accessible to researchers who may consider using Monte Carlo simulations to improve the physical, chemical and biological description of their experimental design or data analysis.
 
+**TOPAS-nBio regression system**
+
+With the move to a fully open-source approach, we implemented a new regression system against which users can test their own modifications to the source code. This regression system can be found on the TOPAS-nBio `GitHub`_ repository, along with a `summary`_ of the results comparing TOPAS-nBio v3.0 to TOPAS-nBio v2.0.
+
 .. _OpenTOPAS: https://opentopas.github.io/index.html
 .. _Geant4 Simulation Toolkit: https://geant4.web.cern.ch
+.. _GitHub: https://github.com/topas-nbio/TOPAS-nBio-regression
+.. _summary: https://github.com/topas-nbio/TOPAS-nBio-regression/blob/main/Summary/tex_openTOPAS/summary.pdf
