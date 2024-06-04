@@ -3,24 +3,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-
-.. note:: 
-    We plan a new release within the month. The new release will be built on the new TOPAS version available at the OpenTOPAS GitHub. Version 4.0 of OpenTOPAS is available at:
-    https://opentopas.github.io/index.html. 
-    Version numbers continue in sequence from previous versions of TOPAS. For more information, see below.
-
-
-.. note:: 
-    TOPAS-nBio's current version is v2.0 and works with TOPAS release 3.8 and newer release. 
-
-    The code is available at:
-    https://github.com/topas-nbio/TOPAS-nBio/releases/tag/v2.0
-    Please use the code as much as possible and report any issues to the TOPAS-nBio forum.
-
 .. note::
     The forum is currently moving and will soon be available at a different site. No posts on the old TOPAS and TOPAS-nBio forums will be answered by the TOPAS team anymore.
     
   
+OpenTOPAS v3.0 released!!!
+===============================
+The new TOPAS-nBio v3.0 has been released and is based on OpenTOPAS v4.0.
+Please see the release notes for (some of) the new features that are available:
+https://github.com/topas-nbio/TOPAS-nBio/releases/tag/latest
+
+The release comes with a new forum, please use the discussions on the TOPAS-nBio GitHub for an integrated experience.
 
 BIG News, release of OpenTOPAS!
 ===============================
