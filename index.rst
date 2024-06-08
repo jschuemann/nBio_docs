@@ -6,8 +6,9 @@
 OpenTOPAS user meeting at PTCOG
 ===============================
 Are you attending PTCOG? Then come join us for an OpenTOPAS user meeting.
+
 .. figure:: images/UserMeetingFlyerPTCOG.png
-   :width: 300
+   :width: 500
    :align: center 
    :alt: User meeting at PTCOG, Join us for an, When: Thursday, June 13, Time: 14:00-16:00 h, Where: Exec room #332, Come meet the team, ask questions and hear the latest about new developments and plans.
 
