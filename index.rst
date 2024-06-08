@@ -2,7 +2,14 @@
    sphinx-quickstart on Thu Apr 12 01:24:56 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-  
+
+OpenTOPAS user meeting at PTCOG
+===============================
+Are you attending PTCOG? Then come join us for an OpenTOPAS user meeting.
+.. image:: images/UserMeetingFlyerPTCOG.png
+  :width: 600
+  :alt: User meeting at PTCOG, Join us for an, When: Thursday, June 13, Time: 14:00-16:00 h, Where: Exec room #332, Come meet the team, ask questions and hear the latest about new developments and plans.
+
 TOPAS-nBio v3.0 released
 ===============================
 The new TOPAS-nBio v3.0 has been released and is based on OpenTOPAS v4.0.
