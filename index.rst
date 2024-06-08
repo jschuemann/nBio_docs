@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-OpenTOPAS user meeting at PTCOG
+OpenTOPAS (previously TOPAS) user meeting at PTCOG
 ===============================
 Are you attending PTCOG? Then come join us for an OpenTOPAS user meeting.
 
