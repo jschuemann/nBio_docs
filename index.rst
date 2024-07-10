@@ -3,14 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-OpenTOPAS (previously TOPAS) user meeting at PTCOG
+OpenTOPAS (previously TOPAS) user meeting at AAPM
 ===============================
-Are you attending PTCOG? Then come join us for an OpenTOPAS user meeting.
+Are you attending AAPM? Then come join us for an OpenTOPAS user meeting.
 
-.. figure:: images/UserMeetingFlyerPTCOG.png
+.. figure:: images/UserMeetingFlyerAAPM.png
    :width: 500
    :align: center 
-   :alt: User meeting at PTCOG, Join us for an, When: Thursday, June 13, Time: 14:00-16:00 h, Where: Exec room #332, Come meet the team, ask questions and hear the latest about new developments and plans.
+   :alt: Join us for a user meeting at AAPM, When: TBD, Where: TBD, Come meet the team, ask questions and hear the latest about new developments and plans.
 
 TOPAS-nBio v3.0 released
 ===============================
