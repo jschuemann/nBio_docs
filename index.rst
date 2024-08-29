@@ -6,6 +6,8 @@
 OpenTOPAS (previously TOPAS) user meeting at RRS
 ===============================
 Are you attending the RRS meeting? Then come join us for the next TOPAS user meeting.
+
+--------------
 .. figure:: images/OpenTOPASatRRS.png
    :width: 300
    :align: center 
