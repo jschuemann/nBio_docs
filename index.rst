@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-The next OpenTOPAS (previously TOPAS) user meeting will be at FRPT
+The next TOPAS user meeting will be at FRPT
 ===============================
 Are you attending the FRPT meeting? Then come join us for the next TOPAS user meeting. Details to follow.
 
