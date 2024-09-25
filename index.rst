@@ -3,14 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-OpenTOPAS (previously TOPAS) user meeting at RRS
+The next OpenTOPAS (previously TOPAS) user meeting will be at FRPT
 ===============================
-Are you attending the RRS meeting? Then come join us for the next TOPAS user meeting.
-
-.. figure:: images/OpenTOPASatRRS.png
-   :width: 800
-   :align: center 
-
+Are you attending the FRPT meeting? Then come join us for the next TOPAS user meeting. Details to follow.
 
 
 TOPAS-nBio v3.0 released
