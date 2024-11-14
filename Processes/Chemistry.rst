@@ -142,14 +142,14 @@ In general, users do not need to change or set these values. If for any reason
 the users require customization of these parameters, the following parameters available
 in TOPAS-nBio will facilitate this task (assuming ``s:Ch/ChemistryName = "TOPASChemistry"``)::
 
- u:Ch/TOPASChemistry/IonizationState/DissociativeDecay = 1.00
- u:Ch/TOPASChemistry/A1B1/DissociativeDecay = 0.65 
- u:Ch/TOPASChemistry/A1B1/Relaxation = 0.35
- u:Ch/TOPASChemistry/B1A1/AutoIonization = 0.55 
- u:Ch/TOPASChemistry/B1A1/DissociativeDecay = 0.15 
- u:Ch/TOPASChemistry/B1A1/Relaxation = 0.30
- u:Ch/TOPASChemistry/RydbergStatesAndDiffuseBands/AutoIoinization = 0.5
- u:Ch/TOPASChemistry/RydbergStatesAndDiffuseBands/Relaxation = 0.5
+ u:Ch/TOPASChemistry/BranchingRatios/IonizationState/DissociativeDecay = 1.00
+ u:Ch/TOPASChemistry/BranchingRatios/A1B1/DissociativeDecay = 0.65 
+ u:Ch/TOPASChemistry/BranchingRatios/A1B1/Relaxation = 0.35
+ u:Ch/TOPASChemistry/BranchingRatios/B1A1/AutoIonization = 0.55 
+ u:Ch/TOPASChemistry/BranchingRatios/B1A1/DissociativeDecay = 0.15 
+ u:Ch/TOPASChemistry/BranchingRatios/B1A1/Relaxation = 0.30
+ u:Ch/TOPASChemistry/BranchingRatios/RydbergStatesAndDiffuseBands/AutoIoinization = 0.5
+ u:Ch/TOPASChemistry/BranchingRatios/RydbergStatesAndDiffuseBands/Relaxation = 0.5
 
 Chemical stage
 ~~~~~~~~~~~~~~~
