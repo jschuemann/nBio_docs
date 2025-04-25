@@ -3,9 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-FRPT user meeting
-===============================
-If you are at FRPT and would like to get together in a user meeting, please contact Jan Schuemann.
+Potential user meetings this year
+==================================
+If you are attending PTCOG, AAPM, RRS, or FRPT this year and are interested in a user meeting, please let us know in the Forum:
+https://github.com/topas-nbio/TOPAS-nBio/discussions/78
 
 
 TOPAS-nBio v3.0 released
