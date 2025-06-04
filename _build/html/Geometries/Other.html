@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Other Models &mdash; TOPAS-nBio 2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=0c75a980" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_background.css?v=39b6a615" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/documentation_options.js?v=60dbed4a"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction" href="../Processes/Intro.html" />
+    <link rel="prev" title="Nucleus Model" href="Nucleus.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TOPAS-nBio
+              <img src="../_static/TOPAS_nBio_Combined.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Introduction.html">Introduction to TOPAS-nBio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/HowToInstall.html">How to Install TOPAS-nBio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/ParameterFile.html">Parameter File System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Members.html">Members of the TOPAS-nBio Collaboration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Citations.html">Citations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/License.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Geometries</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cells.html">Cell Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CellsWithNanoparticles.html">Cell Models with Organelles and targeted Nanoparticles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DNAmodels.html">DNA Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Nucleus.html">Nucleus Model</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Other Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#membranes">Membranes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mitochondria">Mitochondria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#proteins">Proteins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#irt-supercoiled-plasmid-setup">IRT Supercoiled Plasmid Setup</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Processes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Processes/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes/Physics.html">Physics Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes/Chemistry.html">Chemistry</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Biological Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Modeling/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Modeling/DNARepair.html">Mechanistic Models of DNA Repair</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GUI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../GUI/Intro.html">The TOPAS-nBio Graphical User Interface</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scorers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Cells.html">Cell Scorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/DNAScorers.html">DNA Scorers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Chem.html">Chemical Scorers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TOPAS-nBio</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Other Models</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Geometries/Other.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="other-models">
+<h1>Other Models<a class="headerlink" href="#other-models" title="Link to this heading">¶</a></h1>
+<p>Recent experimental evidence is challenging the DNA-centric model of radiobiology and suggesting the full effect of radiation may not be initiated from DNA damage exclusively. Experiments in which the cytoplasm is irradiated, while the nucleus is spared, suggest that radiation induced damage in extra-nuclear cell structures may also be of importance for developing a comprehensive model of the cellular response to radiation. Some targets, other than DNA, are also included in TOPAS-nBio.</p>
+<section id="membranes">
+<h2>Membranes<a class="headerlink" href="#membranes" title="Link to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Membrane.png"><img alt="../_images/Membrane.png" src="../_images/Membrane.png" style="width: 150px;" /></a>
+</figure>
+<p>A lipid bilayer is created in TOPAS-nBio consisting of two hydrophilic heads, each a sphere of radius ~2 nm, and a tail region consisting of a cylinder of radius ~1 nm and length of ~2 nm. The total thickness of the membrane is between 7 - 10 nm. All dimensions are changeable parameters:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">LipidHeadRadius</span><span class="o">=</span><span class="m">1.</span><span class="n"> nm</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">LipidTailHalfLength</span><span class="o">=</span><span class="m">3.</span><span class="n"> nm</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">LipidTailRadius</span><span class="o">=</span><span class="m">0.5</span><span class="n"> nm</span>
+</pre></div>
+</div>
+<p>The membrane can be formed as a ring or a layer generated by the base elements i.e. the lipid unit:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsMembraneLayer&quot;</span>
+
+<span class="n">//or</span>
+
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsMembraneRing&quot;</span>
+</pre></div>
+</div>
+<p>For the ring geometry the number of lipids forming the ring should be specified:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">NumberOfLipids</span><span class="o">=</span><span class="m">50</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/MembraneLayer.png"><img alt="../_images/MembraneLayer.png" src="../_images/MembraneLayer.png" style="width: 300px;" /></a>
+</figure>
+<p>A membrane layer configuration is also available using the TsMembraneLayer extension geometry. This forms a grid of the lipid unit and the number of rows and columns should be specified:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">NumberOfRows</span><span class="o">=</span><span class="m">20</span>
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">NumberOfColumns</span><span class="o">=</span><span class="m">30</span>
+</pre></div>
+</div>
+<p>Transmembrane proteins, which represent ion channels or communication proteins can also be included in the membrane layers.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/IonChannel.png"><img alt="../_images/IonChannel.png" src="../_images/IonChannel.png" style="width: 300px;" /></a>
+</figure>
+<p>Ion channels are generally formed by three or more protein subunits. The TsIonChannel extension models a complex ion channel consisting of 5 protein sub-units of length 40 nm (modeled as cylinders, each with a 5 nm radius) arranged in a circle within the membrane layer. Users need to specify the bilayer parameters as well as the number of rows and columns in the membrane layer:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsIonChannel&quot;</span>
+
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">NumberOfRows</span><span class="o">=</span><span class="m">50</span>
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">NumberOfColumns</span><span class="o">=</span><span class="m">50</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Channel.png"><img alt="../_images/Channel.png" src="../_images/Channel.png" style="width: 300px;" /></a>
+</figure>
+<p>Communication proteins consist of a single protein structure and are modeled as a single cylinder with the TsChannel extension. The number of rows and columns in the membrane should be specified, as well as the inner and outer radii of the membrane channel (Rmin and RMax, respectively) and the half-length of the protein channel:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/</span><span class="na">MyCellType</span><span class="o">=</span><span class="s">&quot;TsChannel&quot;</span>
+
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">NumberOfRows</span><span class="o">=</span><span class="m">100</span>
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">NumberOfCols</span><span class="o">=</span><span class="m">50</span>
+
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">ChannelRmax</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">10</span><span class="n"> nm</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">ChannelRmin</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">2</span><span class="n"> nm</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">ChannelHalfLength</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">20</span><span class="n"> nm</span>
+</pre></div>
+</div>
+</section>
+<section id="mitochondria">
+<h2>Mitochondria<a class="headerlink" href="#mitochondria" title="Link to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Mitochondria.png"><img alt="../_images/Mitochondria.png" src="../_images/Mitochondria.png" style="width: 300px;" /></a>
+</figure>
+<p>Mitochondria are the only sites of extra-nuclear DNA in eukaryotic cells. Mitochondrial DNA (mt-DNA) in humans contains ~ 16569 bps encoding 37 genes and unlike nuclear DNA, which is linear, mt-DNA is circular.</p>
+<p>Mitochondria are generally ellipsoid shaped and can be modeled using the G4Ellipsoid geometry type. The semi-axis lengths (HLX, HLY and HLZ) of the ellipsoid must be specified. mt-DNA may be included in the model, modeled as either a circular or non-circular plasmid using the TsPlasmid extensions, for example:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="c"># Mitochondria</span>
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyMito/</span><span class="na">Type</span><span class="n">              </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;G4Ellipsoid&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyMito/</span><span class="na">HLX</span><span class="n">               </span><span class="o">=</span><span class="n"> </span><span class="m">0.5</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyMito/</span><span class="na">HLY</span><span class="n">               </span><span class="o">=</span><span class="n"> </span><span class="m">1</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyMito/</span><span class="na">HLZ</span><span class="n">               </span><span class="o">=</span><span class="n"> </span><span class="m">0.4</span><span class="n"> um</span>
+
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/mDNA/</span><span class="na">Type</span><span class="n">     </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;tsplasmid&quot;</span>
+<span class="c">#Define the number of base pairs in the ring</span>
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/mDNA/</span><span class="na">NumberOfBasePairs</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">200</span>
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/mDNA/</span><span class="na">Parent</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;MyMito&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="proteins">
+<h2>Proteins<a class="headerlink" href="#proteins" title="Link to this heading">¶</a></h2>
+<p>The <a class="reference external" href="https://www.rcsb.org">protein data bank</a> (PDB) contains over 130,000 biological macromolecular 3D structures, including proteins and nucleic acids. Many of these proteins are essential to normal cellular function, and precise modeling of the spatial distribution in a realistic molecular model can aid in extending our understanding of the effect of radiation.</p>
+</section>
+<section id="irt-supercoiled-plasmid-setup">
+<span id="id1"></span><h2>IRT Supercoiled Plasmid Setup<a class="headerlink" href="#irt-supercoiled-plasmid-setup" title="Link to this heading">¶</a></h2>
+<p>IRT plasmid Strand Break simulations need the information of the chemical species within the DNA that react in order to properly simulate indirect
+Strand Breaks. Such information is provided using a <code class="docutils literal notranslate"><span class="pre">Plasmid.xyz</span></code> file. The physical information for direct
+Strand Breaks is handled by Geant4, which only needs the location and rotation of the plasmid geometries in the form of an <code class="docutils literal notranslate"><span class="pre">Envelope.xyz</span></code> file.
+The user can create both files by hand or by using an external tool. TOPAS-nBio provides a tool to automatize this process
+in a pre-simulation using the TsIRTPlasmidSupercoiledSetup geometry. The example <code class="docutils literal notranslate"><span class="pre">TsDNAPlasmidSetup.txt</span></code> illustrates the use this tool.
+The following parameters must be given to the TsIRTPlasmidSupercoiledSetup component:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="c"># Water Envelope Size</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/plasmid/</span><span class="na">R</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0.5</span><span class="n"> um</span>
+
+<span class="c"># Number of Plasmids</span>
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/plasmid/</span><span class="na">NumberOfPlasmids</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">5</span>
+
+<span class="c"># The DnaFabric file with the plasmid information</span>
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/plasmid/</span><span class="na">InputFile</span><span class="n">  </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;pUC19_20C_3Sigma_ALP_Corrected.fab2g4dna&quot;</span>
+
+<span class="c"># The output file</span>
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/plasmid/</span><span class="na">OutputFile</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;Plasmid_50ugg_Sphere_1um_diameter&quot;</span>
+</pre></div>
+</div>
+<p>The TsPlasmidSupercoiledSetup component will generate two files: <code class="docutils literal notranslate"><span class="pre">Output_plasmids.xyz</span></code> and <code class="docutils literal notranslate"><span class="pre">Output_envelopes.xyz</span></code> which can
+be used in a TsIRTSupercoiledPlasmid geometry and TsIRTStrandBreaks scorer.
+It is recomended that when using the TsPlasmidSupercoiledSetup tool, the following parameters should be set as follows:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">i</span><span class="n">:</span><span class="nc">So/Demo/</span><span class="na">NumberOfHistoriesInRun</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0</span>
+<span class="nc">Ts/</span><span class="na">NumberOfThreads</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">1</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Nucleus.html" class="btn btn-neutral float-left" title="Nucleus Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Processes/Intro.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019,The TOPAS-nBio Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

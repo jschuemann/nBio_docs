@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DNA Models &mdash; TOPAS-nBio 2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=0c75a980" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_background.css?v=39b6a615" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/documentation_options.js?v=60dbed4a"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Nucleus Model" href="Nucleus.html" />
+    <link rel="prev" title="Cell Models with Organelles and targeted Nanoparticles" href="CellsWithNanoparticles.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TOPAS-nBio
+              <img src="../_static/TOPAS_nBio_Combined.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Introduction.html">Introduction to TOPAS-nBio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/HowToInstall.html">How to Install TOPAS-nBio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/ParameterFile.html">Parameter File System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Members.html">Members of the TOPAS-nBio Collaboration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Citations.html">Citations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/License.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Geometries</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cells.html">Cell Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CellsWithNanoparticles.html">Cell Models with Organelles and targeted Nanoparticles</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DNA Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#simple-cylindrical-targets">Simple Cylindrical Targets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#charlton-dna-model">Charlton DNA Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linear-dna-model">Linear DNA Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#circular-plasmid">Circular Plasmid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supercoiled-plasmid">Supercoiled Plasmid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#irt-supercoiled-plasmid">IRT Supercoiled Plasmid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#solenoid-chromatin-fiber-model">Solenoid Chromatin Fiber Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geant4-dna-full-nuclear-model">Geant4-DNA Full Nuclear Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Nucleus.html">Nucleus Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Other.html">Other Models</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Processes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Processes/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes/Physics.html">Physics Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes/Chemistry.html">Chemistry</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Biological Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Modeling/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Modeling/DNARepair.html">Mechanistic Models of DNA Repair</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GUI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../GUI/Intro.html">The TOPAS-nBio Graphical User Interface</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scorers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Cells.html">Cell Scorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/DNAScorers.html">DNA Scorers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Chem.html">Chemical Scorers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TOPAS-nBio</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">DNA Models</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Geometries/DNAmodels.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dna-models">
+<h1>DNA Models<a class="headerlink" href="#dna-models" title="Link to this heading">¶</a></h1>
+<p>Undeniably the nucleus and the genome it contains is the primary radiation target in the cell and of vital importance in most radiobiology studies. Accurate models of the spatial and temporal distribution of radiation induced damage, in the form of DSBs or lesions, on the full DNA structure and its successive evolution is essential for formulating a full understanding of the biological effects of radiation.</p>
+<section id="simple-cylindrical-targets">
+<h2>Simple Cylindrical Targets<a class="headerlink" href="#simple-cylindrical-targets" title="Link to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/CylinderDNA.png"><img alt="../_images/CylinderDNA.png" src="../_images/CylinderDNA.png" style="width: 300px;" /></a>
+</figure>
+<p>DNA has been modeled with Monte Carlo simulations for the last three decades. Originally, energy depositions were modeled within simple cylindrical targets representing DNA stands, nucleosomes or chromatin fibers in order to compare to the experimental microdosimetry data <a class="reference internal" href="#nikjoo1989" id="id1"><span>[Nikjoo1989]</span></a> <a class="reference internal" href="#nikjoo1991" id="id2"><span>[Nikjoo1991]</span></a>.</p>
+<p>Three simple cylindrical target geometries are available, these represent a chromatin fiber (yellow), nucleosome (red) and DNA strand (green), respectively:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyChromatin/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsCylindericalChromatin&quot;</span>
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyNucleosome/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsCylindericalNucleosome&quot;</span>
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyDNA/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsCylindericalDNA&quot;</span>
+</pre></div>
+</div>
+<p>The size of the cylinders are set to fixed sizes of the representative geometry. For the DNA strand this is a length of 2 nm with a diameter of 2 nm, the nucleosome has a length of 10 nm and diameter of 5 nm while the chromatin fiber has a length of 25 nm and diameter of 25 nm. However, users do have the option of specifying new dimensions for each component with the following parameters:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyChromatin/</span><span class="na">ChromatinHalfLength</span><span class="o">=</span><span class="m">12.5</span><span class="n"> nm</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyChromatin/</span><span class="na">ChromatinRadius</span><span class="o">=</span><span class="m">12.5</span><span class="n"> nm</span>
+
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyNucleosome/</span><span class="na">NucleosomeHalfLength</span><span class="o">=</span><span class="m">5</span><span class="n"> nm</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyNucleosome/</span><span class="na">NucleosomeRadius</span><span class="o">=</span><span class="m">2.5</span><span class="n"> nm</span>
+
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyDNA/</span><span class="na">DNAHalfLength</span><span class="o">=</span><span class="m">1</span><span class="n"> nm</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyDNA/</span><span class="na">DNARadius</span><span class="o">=</span><span class="m">1</span><span class="n"> nm</span>
+</pre></div>
+</div>
+</section>
+<section id="charlton-dna-model">
+<h2>Charlton DNA Model<a class="headerlink" href="#charlton-dna-model" title="Link to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Charlton.png"><img alt="../_images/Charlton.png" src="../_images/Charlton.png" style="width: 300px;" /></a>
+</figure>
+<p>The TsCharltonDNA model is based on a simple combination of cylinders. More details can be found in Charlton et al. (1989) <a class="reference internal" href="#charlton1989" id="id3"><span>[Charlton1989]</span></a>. The inner cylinder has a diameter of 1 nm and length of 0.34 nm, representing the basepair of the DNA strand. Two surrounding half-cylinders represent the sugar phosphate backbone of the DNA; these are each rotated by 36 degrees on adjacent base-pairs. Users have to specify the number of base pairs to be simulated:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyDNA/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsCharltonDNA&quot;</span>
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyDNA/</span><span class="na">NumberOfBasePairs</span><span class="o">=</span><span class="m">10</span>
+</pre></div>
+</div>
+</section>
+<section id="linear-dna-model">
+<h2>Linear DNA Model<a class="headerlink" href="#linear-dna-model" title="Link to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/LinearDNA.png"><img alt="../_images/LinearDNA.png" src="../_images/LinearDNA.png" style="width: 300px;" /></a>
+</figure>
+<p>A similar model to the above Charlton DNA model is called TsLinearDNA which also models the DNA basepair as a cylinder of diameter 1 nm and length 0.34 nm, but models the sugar phosphate backbone as two quarter cylinders opposite each other with an outer diameter of 2.37 nm, rotated by 36 degrees on each subsequent basepair:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyDNA/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsLinearDNA&quot;</span>
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyDNA/</span><span class="na">NumberOfBasePairs</span><span class="o">=</span><span class="m">10</span>
+</pre></div>
+</div>
+</section>
+<section id="circular-plasmid">
+<h2>Circular Plasmid<a class="headerlink" href="#circular-plasmid" title="Link to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Plasmid.png"><img alt="../_images/Plasmid.png" src="../_images/Plasmid.png" style="width: 300px;" /></a>
+</figure>
+<p>TsPlasmid is a simple circular plasmid. The DNA has the same structure as the linear DNA model but arranged in a ring. Each DNA segment consists of a central cylindrical basepair (diameter 1 nm and length 0.34 nm) surrounded by two quarter cylinders (diameter 2.37 nm) for the sugar phosphate backbone. Users have to specify the number of basepairs:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/CircularPlasmid/</span><span class="na">Type</span><span class="n">     </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;TsPlasmid&quot;</span>
+<span class="c">#Define the number of base pairs in the ring</span>
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/CircularPlasmid/</span><span class="na">NumberOfBasePairs</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">2000</span>
+</pre></div>
+</div>
+</section>
+<section id="supercoiled-plasmid">
+<h2>Supercoiled Plasmid<a class="headerlink" href="#supercoiled-plasmid" title="Link to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/SupercoiledPlasmid.png"><img alt="../_images/SupercoiledPlasmid.png" src="../_images/SupercoiledPlasmid.png" style="width: 300px;" /></a>
+</figure>
+<p>TsSupercoiledPlasmid is a supercoiled plasmid defined from an ascii file that contains the vertex position (in nm) of a deformed polygon that forms the supercoiled path. Different configurations of DNA can be chosen: half cylinders (HalfCylinder), quarter cylinders - similar to the circular plasmid (QuarterCylinder) or spheres (Sphere). The DNA consists of the sugar phosphate backbone and base. Users have to specify the file name of the ascii file that contains the vertex of the deformed polygon forming the supercoiled plasmid. We provide two files pBR322_a.xyz and pBR322_b.xyz. For these files, supercoiling is achieved using the Vologodskii methodology <a class="reference internal" href="#vologodskii1994" id="id4"><span>[Vologodskii1994]</span></a>:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/SupercoiledPlasmid/</span><span class="na">Type</span><span class="n">     </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;TsPlasmidSupercoiled&quot;</span>
+<span class="c">#Define the file name</span>
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/SupercoiledPlasmid/</span><span class="na">FileName</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;pBR322_a.xyz&quot;</span>
+<span class="c"># Define the DNA model</span>
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/SupercoiledPlamid/</span><span class="na">DNA_Model</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;QuarterCylinder&quot;</span><span class="n"> </span><span class="c"># HalfCylinder or Sphere</span>
+</pre></div>
+</div>
+<p>If each coordinate in the ascii file belongs to a single basepair of the plasmid, then the following must be set:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">b</span><span class="n">:</span><span class="nc">Ge/SupercoiledPlamid/</span><span class="na">SegmentPlasmidPath</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="kc">&quot;False&quot;</span><span class="n"> </span><span class="c"># Default False</span>
+</pre></div>
+</div>
+<p>Otherwise, the deformed polygon is segmented using units of 0.34 nm and smoothed.</p>
+</section>
+<section id="irt-supercoiled-plasmid">
+<h2>IRT Supercoiled Plasmid<a class="headerlink" href="#irt-supercoiled-plasmid" title="Link to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/IRTSupercoiledPlasmid.png"><img alt="../_images/IRTSupercoiledPlasmid.png" src="../_images/IRTSupercoiledPlasmid.png" style="width: 300px;" /></a>
+</figure>
+<p>TsIRTSupercoiledPlasmid is a supercoiled plasmid geometry defined from a DnaFabric <a class="reference internal" href="#meylan2016" id="id5"><span>[Meylan2016]</span></a> file (.fab2g4dna) that contains the
+plasmid information in a volume by volume manner. This geometry can be used for regular energy deposit simulations to account
+for DNA Strand Breaks due to physical interactions and for indirect DNA Strand Breaks using the IRT scorers. The geometry is
+made using six cut spheres using the solid Booleans method from Geant4 which increases the geometry initialization time but
+gives a smooth plasmid. The following parameters are necessary for the use of this geometry, the enclosure radius, the DnaFabric
+input file and a plasmid location and rotation:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/IRTSupercoiledPlasmid/</span><span class="na">Type</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;TsIRTPlasmidSupercoiled&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/IRTSupercoiledPlasmid/</span><span class="na">R</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0.5</span><span class="n"> um</span>
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/IRTSupercoiledPlasmid/</span><span class="na">InputFile</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;pUC19.fab2g4dna&quot;</span>
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/IRTSupercoiledPlasmid/</span><span class="na">EnvelopeFile</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;Plasmid_Envelope.xyz&quot;</span>
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/IRTSUpercoiledPlasmid/</span><span class="na">NumberOfPlasmids</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">5</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Plasmid_Envelope.xyz</span></code> file can be done by hand by a user, it is a file containing the position x, y and z and the rotations
+of a set of plasmids. However, we recommend the use of a pre simulation setup tool called TsIRTSupercoiledPlasmidSetup to aid in
+this task. This tool is further explained in <a class="reference internal" href="Other.html#irt-supercoiled-plasmid-setup"><span class="std std-ref">IRT Supercoiled Plasmid Setup</span></a>.
+The number of lines in the <code class="docutils literal notranslate"><span class="pre">Plasmid_Envelope.xyz</span></code> file must be greater or equal to the <code class="docutils literal notranslate"><span class="pre">NumberOfPlasmids</span></code> parameter.</p>
+<p>We provide one pUC19 plasmid in DnaFabric format called “pUC19_20C_3Sigma_ALP_Corrected.fab2g4dna” generated using Brownian Dynamics
+<a class="reference internal" href="#ermak1978" id="id6"><span>[Ermak1978]</span></a> with a temperature of 20 degrees Celsius and -0.03 super helix density. This plasmid is the one shown at the start of
+this section.</p>
+</section>
+<section id="solenoid-chromatin-fiber-model">
+<h2>Solenoid Chromatin Fiber Model<a class="headerlink" href="#solenoid-chromatin-fiber-model" title="Link to this heading">¶</a></h2>
+<p>TsSolenoidFiber is a chromatin fiber model, based on a solenoid geometry, described in Henthorn et al. (2017) <a class="reference internal" href="#henthorn2017a" id="id7"><span>[Henthorn2017a]</span></a>.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/SolenoidFiber1.png"><img alt="../_images/SolenoidFiber1.png" src="../_images/SolenoidFiber1.png" style="width: 300px;" /></a>
+</figure>
+<p>By default the model of the double helix has backbones and bases modeled as spheres wrapped around a cylindrical histone protein. The radius of the base sphere is 0.208 nm, while the backbone sphere had a radius of 0.240 nm. Users can also specify to build the DNA backbone and base volumes as half cylinders, described by Charlton, Nikjoo and Humm (1989) <a class="reference internal" href="#charlton1989" id="id8"><span>[Charlton1989]</span></a>, or as quarter cylinders, as described by Bernal and Liendo (Med. Phys. 2009) <a class="reference internal" href="#bernal2009" id="id9"><span>[Bernal2009]</span></a>. The histone radius is 3.3 nm with a length of 5.7 nm. The double helix structure is wrapped around cylindrical histones in 1.65 left-handed turns to form the nucleosome. These are arranged in a solenoid chromatin conformation, with 6 histones per turn of the fiber. Each fiber contains 61 histones and ~10.8 kbp of DNA.</p>
+<p>Users can set the fiber radius and length:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">d</span><span class="n">:</span><span class="nc">Ge/Fiber/</span><span class="na">FiberHalfLength</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">80.0</span><span class="n"> nm</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/Fiber/</span><span class="na">FiberRadius</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">18.5</span><span class="n"> nm</span>
+</pre></div>
+</div>
+<p>Users can change the number of histones per turn:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">i</span><span class="n">:</span><span class="nc">Ge/Fiber/</span><span class="na">NumberOfHistonesPerTurn</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">6</span>
+</pre></div>
+</div>
+<p>Users can change the DNA volume geometry, by including one of the below:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/Fiber/</span><span class="na">DNA_Model</span><span class="n"> </span><span class="o">=</span><span class="n"> Sphere            </span><span class="c">#Described by Bertolet et al. (2022)</span>
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/Fiber/</span><span class="na">DNA_Model</span><span class="n"> </span><span class="o">=</span><span class="n"> HalfCylinder      </span><span class="c">#Described by Charlton, Nikjoo and Humm (1989)</span>
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/Fiber/</span><span class="na">DNA_Model</span><span class="n"> </span><span class="o">=</span><span class="n"> QuarterCylinder   </span><span class="c">#Described by Bernal and Liendo (2009)</span>
+</pre></div>
+</div>
+<p>Note that as of v1.1, the sphere model is slightly different from the one in v1.0. Also, different models for the hydration shell around these three DNA models have been added. See Bertolet et al. 2022 <a class="reference internal" href="#bertolet2022" id="id10"><span>[Bertolet2022]</span></a> for more details. Also,</p>
+<p>Two different scorers are provided for the TsSolenoidFiber; NtupleForBasePair and NtupleForSpatial. Both of these are described in more detail here.</p>
+</section>
+<section id="geant4-dna-full-nuclear-model">
+<h2>Geant4-DNA Full Nuclear Model<a class="headerlink" href="#geant4-dna-full-nuclear-model" title="Link to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Geant4WholeNucleus.png"><img alt="../_images/Geant4WholeNucleus.png" src="../_images/Geant4WholeNucleus.png" style="width: 300px;" /></a>
+</figure>
+<p>The Geant4-DNA model represents the whole genome (6 x 10^9 bps) within an ellipsoid nucleus for a cell in the G0/G1 phase and is further described in Dos Santos M et al. (2014) <a class="reference internal" href="#dossantos2014" id="id11"><span>[DosSantos2014]</span></a>.</p>
+<p>The DNA double helix strands are composed of two separate strands built from the union of spheres. The sugar-phosphate backbone of the DNA has a total diameter of 2.16 nm and the DNA base, within the backbone structure, has a diameter of 0.34 nm. The double helix is used to form a nucleosome which consists of a core histone protein (cylinder with diameter 6.5 nm and length of 5.7 nm) wrapped by two turns of the DNA double helix (a total of 200 bps). The chromatin fiber is represented by a cylinder of diameter 30.8 nm and length 161 nm. Each fiber contains 90 nucleosomes which are placed on a helix. To represent the chromatin loops, 7 chromatin fibers are arranged in a “flower” shape. The flower has 7 “petals”, with each composed of 4 fibers arranged in a diamond. The flower substructures fill 23 chromosome territories, each represented by a box of varying size.</p>
+<p>Users need to include the files of data specifying the position of the chromosome territories within the nucleus. These files are named chromo*.dat (24 files total).</p>
+<p>To build the full DNA hierarchy, the flags to specify the building of the chromatin fibers and the basepairs should be set to true:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;tsdna&quot;</span>
+<span class="kt">b</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">BuildChromatinFiber</span><span class="o">=</span><span class="kc">&quot;true&quot;</span>
+<span class="kt">b</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">BuildBases</span><span class="o">=</span><span class="kc">&quot;true&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
+<div role="list" class="citation-list">
+<div class="citation" id="nikjoo1989" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Nikjoo1989</a><span class="fn-bracket">]</span></span>
+<p>Nikjoo H, Goodhead DT, Charlton DE &amp; Paretzke HG 1989.
+Energy deposition in small cylindrical targets by ultrasoft X-rays Phys. Med. Biol. 34(6), 691–705.</p>
+</div>
+<div class="citation" id="nikjoo1991" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">Nikjoo1991</a><span class="fn-bracket">]</span></span>
+<p>Nikjoo H, Goodhead DT, Charlton DE &amp; Paretzke HG 1991.
+Energy deposition in small cylindrical targets by monoenergetic electrons Int. J. Radiat. Biol. 60(5), 739–756.</p>
+</div>
+<div class="citation" id="charlton1989" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Charlton1989<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id3">1</a>,<a role="doc-backlink" href="#id8">2</a>)</span>
+<p>Charlton DE, Nikjoo H &amp; Humm JL 1989. Calculation of initial yields of single- and double-strand breaks in
+cell nuclei from electrons, protons and alpha particles Int. J. Radiat. Biol. 56(1), 1–19.</p>
+</div>
+<div class="citation" id="vologodskii1994" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">Vologodskii1994</a><span class="fn-bracket">]</span></span>
+<p>Vologodskii AV &amp; Cozzarelli NR 1994. Conformational and thermodynamic properties of supercoiled DNA Annu.
+Rev. Biophys. Biomol. Struct. 23, 609-643.</p>
+</div>
+<div class="citation" id="meylan2016" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">Meylan2016</a><span class="fn-bracket">]</span></span>
+<p>Meylan, S., Vimont, U., Incerti, S., Clairand, I., Villagrasa, C. 2016.
+Geant4-DNA simulations using complex DNA geometries generated by the DnaFabric tool.
+Computer Physics Communications, 204, 159–169. <a class="reference external" href="https://doi.org/10.1016/j.cpc.2016.02.019">https://doi.org/10.1016/j.cpc.2016.02.019</a></p>
+</div>
+<div class="citation" id="ermak1978" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">Ermak1978</a><span class="fn-bracket">]</span></span>
+<p>Ermak D L, McCammon J A 1978. Brownian dynamics with hydrodynamic interactions.
+The Journal of Chemical Physics, 69(4), 1352–1360. <a class="reference external" href="https://doi.org/10.1063/1">https://doi.org/10.1063/1</a>.436761&lt;/div&gt;</p>
+</div>
+<div class="citation" id="henthorn2017a" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">Henthorn2017a</a><span class="fn-bracket">]</span></span>
+<p>Henthorn NT, Warmenhoven JW, Sotiropoulos M, Mackay RI, Kirkby KJ &amp; Merchant MJ 2017.
+Nanodosimetric simulation of direct ion-induced DNA damage using different chromatin
+geometry models. Radiation Research, 188, 770-783.</p>
+</div>
+<div class="citation" id="bernal2009" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">Bernal2009</a><span class="fn-bracket">]</span></span>
+<p>Bernal &amp; Liendo 2009. An investigation on the capabilities of the PENELOPE MC code
+in nanodosimetry Med. Phys. 36(2), 620-625.</p>
+</div>
+<div class="citation" id="dossantos2014" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">DosSantos2014</a><span class="fn-bracket">]</span></span>
+<p>Dos Santos M, Villagrasa C, Clairand I &amp; Incerti S 2014. Influence of the chromatin
+density on the number of direct clustered damages calculated for proton and alpha
+irradiations using a Monte Carlo code Progress in Nuclear Science and Technology 4, 449–453.</p>
+</div>
+<div class="citation" id="bertolet2022" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">Bertolet2022</a><span class="fn-bracket">]</span></span>
+<p>Bertolet, A., Ramos-Mendez, J., McNamara, A., Yoo, D., Ingram, S., Henthorn, N., Warmenhoven, J. W., Faddegon, B., Merchant, M., McMahon S. J. (2022). Impact of DNA geometry and scoring on Monte Carlo track-structure simulations of initial radiation induced damage. Radiation Research, 2022;198(3):207-220.  PMID: 35767729  PMCID: PMC9458623.</p>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CellsWithNanoparticles.html" class="btn btn-neutral float-left" title="Cell Models with Organelles and targeted Nanoparticles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Nucleus.html" class="btn btn-neutral float-right" title="Nucleus Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019,The TOPAS-nBio Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

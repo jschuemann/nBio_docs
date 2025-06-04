@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cell Models &mdash; TOPAS-nBio 2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=0c75a980" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_background.css?v=39b6a615" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/documentation_options.js?v=60dbed4a"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Cell Models with Organelles and targeted Nanoparticles" href="CellsWithNanoparticles.html" />
+    <link rel="prev" title="Introduction" href="Intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TOPAS-nBio
+              <img src="../_static/TOPAS_nBio_Combined.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Introduction.html">Introduction to TOPAS-nBio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/HowToInstall.html">How to Install TOPAS-nBio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/ParameterFile.html">Parameter File System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Members.html">Members of the TOPAS-nBio Collaboration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Citations.html">Citations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/License.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Geometries</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cell Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#spherical-cell">Spherical Cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ellipsoid-cell">Ellipsoid Cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cuboidal-cells">Cuboidal Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#irregular-shaped-cells">Irregular-shaped cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bone-cells">Bone Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#blood-cells">Blood Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#neurons">Neurons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cell-culture">Cell Culture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CellsWithNanoparticles.html">Cell Models with Organelles and targeted Nanoparticles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DNAmodels.html">DNA Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Nucleus.html">Nucleus Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Other.html">Other Models</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Processes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Processes/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes/Physics.html">Physics Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes/Chemistry.html">Chemistry</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Biological Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Modeling/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Modeling/DNARepair.html">Mechanistic Models of DNA Repair</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GUI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../GUI/Intro.html">The TOPAS-nBio Graphical User Interface</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scorers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Cells.html">Cell Scorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/DNAScorers.html">DNA Scorers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Chem.html">Chemical Scorers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TOPAS-nBio</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Cell Models</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Geometries/Cells.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cell-models">
+<h1>Cell Models<a class="headerlink" href="#cell-models" title="Link to this heading">¶</a></h1>
+<p>A common end point of measurement for cells cultured <em>in vitro</em> in radiobiology is clonogenic cell survival. Single cell Monte Carlo simulations can provide insight into the total dose received by the cell or the distribution of dose within sub-regions of the cell (e.g., dose to the cell nucleus). This may be correlated with experimental measurements of the loss of a specific function or cell death. Single cell models can also form the geometric boundary for more complex studies, for example, calculating the energy deposited in other sub-cellular components (e.g., organelles, cell membranes) or investigating DNA damage in the nucleus.</p>
+<p>TOPAS-nBio provides users with a unique framework for simulating multiple cell types and the option of including organelle sub-components in the model.</p>
+<section id="spherical-cell">
+<h2>Spherical Cell<a class="headerlink" href="#spherical-cell" title="Link to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/SphericalCell.png"><img alt="../_images/SphericalCell.png" src="../_images/SphericalCell.png" style="width: 300px;" /></a>
+</figure>
+<p>The TsSphericalCell component is a model of a spherical cell with the option of including organelles.
+To create the model specify the component name as well as the cell radius required:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsSphericalCell&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">CellRadius</span><span class="o">=</span><span class="m">20</span><span class="n"> um</span>
+</pre></div>
+</div>
+<p>Users have the option of including a nucleus. Specify the radius to add the nucleus to the cell:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/Nucleus/</span><span class="na">NucleusRadius</span><span class="o">=</span><span class="m">5.</span><span class="n"> um</span>
+</pre></div>
+</div>
+<p>The nucleus position within the cell can be edited using:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/Nucleus/</span><span class="na">translateX</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0.2</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/Nucleus/</span><span class="na">translateY</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0.0</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/Nucleus/</span><span class="na">translateZ</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0.1</span><span class="n"> um</span>
+</pre></div>
+</div>
+<p>Mitochondria can also be placed randomly in the cell, the size and the number of mitochondria are specified in the parameter file:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyCell/Mitochondria/</span><span class="na">NumberbOfMitochondria</span><span class="o">=</span><span class="m">20</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/Mitochondria/</span><span class="na">a</span><span class="o">=</span><span class="m">0.5</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/Mitochondria/</span><span class="na">b</span><span class="o">=</span><span class="m">0.3</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/Mitochondria/</span><span class="na">c</span><span class="o">=</span><span class="m">0.9</span><span class="n"> um</span>
+</pre></div>
+</div>
+<p>A nucleus and mitochondria may be added to any of the cell models listed in a similar manner.</p>
+</section>
+<section id="ellipsoid-cell">
+<h2>Ellipsoid Cell<a class="headerlink" href="#ellipsoid-cell" title="Link to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/EllipsoidCell.png"><img alt="../_images/EllipsoidCell.png" src="../_images/EllipsoidCell.png" style="width: 300px;" /></a>
+</figure>
+<p>The TsEllipsoidCell component is a model of an ellipsoid cell with the option of including organelles.
+To use the cell model, specify the component name as well as the semi-axis lengths of the ellipsoid:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsEllipsoidCell&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">xSemiAxis</span><span class="o">=</span><span class="m">20</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">ySemiAxis</span><span class="o">=</span><span class="m">10</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">zSemiAxis</span><span class="o">=</span><span class="m">15</span><span class="n"> um</span>
+</pre></div>
+</div>
+</section>
+<section id="cuboidal-cells">
+<h2>Cuboidal Cells<a class="headerlink" href="#cuboidal-cells" title="Link to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/CubodialCell.png"><img alt="../_images/CubodialCell.png" src="../_images/CubodialCell.png" style="width: 300px;" /></a>
+</figure>
+<p>The TsCuboidalCell component is a model of a cuboidal or rectangular cell with the option of including organelles.
+To use the model specify the component name as well as the half-lengths of each side of the cube/rectangle required:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsCuboidalCell&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Cell_HLX</span><span class="o">=</span><span class="m">10</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Cell_HLY</span><span class="o">=</span><span class="m">20</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Cell_HLZ</span><span class="o">=</span><span class="m">10</span><span class="n"> um</span>
+</pre></div>
+</div>
+</section>
+<section id="irregular-shaped-cells">
+<h2>Irregular-shaped cells<a class="headerlink" href="#irregular-shaped-cells" title="Link to this heading">¶</a></h2>
+<p>Cells with irregular-shapes are also available. This includes 3 fibroblast cell models and a 3D hexagonal cell.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/FibroblastCell1.png"><img alt="../_images/FibroblastCell1.png" src="../_images/FibroblastCell1.png" style="width: 300px;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/FibroblastCell2.png"><img alt="../_images/FibroblastCell2.png" src="../_images/FibroblastCell2.png" style="width: 300px;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/FibroblastCell3.png"><img alt="../_images/FibroblastCell3.png" src="../_images/FibroblastCell3.png" style="width: 300px;" /></a>
+</figure>
+<p>Three models of Fibroblasts are provided in TOPAS-nBio:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsFibroblastCell1&quot;</span>
+
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsFibroblastCell2&quot;</span>
+
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsFibroblastCell3&quot;</span>
+</pre></div>
+</div>
+<p>An irregular-shaped cell using a hexagon is also available with optional organelles:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsHexagonCell&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="bone-cells">
+<h2>Bone Cells<a class="headerlink" href="#bone-cells" title="Link to this heading">¶</a></h2>
+<p>Three different bone cell geometries are available in TOPAS-nBio: osteoblasts, osteoclasts and osteocytes.</p>
+<p>Osteocytes and osteoblasts have the option of including a single nucleus and/or mitochondria.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Osteoblast.png"><img alt="../_images/Osteoblast.png" src="../_images/Osteoblast.png" style="width: 300px;" /></a>
+</figure>
+<p>Osteoblasts are cubical, users should specify the half-lengths of the cell:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsOsteoblast&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Cell_HLX</span><span class="o">=</span><span class="m">10</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Cell_HLY</span><span class="o">=</span><span class="m">10</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Cell_HLZ</span><span class="o">=</span><span class="m">10</span><span class="n"> um</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Osteocyte.png"><img alt="../_images/Osteocyte.png" src="../_images/Osteocyte.png" style="width: 300px;" /></a>
+</figure>
+<p>Osteocytes are irregular shaped cells:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsOsteocyte&quot;</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Osteoclast.png"><img alt="../_images/Osteoclast.png" src="../_images/Osteoclast.png" style="width: 300px;" /></a>
+</figure>
+<p>Osteoclasts are large cells (50 - 120 um) with multiple nuclei. Users should specify the size of the cell, the number of nuclei and the size of the nuclei:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsOsteoclast&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">CellRadius</span><span class="o">=</span><span class="m">50.</span><span class="n"> um</span>
+
+<span class="c">#Nuclei</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/Nucleus/</span><span class="na">NucleusRadius</span><span class="o">=</span><span class="m">5.</span><span class="n"> um</span>
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyCell/Nucleus/</span><span class="na">NumberOfNuclei</span><span class="o">=</span><span class="m">5</span>
+</pre></div>
+</div>
+</section>
+<section id="blood-cells">
+<h2>Blood Cells<a class="headerlink" href="#blood-cells" title="Link to this heading">¶</a></h2>
+<p>Red blood cell (RBC) and lymphocyte geometry extensions are available in TOPAS-nBio.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/RBC.png"><img alt="../_images/RBC.png" src="../_images/RBC.png" style="width: 300px;" /></a>
+</figure>
+<p>The red blood cell requires users to specify its radius and width (of the thickest section). The cell is modeled as a torus. Generally the radius of these cells are 6-8 um and the thickness of the torus is 1-3 um. Red blood cells do not contain any organelles:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsRedBloodCell&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">RBCRadius</span><span class="o">=</span><span class="m">6</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">RBCWidth</span><span class="o">=</span><span class="m">2</span><span class="n"> um</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Basophil.png"><img alt="../_images/Basophil.png" src="../_images/Basophil.png" style="width: 300px;" /></a>
+</figure>
+<p>Basophils are white blood cells that have 2-3 lobed nucleus and contain many granules. Since the nucleus is generally bilobed, the model nucleus has two lobes and users need to specify the radius of the cell. The model also has the option of including granules throughout the cytoplasm with a default radius of 0.25 um, users should specify the number of granules:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsBasophil&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">BasophilRadius</span><span class="o">=</span><span class="m">7.0</span><span class="n"> um</span>
+
+<span class="c">#Optional: include granules</span>
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyCell/Granule/</span><span class="na">NumberOfGranules</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">200</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Eosinophil.png"><img alt="../_images/Eosinophil.png" src="../_images/Eosinophil.png" style="width: 300px;" /></a>
+</figure>
+<p>Eosinophils are white blood cells that are bi-lobed, also containing granules. The model also has the option of including granules throughout the cytoplasm with a default radius of 0.25 um, users should specify the number of granules:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsEosinophil&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">EosinophilRadius</span><span class="o">=</span><span class="m">8.0</span><span class="n"> um</span>
+
+<span class="c">#Optional: include granules</span>
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyCell/Granule/</span><span class="na">NumberOfGranules</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">200</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Lymphocyte.png"><img alt="../_images/Lymphocyte.png" src="../_images/Lymphocyte.png" style="width: 300px;" /></a>
+</figure>
+<p>Lymphocytes are small white blood cells (leukocyte) with a single large nucleus. Users have to specify the cell radius. Nucleus radius may also be set, if not set by the user, the default radius is 4 um:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsLymphocyte&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">LymphocyteRadius</span><span class="o">=</span><span class="m">5.0</span><span class="n"> um</span>
+
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/Nucleus/</span><span class="na">NucleusRadius</span><span class="o">=</span><span class="m">4.5</span><span class="n"> um</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Monocyte.png"><img alt="../_images/Monocyte.png" src="../_images/Monocyte.png" style="width: 300px;" /></a>
+</figure>
+<p>Monocytes are also white blood cells with a kidney-shaped nucleus. Users need to specify the cell radius:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsMonocyte&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">MonocyteRadius</span><span class="o">=</span><span class="m">10.0</span><span class="n"> um</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Neutrophil.png"><img alt="../_images/Neutrophil.png" src="../_images/Neutrophil.png" style="width: 300px;" /></a>
+</figure>
+<p>Neutrophil are white bloods cells with a multi-lobed nucleus (3-5 lobes). Users need to specify the cell radius. The model contains a 5 lobed nucleus:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsNeutrophil&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCell/</span><span class="na">NeutrophilRadius</span><span class="o">=</span><span class="m">7.0</span><span class="n"> um</span>
+</pre></div>
+</div>
+</section>
+<section id="neurons">
+<h2>Neurons<a class="headerlink" href="#neurons" title="Link to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/Neuron.png"><img alt="../_images/Neuron.png" src="../_images/Neuron.png" style="width: 500px;" /></a>
+</figure>
+<p>In order to model realistic representations of the numerous types of neurons and supporting glial cells in the central nervous system, TOPAS-nBio has an interface to the <a class="reference external" href="http://neuromorpho.org">NeuroMorpho neuron database</a>. The database contains over 100,000 neuron and glial geometries in 40 different brain regions for several different species, including rodent and human. To model a cell structure from the database, users need to download the standardized ASCII data file (in the SWC open source format for storing neuron morphologies) of the specific neuron or glial cell they wish to simulate. The standard SWC format is a text file starting with a free-text header section (denoted by the symbol #) and contains a matrix of 7 columns below the header. The standard format defines four neuron components with an integer value (1 – soma, 2 – axon, 3 – basal dendrite and 4 – apical dendrite) while values of 5+ are used for custom parameters. Note some formats extend on the standard format (SWC++) and include fork and end points as values 5 and 6, respectively.</p>
+<p>To simulate the neuron, specify the name of the SWC file, for example:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/Neuron/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsNeuroMorpo&quot;</span>
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/Neuron/</span><span class="na">NeuroMorpoFileName</span><span class="o">=</span><span class="s">&quot;NMO_00943_prc.txt&quot;</span>
+</pre></div>
+</div>
+<p>A ntuple scorer specifically for neuron structures is also available:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Sc/NeuronScorer/</span><span class="na">Quantity</span><span class="n">    </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;NtupleForNeuron&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="cell-culture">
+<h2>Cell Culture<a class="headerlink" href="#cell-culture" title="Link to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/CellCulture.png"><img alt="../_images/CellCulture.png" src="../_images/CellCulture.png" style="width: 100px;" /></a>
+</figure>
+<p>TsCellCulture is a geometry extension for filling a rectangular volume with spherical cells, with a central nucleus. Users should specify the size of the container volume, the radius of the spherical cell and the radius of the spherical nucleus. The total number of cells also has to be specified:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCulture/</span><span class="na">Type</span><span class="o">=</span><span class="s">&quot;TsCellCulture&quot;</span>
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCulture/</span><span class="na">Material</span><span class="o">=</span><span class="s">&quot;G4_WATER&quot;</span>
+<span class="kt">s</span><span class="n">:</span><span class="nc">Ge/MyCulture/</span><span class="na">Parent</span><span class="o">=</span><span class="s">&quot;World&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCulture/</span><span class="na">Container_HLX</span><span class="o">=</span><span class="n"> </span><span class="m">100</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCulture/</span><span class="na">Container_HLY</span><span class="o">=</span><span class="n"> </span><span class="m">100</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCulture/</span><span class="na">Container_HLZ</span><span class="o">=</span><span class="n"> </span><span class="m">20</span><span class="n"> um</span>
+<span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyCulture/</span><span class="na">NumberOfCells</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">20</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCulture/</span><span class="na">CellRadius</span><span class="o">=</span><span class="m">10</span><span class="n"> um</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ge/MyCulture/</span><span class="na">NucleusRadius</span><span class="o">=</span><span class="n"> </span><span class="m">6</span><span class="n"> um</span>
+</pre></div>
+</div>
+<p>An example scoring extension is also provided:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Sc/CultureScorer/</span><span class="na">Quantity</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;NtupleForCulture&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CellsWithNanoparticles.html" class="btn btn-neutral float-right" title="Cell Models with Organelles and targeted Nanoparticles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019,The TOPAS-nBio Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

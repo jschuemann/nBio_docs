@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The TOPAS-nBio Graphical User Interface &mdash; TOPAS-nBio 2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=0c75a980" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_background.css?v=39b6a615" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/documentation_options.js?v=60dbed4a"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction" href="../Scorers/Intro.html" />
+    <link rel="prev" title="Mechanistic Models of DNA Repair" href="../Modeling/DNARepair.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TOPAS-nBio
+              <img src="../_static/TOPAS_nBio_Combined.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Introduction.html">Introduction to TOPAS-nBio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/HowToInstall.html">How to Install TOPAS-nBio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/ParameterFile.html">Parameter File System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Members.html">Members of the TOPAS-nBio Collaboration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Citations.html">Citations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/License.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Geometries</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Geometries/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Geometries/Cells.html">Cell Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Geometries/CellsWithNanoparticles.html">Cell Models with Organelles and targeted Nanoparticles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Geometries/DNAmodels.html">DNA Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Geometries/Nucleus.html">Nucleus Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Geometries/Other.html">Other Models</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Processes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Processes/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes/Physics.html">Physics Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes/Chemistry.html">Chemistry</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Biological Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Modeling/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Modeling/DNARepair.html">Mechanistic Models of DNA Repair</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GUI</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The TOPAS-nBio Graphical User Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mouse-control"><strong>Mouse Control</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-parameter-control-table"><strong>The Parameter Control Table</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-functions"><strong>Additional Functions</strong></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scorers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Cells.html">Cell Scorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/DNAScorers.html">DNA Scorers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Chem.html">Chemical Scorers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TOPAS-nBio</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">The TOPAS-nBio Graphical User Interface</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/GUI/Intro.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="the-topas-nbio-graphical-user-interface">
+<h1>The TOPAS-nBio Graphical User Interface<a class="headerlink" href="#the-topas-nbio-graphical-user-interface" title="Link to this heading">¶</a></h1>
+<p>TOPAS-nBio includes an optional Graphical User Interface (GUI).
+The GUI allows the user to easily manipulate graphics
+(rotate, zoom and click on graphical elements to get more
+information about the selected geometry element or particle track)
+and inspect and adjust TOPAS parameters.</p>
+<p>The GUI is intended as a rapid prototyping extension of TOPAS-nBio.
+It allows you to easily see and adjust geometry
+and review the behavior of a small set of particle histories.
+The GUI then gives you the ability to save the new parameters,
+such that these saved values can later be loaded back in to a new
+TOPAS-nBio session, with or without the GUI.</p>
+<p>For larger, high precision runs, with larger numbers of histories,
+the user will generally run on a batch system (cluster or cloud)
+without the GUI.</p>
+<p>Future developments will extend the system such that users will
+be able to directly launch cluster or cloud jobs from the GUI,
+with the GUI serving to monitor the progress of those jobs and
+display their results.</p>
+<p>The GUI is based on the Qt Toolkit. To activate the GUI,
+include the following parameter in your TOPAS Parameter Control File:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="nc">Ts/</span><span class="na">UseQt</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="kc">&quot;True&quot;</span>
+</pre></div>
+</div>
+<p>TOPAS will then bring up the GUI.</p>
+<img alt="../_images/GUI.png" src="../_images/GUI.png" />
+<section id="mouse-control">
+<h2><strong>Mouse Control</strong><a class="headerlink" href="#mouse-control" title="Link to this heading">¶</a></h2>
+<p>The top row of icons determine the behavior of the mouse when
+one clicks in the graphics window. Going from left to right:</p>
+<ul class="simple">
+<li><p>Pick to Translate the Image. Moving the mouse will move the image left right up or down</p></li>
+<li><p>Pick to Inquire. A pop-up window will give details about the selected object within the image (name of geometry, material, density etc., or type of particle track, partile energy, etc.).</p></li>
+<li><p>Pick to Zoom out</p></li>
+<li><p>Pick to Zoom in</p></li>
+<li><p>Pick to Rotate. Moving the mouse will rotate the image.</p></li>
+</ul>
+</section>
+<section id="the-parameter-control-table">
+<h2><strong>The Parameter Control Table</strong><a class="headerlink" href="#the-parameter-control-table" title="Link to this heading">¶</a></h2>
+<p>The Parameter Control Table includes one row for each of the parameters that you can adjust.
+Click on the given value to adjust.
+There may be a slider or a text input box, depending on the parameter type.
+If you type an invalid entry, a warning message will appear in the session console area on the lower right, and the previous value will be restored.</p>
+<p>You choose which of your TOPAS parameters will be displayed here
+by adding the prefix character “c” (for “changeable”) to the parameter type. So, for example, to have the Z Half Length of a component named
+MyBox be included in this control area, specify it in the parameter control file as:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">ic</span><span class="n">:</span><span class="nc">Ge/MyBox/</span><span class="na">HLX</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">2</span>
+</pre></div>
+</div>
+<p>Or to have this NOT be present in the control area:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">i</span><span class="n">:</span><span class="nc">Ge/MyBox/</span><span class="na">HLX</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">2</span>
+</pre></div>
+</div>
+</section>
+<section id="additional-functions">
+<h2><strong>Additional Functions</strong><a class="headerlink" href="#additional-functions" title="Link to this heading">¶</a></h2>
+<p>A set of buttons above the parameter control table support additional functions:</p>
+<ul class="simple">
+<li><p>Save: saves the current set of parameters to a new file in your current directory. The file name will be displayed in the session console area on the lower right. The new file will NOT overwrite your original parameter file. Rather, it will create a new parameter file that includes only your changes, and that then uses the TOPAS inclueFile mechanism to bring in your original parameter file for the other, unchanged values.</p></li>
+<li><p>+Geom: Brings up a window to let you add a new Geometry Component</p></li>
+<li><p>+Scorer: Brings up a window to let you add a new Scorer. Note that due to constraints in the way Geant4 initializes various functions, you can only add scorers Before the first run.</p></li>
+<li><p>+Source: Brings up a window to let you add a new Particle Source. Note that due to constraints in the way Geant4 initializes various functions, you can only add scorers Before the first run.</p></li>
+<li><p>Run: Runs your simulation. You can issue this as many times as you wish, changing parameters and re-running to see new results.</p></li>
+<li><p>PDF: Saved the current graphics window to a PDF file in your current directory.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Modeling/DNARepair.html" class="btn btn-neutral float-left" title="Mechanistic Models of DNA Repair" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Scorers/Intro.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019,The TOPAS-nBio Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

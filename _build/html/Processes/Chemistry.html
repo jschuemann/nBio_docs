@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chemistry &mdash; TOPAS-nBio 2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=0c75a980" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_background.css?v=39b6a615" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/documentation_options.js?v=60dbed4a"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction" href="../Modeling/Intro.html" />
+    <link rel="prev" title="Physics Processes" href="Physics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TOPAS-nBio
+              <img src="../_static/TOPAS_nBio_Combined.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Introduction.html">Introduction to TOPAS-nBio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/HowToInstall.html">How to Install TOPAS-nBio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/ParameterFile.html">Parameter File System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Members.html">Members of the TOPAS-nBio Collaboration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/Citations.html">Citations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/License.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Geometries</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Geometries/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Geometries/Cells.html">Cell Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Geometries/CellsWithNanoparticles.html">Cell Models with Organelles and targeted Nanoparticles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Geometries/DNAmodels.html">DNA Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Geometries/Nucleus.html">Nucleus Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Geometries/Other.html">Other Models</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Processes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Physics.html">Physics Processes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chemistry</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#topas-nbio-default-chemistry-list">TOPAS-nBio Default chemistry list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geant4-default-chemistry-list">Geant4 Default chemistry list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#actvating-the-chemistry-of-topas-nbio">Actvating the Chemistry of TOPAS-nBio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configurable-chemistry-list">Configurable chemistry list</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prechemical-stage">Prechemical stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chemical-stage">Chemical stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#truncation-transport-for-chemical-stage">Truncation transport for chemical stage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#chemical-diffusion-reaction-algorithms">Chemical Diffusion-Reaction Algorithms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-by-step">Step-By-Step</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#independent-reaction-times">Independent Reaction Times</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#simulations-considering-ph">Simulations considering pH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#irt-automatic-temperature-scalling">IRT Automatic Temperature Scalling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Biological Modeling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Modeling/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Modeling/DNARepair.html">Mechanistic Models of DNA Repair</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GUI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../GUI/Intro.html">The TOPAS-nBio Graphical User Interface</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scorers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Cells.html">Cell Scorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/DNAScorers.html">DNA Scorers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scorers/Chem.html">Chemical Scorers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TOPAS-nBio</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Chemistry</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Processes/Chemistry.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chemistry">
+<h1>Chemistry<a class="headerlink" href="#chemistry" title="Link to this heading">¶</a></h1>
+<section id="topas-nbio-default-chemistry-list">
+<h2>TOPAS-nBio Default chemistry list<a class="headerlink" href="#topas-nbio-default-chemistry-list" title="Link to this heading">¶</a></h2>
+<p>We recommend the following chemistry parameters which include changes that
+allowed to reconcile the experimental and simulated yields of chemical species
+at the picosecond level as shown in <a class="reference internal" href="#ramosmendez2021" id="id1"><span>[RamosMendez2021]</span></a>.</p>
+<p>The default chemistry list for TOPAS-nBio can be found at <code class="docutils literal notranslate"><span class="pre">topas-nBio/examples/processes/TOPASDefaultReactions.txt</span></code>.</p>
+<p>To use the default chemistry parameters from TOPAS-nBio, users had to use the topas chemistry modules, either
+<code class="docutils literal notranslate"><span class="pre">TsEmDNAChemistry</span></code> or <code class="docutils literal notranslate"><span class="pre">TsEmDNAChemistryExtended</span></code>. In addition, add the following parameter:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kn">includeFile</span><span class="n"> </span><span class="o">=</span><span class="n"> TOPASDefaultReactions.txt</span>
+</pre></div>
+</div>
+<p>The example <code class="docutils literal notranslate"><span class="pre">topas-nBio/examples/scorers/IRTGetGValue/TsIRTGvalue.txt</span></code> shows how to properly use this chemistry list
+and recreate the validation results from <a class="reference internal" href="#ramosmendez2021" id="id2"><span>[RamosMendez2021]</span></a>.</p>
+</section>
+<section id="geant4-default-chemistry-list">
+<h2>Geant4 Default chemistry list<a class="headerlink" href="#geant4-default-chemistry-list" title="Link to this heading">¶</a></h2>
+<p>TOPAS-nBio <a class="reference internal" href="#schuemann2019a" id="id3"><span>[Schuemann2019a]</span></a> can inherit the parameters (reactions, reaction rates, etc.) provided
+by the Geant4-DNA toolkit to perform radiolysis simulations via the modules
+<a class="reference external" href="https://opentopas.readthedocs.io/en/latest/parameters/physics/modular.html#list-of-available-modules">g4em-dna-chemistry</a>
+and
+<a class="reference external" href="https://opentopas.readthedocs.io/en/latest/parameters/physics/modular.html#list-of-available-modules">g4em-dna-chemistry_opt1</a>.
+The chemistry parameters provided in the first module are reported in
+<a class="reference internal" href="#karamitros2012" id="id4"><span>[Karamitros2012]</span></a> <a class="reference internal" href="#incerti2016" id="id5"><span>[Incerti2016]</span></a>. The chemistry parameters provided in
+the second module are reported in <a class="reference internal" href="#ramosmendez2018" id="id6"><span>[RamosMendez2018]</span></a>.</p>
+<p>The activation of the chemical stage is performed by including a chemistry model in
+the modular physics list, for example using the following parameter:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">sv</span><span class="n">:</span><span class="nc">Ph/Default/</span><span class="na">Modules</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">2</span><span class="n"> </span><span class="s">&quot;g4em-dna&quot;</span><span class="n"> </span><span class="s">&quot;g4em-dna-chemistry&quot;</span>
+</pre></div>
+</div>
+<p>The order of these modules must be consistent with the occurrence of the
+physical and chemical processes. Thus, the module for the physical process
+must be followed by the module for the chemical process. By default, the
+pre-chemical and chemical stages are activated, but no explicit step-by-step
+transport is performed. This is useful only for the scoring of the G-value
+(the yield of chemical species per 100 eV of energy deposit) as a function
+of time. A scorer that retrieves this quantity is the <code class="docutils literal notranslate"><span class="pre">GValue</span></code> scorer.
+The example <code class="docutils literal notranslate"><span class="pre">topas-nBio/examples/scorers/SBSGetGValue/GvalueG4DNADefault.txt</span></code> shows a complete implementation of this
+scorer.</p>
+</section>
+<section id="actvating-the-chemistry-of-topas-nbio">
+<h2>Actvating the Chemistry of TOPAS-nBio<a class="headerlink" href="#actvating-the-chemistry-of-topas-nbio" title="Link to this heading">¶</a></h2>
+<p>Simulation of chemical species reactions can be activated by
+using a set of parameters associated with a chemistry name (analogous to the physics list <code class="docutils literal notranslate"><span class="pre">Ph/ListName</span></code>).
+Different sets of parameters can be associated to different chemistry names, and only those assigned to the
+chemistry name defined by the following parameter will be used (e.g.
+<code class="docutils literal notranslate"><span class="pre">TOPASChemistry</span></code>:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:Ch/ChemistryName </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;TOPASChemistry&quot;</span>
+</pre></div>
+</div>
+<p>The configuration of parameters for the chemistry stage requires the user to define an end time
+and (in the case of the Step-By-Step method) a time resolution. The end time must be larger
+than 1 ps (i.e. the time where the chemical stage begins). The time resolution can be defined piecewise.
+For example, to set the transport of chemical species up to 15 ns with time step resolution of
+1 ns from 1 ps to 10 ns and 10 ps from 10 ns to 15 ns, the following parameters must be set
+(assuming the chemistry name <code class="docutils literal notranslate"><span class="pre">TOPASChemistry</span></code>):</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="c"># Activate Chemistry and Set Chemistry End Time</span>
+<span class="kt">b</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/</span><span class="na">ChemicalStageTransportActive</span><span class="n">     </span><span class="o">=</span><span class="n"> </span><span class="kc">&quot;True&quot;</span>
+<span class="kt">d</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/</span><span class="na">ChemicalStageTimeEnd</span><span class="n">             </span><span class="o">=</span><span class="n"> </span><span class="m">15.0</span><span class="n"> ns</span>
+
+<span class="c"># Only for Step-By-Step Chemistry</span>
+<span class="kt">dv</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/</span><span class="na">ChemicalStageTimeStepsHighEdges</span><span class="n">   </span><span class="o">=</span><span class="n"> </span><span class="m">2</span><span class="n"> </span><span class="m">10.0</span><span class="n">  </span><span class="m">15.0</span><span class="n"> ns</span>
+<span class="kt">dv</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/</span><span class="na">ChemicalStageTimeStepsResolutions</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">2</span><span class="n">  </span><span class="m">1.0</span><span class="n">  </span><span class="m">10.0</span><span class="n"> ps</span>
+</pre></div>
+</div>
+<p>After these parameters have been set, the spatio-temporal information of the
+chemical species is available and can be visualized using the
+TOPAS graphics for Step-By-Step chemistry only. A scorer example to retrieve the track information (physical
+and chemical) is <code class="docutils literal notranslate"><span class="pre">particleTuple.txt</span></code>. A graphics example to visualize the transport
+of chemical species is <code class="docutils literal notranslate"><span class="pre">ActiveChemistryDefault.txt</span></code>.</p>
+</section>
+<section id="configurable-chemistry-list">
+<h2>Configurable chemistry list<a class="headerlink" href="#configurable-chemistry-list" title="Link to this heading">¶</a></h2>
+<p>Simulation of the water radiolysis process requires the setup of a
+large set of parameters: branching ratios, dissociation schemes,
+reaction rates, types of chemical species and diffusion coefficients.
+Advanced users that require to activate or deactivate reactions, change the
+reaction rates or diffusion coefficients, etc., have that flexibility
+provided by TOPAS-nBio. For that, one of the specialized modules <code class="docutils literal notranslate"><span class="pre">TsEmDNAChemistry</span></code>
+and <code class="docutils literal notranslate"><span class="pre">TsEmDNAChemistryExtended</span></code>  must be
+included instead of the Geant4DNA chemistry module as follows:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">sv</span><span class="n">:</span><span class="nc">Ph/Default/</span><span class="na">Modules</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">2</span><span class="n"> </span><span class="s">&quot;TsEmDNAPhysics&quot;</span><span class="n"> </span><span class="s">&quot;TsEmDNAChemistry&quot;</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">sv</span><span class="n">:</span><span class="nc">Ph/Default/</span><span class="na">Modules</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">2</span><span class="n"> </span><span class="s">&quot;TsEmDNAPhysics&quot;</span><span class="n"> </span><span class="s">&quot;TsEmDNAChemistryExtended&quot;</span>
+</pre></div>
+</div>
+<p>Instead of the <code class="docutils literal notranslate"><span class="pre">TsEmDNAPhysics</span></code> physics module, one of the other options described in the
+<a class="reference internal" href="Physics.html#physics-processes"><span class="std std-ref">Physics Processes</span></a> can be used.</p>
+<p>In this way, a whole set of parameters can be customized by using the following
+conventions. Chemical species are named using full names without separation
+spaces, for example, H<sub>2</sub>O<sub>2</sub> is HydrogenPeroxide (case
+insensitive). The list of available molecules and diffusion coefficients
+customizable via <code class="docutils literal notranslate"><span class="pre">TsEmDNAChemistry</span></code> and <code class="docutils literal notranslate"><span class="pre">TsEmDNAChemistryExtended</span></code>  are
+shown in the following table:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Molecule</p></td>
+<td><p>TOPAS name</p></td>
+<td><p>D (10<sup>–9</sup>m<sup>2</sup>/s) at 25<sup>o</sup>C</p></td>
+</tr>
+<tr class="row-even"><td><p>e<sup>–</sup><sub>aq</sub></p></td>
+<td><p>SolvatedElectron</p></td>
+<td><p>4.9</p></td>
+</tr>
+<tr class="row-odd"><td><p><sup>•</sup>OH</p></td>
+<td><p>Hydroxyl</p></td>
+<td><p>2.2</p></td>
+</tr>
+<tr class="row-even"><td><p>H<sup>•</sup></p></td>
+<td><p>Hydrogen</p></td>
+<td><p>7.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H<sub>3</sub>O<sup>+</sup></p></td>
+<td><p>Hydronium</p></td>
+<td><p>9.46</p></td>
+</tr>
+<tr class="row-even"><td><p>H<sub>2</sub></p></td>
+<td><p>Dyhydrogen</p></td>
+<td><p>4.8</p></td>
+</tr>
+<tr class="row-odd"><td><p>OH<sup>–</sup></p></td>
+<td><p>Hydroxide</p></td>
+<td><p>5.3</p></td>
+</tr>
+<tr class="row-even"><td><p>H<sub>2</sub>O<sub>2</sub></p></td>
+<td><p>HydrogenPeroxide</p></td>
+<td><p>2.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>O<sub>2</sub></p></td>
+<td><p>Oxygen</p></td>
+<td><p>2.4       (only in TsEmDNAChemistryExtended for SBS)</p></td>
+</tr>
+<tr class="row-even"><td><p>O<sub>2–</sub></p></td>
+<td><p>SuperoxideAnion</p></td>
+<td><p>1.75      (only in TsEmDNAChemistryExtended for SBS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>HO<sub>2</sub></p></td>
+<td><p>HydroPeroxy</p></td>
+<td><p>2.3       (only in TsEmDNAChemistryExtended for SBS)</p></td>
+</tr>
+<tr class="row-even"><td><p>HO<sub>–2</sub></p></td>
+<td><p>Dioxidanide</p></td>
+<td><p>1.4       (only in TsEmDNAChemistryExtended for SBS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>O<sub>3</sub>P</p></td>
+<td><p>AtomicOxygen</p></td>
+<td><p>2.0       (only for IRT)</p></td>
+</tr>
+<tr class="row-even"><td><p>O<sup>–</sup></p></td>
+<td><p>Oxyde</p></td>
+<td><p>2.0       (only for IRT)</p></td>
+</tr>
+<tr class="row-odd"><td><p>O<sub>3</sub> <sup>-</sup></p></td>
+<td><p>Trioxide</p></td>
+<td><p>2.0       (only for IRT)</p></td>
+</tr>
+<tr class="row-even"><td><p>O<sub>3</sub></p></td>
+<td><p>Ozone</p></td>
+<td><p>2.0       (only for IRT)</p></td>
+</tr>
+</tbody>
+</table>
+<section id="prechemical-stage">
+<h3>Prechemical stage<a class="headerlink" href="#prechemical-stage" title="Link to this heading">¶</a></h3>
+<p>The dissociation schemes and branching ratios are inherited from Geant4-DNA.
+In general, users do not need to change or set these values. If for any reason
+the users require customization of these parameters, the following parameters available
+in TOPAS-nBio will facilitate this task (assuming <code class="docutils literal notranslate"><span class="pre">s:Ch/ChemistryName</span> <span class="pre">=</span> <span class="pre">&quot;TOPASChemistry&quot;</span></code>):</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">u</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/BranchingRatios/IonizationState/</span><span class="na">DissociativeDecay</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">1.00</span>
+<span class="kt">u</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/BranchingRatios/A1B1/</span><span class="na">DissociativeDecay</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0.65</span>
+<span class="kt">u</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/BranchingRatios/A1B1/</span><span class="na">Relaxation</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0.35</span>
+<span class="kt">u</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/BranchingRatios/B1A1/</span><span class="na">AutoIonization</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0.55</span>
+<span class="kt">u</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/BranchingRatios/B1A1/</span><span class="na">DissociativeDecay</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0.15</span>
+<span class="kt">u</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/BranchingRatios/B1A1/</span><span class="na">Relaxation</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0.30</span>
+<span class="kt">u</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/BranchingRatios/RydbergStatesAndDiffuseBands/</span><span class="na">AutoIoinization</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0.5</span>
+<span class="kt">u</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/BranchingRatios/RydbergStatesAndDiffuseBands/</span><span class="na">Relaxation</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0.5</span>
+</pre></div>
+</div>
+</section>
+<section id="chemical-stage">
+<h3>Chemical stage<a class="headerlink" href="#chemical-stage" title="Link to this heading">¶</a></h3>
+<p>For the chemical stage, the number of reactions and reaction rates are also
+inherited from Geant4-DNA. Additional reactions can be defined using the molecules
+from the previous table, and the reaction rates can also be overwritten for the
+existing reactions. The way the reactions are defined is the following, let us
+assume we have two molecules named <code class="docutils literal notranslate"><span class="pre">SolvatedElectron</span></code> and <code class="docutils literal notranslate"><span class="pre">Oxygen</span></code>. After
+their reaction, they produce the product <code class="docutils literal notranslate"><span class="pre">SuperoxideAnion</span></code>. Then, two
+parameters are required to define that reaction: one parameter to
+associate the pair of molecules and define the products, one parameter to
+assigns the reaction rate (with units of /M/s), e.g:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="c"># Define the products:</span>
+<span class="kt">sv</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/Reaction/SolvatedElectron/Oxygen/</span><span class="na">Products</span><span class="n">    </span><span class="o">=</span><span class="n"> </span><span class="m">1</span><span class="n"> </span><span class="s">&quot;SuperoxideAnion&quot;</span>
+
+<span class="c"># Assign a reaction rate value:</span>
+<span class="kt">d</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/Reaction/SolvatedElectron/Oxygen/</span><span class="na">ReactionRate</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">1.9e10</span><span class="n">  /M/s</span>
+
+<span class="c"># Assign the Reaction Type</span>
+<span class="kt">i</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/Reaction/SolvatedElectron/Oxygen/</span><span class="na">ReactionRate</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">2</span>
+
+<span class="c"># SBS Compatible Reactions</span>
+<span class="kt">b</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/Reaction/SolvatedElectron/Oxygen/</span><span class="na">CompatibleWithStepByStep</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="kc">&quot;True&quot;</span>
+</pre></div>
+</div>
+<p>Reaction types can be 1, 2, 3, 4 or 5 depending on the reactants charge and mode of reaction (totally diffusion
+controlled  or partially diffusion  controlled) <a class="reference internal" href="#plante2017" id="id7"><span>[Plante2017]</span></a>. Background reactions (type 6) are threated separetedly
+for either Step-By-Step or IRT simulations, as it will be discussed in a following section.</p>
+<p>If the reaction does not produce any product or the product won’t react further, for
+example,  the product from <sup>•</sup>OH + H<sup>•</sup> –&gt; H <sub>2</sub>O, then the name <code class="docutils literal notranslate"><span class="pre">None</span></code>
+must be used, e.g:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="c"># Define the reaction without products:</span>
+<span class="kt">sv</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/Reaction/Hydroxyl/Hydrogen/</span><span class="na">Products</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">1</span><span class="n"> </span><span class="s">&quot;None&quot;</span>
+</pre></div>
+</div>
+<p>TOPAS-nBio provides two sets of chemical parameters in the files <code class="docutils literal notranslate"><span class="pre">TOPASChemistry.txt</span></code>
+and <code class="docutils literal notranslate"><span class="pre">TOPASChemistry_Extended.txt</span></code> to be used with <code class="docutils literal notranslate"><span class="pre">TsEmDNAChemistry</span></code> and <code class="docutils literal notranslate"><span class="pre">TsEmDNAChemistryExtended</span></code>
+, respectively. These files (available in examples/processes) should be included in the usual way
+with <code class="docutils literal notranslate"><span class="pre">includeFile</span> <span class="pre">=</span> <span class="pre">&quot;TOPASChemistry.txt&quot;</span></code>. The first set of reactions and reaction rates reproduces
+experimental data from the literature, as reported in <a class="reference internal" href="#ramosmendez2018" id="id8"><span>[RamosMendez2018]</span></a>. The examples
+<code class="docutils literal notranslate"><span class="pre">ActiveChemistryRevised.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">ActiveChemistryExtended.txt</span></code> show how to define the new reaction
+capability.</p>
+</section>
+<section id="truncation-transport-for-chemical-stage">
+<h3>Truncation transport for chemical stage<a class="headerlink" href="#truncation-transport-for-chemical-stage" title="Link to this heading">¶</a></h3>
+<p>An additional feature is the capability to terminate the transport of chemical species in volumes
+having a user defined material. In that case, the species are terminated once they come in contact
+with the volume (at the boundary or the first step within the volume). To use that capability, a new
+material must be cloned from the <code class="docutils literal notranslate"><span class="pre">G4_WATER</span></code> material:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:</span><span class="nc">Ma/G4_WATER_MODIFIED/</span><span class="na">CloneFromMaterial</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;G4_WATER&quot;</span>
+<span class="kt">d</span><span class="n">:</span><span class="nc">Ma/G4_WATER_MODIFIED/</span><span class="na">CloneWithDensity</span><span class="n">  </span><span class="o">=</span><span class="n"> </span><span class="m">1.0</span><span class="n"> g/cm3</span>
+</pre></div>
+</div>
+<p>Then call the following parameters (also, see example <code class="docutils literal notranslate"><span class="pre">RemoveChemicalSpeciesInVolume.txt</span></code>):</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">s</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/</span><span class="na">RemoveInMaterial</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;G4_WATER_MODIFIED&quot;</span>
+<span class="kt">sv</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/</span><span class="na">RemoveInMaterialTheseMolecules</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">2</span><span class="n"> </span><span class="s">&quot;SolvatedElectron&quot;</span><span class="n"> </span><span class="s">&quot;Hydrogen&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="chemical-diffusion-reaction-algorithms">
+<h2>Chemical Diffusion-Reaction Algorithms<a class="headerlink" href="#chemical-diffusion-reaction-algorithms" title="Link to this heading">¶</a></h2>
+<p>TOPAS-nBio incorporates two different methods for the diffusion and reaction of chemical species, the Step-By-Step (SBS) <a class="reference internal" href="#turner1983" id="id9"><span>[Turner1983]</span></a>
+and Independent Reaction Times (IRT) <a class="reference internal" href="#clifford1986" id="id10"><span>[Clifford1986]</span></a> methods. Either method can be invoked by means of specific scorers.
+Main differences between both methods are the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>SBS simulates the spatial and temporal evolution of the chemical species and thus is slower than IRT.</p></li>
+<li><p>SBS allows to visualize chemical evolution.</p></li>
+<li><p>IRT can reach up to two or three orders of magnitude shorter times than SBS.</p></li>
+<li><p>Further chemical species can be defined only in IRT using parameters starting with ‘’Mo’’, see below.</p></li>
+<li><p>Reactions between chemical species and background are defined in a different way between both methods.</p></li>
+<li><p>Products from background reactions can be simulated only with IRT.</p></li>
+</ul>
+</div></blockquote>
+<section id="step-by-step">
+<span id="id11"></span><h3>Step-By-Step<a class="headerlink" href="#step-by-step" title="Link to this heading">¶</a></h3>
+<p>For the SBS method, TOPAS-nBio inherits the reactions and molecules from Geant4-DNA.
+To incorporate reactions with the background (scavenging) in TOPAS-nBio, the following structure must be used:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="c"># The Reactant: Scavenged Molecules</span>
+<span class="kt">sv</span><span class="n">:</span><span class="nc">Sc/SBSGValue/Scavenger/</span><span class="na">Molecules</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">2</span><span class="n"> </span><span class="s">&quot;SolvatedElectron&quot;</span><span class="n"> </span><span class="s">&quot;Hydroxyl&quot;</span>
+
+<span class="c"># The Scavenger concentrations</span>
+<span class="kt">dv</span><span class="n">:</span><span class="nc">Sc/SBSGValue/Scavenger/</span><span class="na">Concentrations</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">2</span><span class="n"> </span><span class="m">1e-2</span><span class="n"> </span><span class="m">1e-2</span><span class="n"> M</span>
+
+<span class="c"># The Scavenger reaction rate</span>
+<span class="kt">dv</span><span class="n">:</span><span class="nc">Sc/SBSGValue/Scavenger/</span><span class="na">ReactionRates</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">2</span><span class="n"> </span><span class="m">5e10</span><span class="n"> </span><span class="m">2.7e9</span><span class="n"> /M/s</span>
+
+<span class="c"># Confirm if there are products: Must be set to False.</span>
+<span class="kt">bv</span><span class="n">:</span><span class="nc">Sc/SBSGValue/Scavenger/</span><span class="na">HasProducts</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">2</span><span class="n"> </span><span class="kc">&quot;False&quot;</span><span class="n"> </span><span class="kc">&quot;False&quot;</span>
+</pre></div>
+</div>
+<p>where M = 1 mol/dm3.</p>
+<p>In the previous example solvated electrons and Hydroxyl radicals will be scavenged at a rate (scavenging capacity) of <span class="math notranslate nohighlight">\(5 \times 10^{8} s^{-1}\)</span> for the solvated electrons and <span class="math notranslate nohighlight">\(2.7 \times 10^{7} s^{-1}\)</span> for the hydroxyl radical, respectively.
+Current version of TOPAS-nBio does not produces any product from background reaction. This capability will be added in a future release of TOPAS-nBio.</p>
+</section>
+<section id="independent-reaction-times">
+<span id="id12"></span><h3>Independent Reaction Times<a class="headerlink" href="#independent-reaction-times" title="Link to this heading">¶</a></h3>
+<p>For IRT we provide a revisited reaction kinetics model (reaction and reaction rates) reported in <a class="reference internal" href="#ramosmendez2021" id="id13"><span>[RamosMendez2021]</span></a> which reconciliated simulated and measured
+G values at the picosecond range. This model is provided in the example TOPAS-nBio/examples/scorers/GetIRTGvalues.</p>
+<p>The user can define new molecules by using the parameter system by using the <code class="docutils literal notranslate"><span class="pre">Mo</span></code> prefix as follows:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="c"># Define the internal Symbol of the Molecule</span>
+<span class="kt">s</span><span class="n">:Mo/DM</span><span class="nc">SO/</span><span class="na">Symbol</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;DMSO^0&quot;</span>
+
+<span class="c"># Define the Diffussion Coefficient</span>
+<span class="kt">d</span><span class="n">:Mo/DM</span><span class="nc">SO/</span><span class="na">DiffusionCoefficient</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0</span><span class="n"> nm2/s</span>
+
+<span class="c"># Define the Charge of the Molecule</span>
+<span class="kt">u</span><span class="n">:Mo/DM</span><span class="nc">SO/</span><span class="na">Charge</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0</span>
+
+<span class="c"># Define the reaction radius</span>
+<span class="kt">d</span><span class="n">:Mo/DM</span><span class="nc">SO/</span><span class="na">Radius</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0.3</span><span class="n"> nm</span>
+</pre></div>
+</div>
+<p>New molecules defined with the previous method are not compatible with the StepByStep method.
+In IRT, the declaration of background reactions follows the same convention from the regular reactions:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="kt">sv</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/BackgroundReaction/hydroxyl/DMSO/</span><span class="na">Products</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">1</span><span class="n"> </span><span class="s">&quot;OHDMSOProduct^0&quot;</span>
+<span class="kt">d</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/BackgroundReaction/hydroxyl/DMSO/</span><span class="na">ReactionRate</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">7.1e9</span><span class="n"> /M/s</span>
+<span class="kt">d</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/BackgroundReaction/hydroxyl/DMSO/</span><span class="na">Concentration</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">1e-1</span><span class="n"> M</span>
+</pre></div>
+</div>
+<p>Two models for simulating background reactions are provided, and can be selected as follows:</p>
+<blockquote>
+<div><p># Either ExponentialSingleFactor or ExponentialDoubleFactor
+s:Ch/TOPASChemistry/BackgroundReaction/hydroxyl/DMSO/ScavengingModel = “ExponentialSingleFactor”</p>
+</div></blockquote>
+<p>Where <code class="docutils literal notranslate"><span class="pre">ExponentialSingleFactor</span></code> refers to method described in <a class="reference internal" href="#plante2017" id="id14"><span>[Plante2017]</span></a> and <code class="docutils literal notranslate"><span class="pre">ExponentialDoubleFactor</span></code>
+is the method described in <a class="reference internal" href="#pimblott1991" id="id15"><span>[Pimblott1991]</span></a>.</p>
+<p>TOPAS-nBio IRT allows for the activation and deactivation of reactions. This allows users to define a list of
+chemical reactions and pick and choose which ones of them will be active during the simulation without
+the need to introduce or delete the whole reaction:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="c"># Deactivate an already existing Chemical Reaction</span>
+<span class="kt">b</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/Reaction/hydrogen/hydroxyl/</span><span class="na">Active</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="kc">&quot;False&quot;</span>
+
+<span class="c"># Deactivate an already existing Background Reaction</span>
+<span class="kt">b</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/BackgroundReaction/hydroxyl/DMSO/</span><span class="na">Active</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="kc">&quot;False&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="simulations-considering-ph">
+<h2>Simulations considering pH<a class="headerlink" href="#simulations-considering-ph" title="Link to this heading">¶</a></h2>
+<p>The IRT method of TOPAS-nBio allows the user to scale the pH value of the medium. This can be usefull to model the physical conditions of experimental setups in more detail. The pH scalling was developed following the work of <a class="reference internal" href="#autsavapromporn2007" id="id16"><span>[Autsavapromporn2007]</span></a> and <a class="reference internal" href="#plante2011" id="id17"><span>[Plante2011]</span></a>. To change the pH of the medium the following parameters are used:</p>
+<div class="highlight-topas notranslate"><div class="highlight"><pre><span></span><span class="c"># Modeling acid properties can be set to &quot;H2SO4&quot; or &quot;Generic&quot;</span>
+<span class="c"># &quot;Generic&quot; is an artifical PH scalling in which no acid is present</span>
+<span class="kt">s</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/</span><span class="na">ModelAcidPropertiesFromSubstance</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="s">&quot;H2SO4&quot;</span>
+
+<span class="c"># Use acid concentration to change pH, not available with &quot;Generic&quot; solvent</span>
+<span class="kt">s</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/</span><span class="na">ModelAcidPropertiesWithConcentration</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">0.4</span><span class="n"> M</span>
+
+<span class="c"># Use a specific pH and calculate acid concentration</span>
+<span class="kt">s</span><span class="n">:Ch/TOPA</span><span class="nc">SChemistry/</span><span class="na">ModelAcidPropertiesWithpH</span><span class="n"> </span><span class="o">=</span><span class="n"> </span><span class="m">4.6</span>
+</pre></div>
+</div>
+<p>The last two parameters; <code class="docutils literal notranslate"><span class="pre">ModelAcidPropertiesWithConcentration</span></code> and <code class="docutils literal notranslate"><span class="pre">ModelAcidPropertiesWithpH</span></code> canot be
+used at the same time, if the user attemps to do so TOPAS will exit and an error message displayed. TOPAS-nBio will
+automatically scale reaction rates for reactions between two charged chemical species based on the ionic strength
+of the medium. An example is provide shown this capability throught the Fricke dosimeter, see example TOPAS-nBio/example/scorers/FrickeIRT</p>
+</section>
+<section id="irt-automatic-temperature-scalling">
+<h2>IRT Automatic Temperature Scalling<a class="headerlink" href="#irt-automatic-temperature-scalling" title="Link to this heading">¶</a></h2>
+<p>TOPAS-nBio provides its users with a built-in temperature scalling algorithm compatible with IRT.
+It is based on the work of <a class="reference internal" href="#elliot1994" id="id18"><span>[Elliot1994]</span></a> and <a class="reference internal" href="#dupenhoat200" id="id19"><span>[DuPenhoat200]</span></a>.
+Specif details regarding the implementation can be found in <a class="reference internal" href="#ramosmendez2022" id="id20"><span>[RamosMendez2022]</span></a>. To use the temperature scaling of reaction rates and
+diffusion coefficients, the users must the parameter <code class="docutils literal notranslate"><span class="pre">u:Ch/TOPASChemistry/Temperature</span></code> and setting it to the temperature in Celsius.</p>
+<p>For the best results, it is recommended to also change the water density to the value that corresponds with the desired temperature.
+We provide users with two examples that showcase this TOPAS-nBio IRT feature in the folder <code class="docutils literal notranslate"><span class="pre">/examples/scorers/Temperatures</span></code>: <code class="docutils literal notranslate"><span class="pre">TemperatureExample_20C.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">TemperatureExample_90C.txt</span></code>.</p>
+<p>We remind users that this specific implementation is only valid between 0 and 90 degrees Celsius.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
+<div role="list" class="citation-list">
+<div class="citation" id="karamitros2012" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">Karamitros2012</a><span class="fn-bracket">]</span></span>
+<p>Karamitros M, Mantero A, Incerti S, Friedland W, Baldacchino G, Barberet P,
+Bernal M, Capra R, Champion C, El Bitar Z, Francis Z, Gueye P, Ivanchenko A,
+Ivanchenko V, Kurashige H, Mascialino B, Moretto P, Nieminen P, Santin G,
+Seznec H, Tran H N, Villagrasa C and Zacharatou C 2011 Modeling Radiation
+Chemistry in the Geant4 Toolkit Prog. Nucl. Sci. Technol. 2 503–8
+<a class="reference external" href="http://www.aesj.or.jp/publication/pnst002/data/503-508.pdf">http://www.aesj.or.jp/publication/pnst002/data/503-508.pdf</a></p>
+</div>
+<div class="citation" id="incerti2016" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">Incerti2016</a><span class="fn-bracket">]</span></span>
+<p>Incerti S, Douglass M, Penfold S, Guatelli S and Bezak E 2016
+Review of Geant4-DNA applications for micro and nanoscale simulations Phys.
+Medica 32 1187–200 <a class="reference external" href="http://www.physicamedica.com/article/S1120-1797(16)30927-9/pdf">http://www.physicamedica.com/article/S1120-1797(16)30927-9/pdf</a></p>
+</div>
+<div class="citation" id="ramosmendez2018" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>RamosMendez2018<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id6">1</a>,<a role="doc-backlink" href="#id8">2</a>)</span>
+<p>Ramos-Méndez J, Perl J, Schuemann J, McNamara A, Paganetti H and Faddegon B
+2018 Monte Carlo simulation of chemistry following radiolysis with TOPAS-nBio
+Phys. Med. Biol. 63 105014 <a class="reference external" href="http://iopscience.iop.org/article/10.1088/1361-6560/aac04c">http://iopscience.iop.org/article/10.1088/1361-6560/aac04c</a></p>
+</div>
+<div class="citation" id="ramosmendez2021" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>RamosMendez2021<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id13">3</a>)</span>
+<p>Ramos-Méndez J, LaVerne J, D-Kondo J, et. al. 2021
+TOPAS-nBio validation for simulating water radiolysis and DNA damage under low-LET irradiation.
+Phys. Med. Biol. <a class="reference external" href="https://iopscience.iop.org/article/10.1088/1361-6560/ac1f39">https://iopscience.iop.org/article/10.1088/1361-6560/ac1f39</a></p>
+</div>
+<div class="citation" id="ramosmendez2022" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">RamosMendez2022</a><span class="fn-bracket">]</span></span>
+<p>Ramos-Méndez, J., García-García, O., Domínguez-Kondo, J., Laverne, J. A., Schuemann, J., Moreno-Barbosa, E.,
+Faddegon, B. (2022). TOPAS-nBio simulation of temperature-dependent indirect DNA strand break yields. Physics in
+Medicine and Biology. <a class="reference external" href="https://doi.org/10.1088/1361-6560/ac79f9">https://doi.org/10.1088/1361-6560/ac79f9</a></p>
+</div>
+<div class="citation" id="clifford1986" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">Clifford1986</a><span class="fn-bracket">]</span></span>
+<p>Clifford P, Green N J B, Oldfield M J, Pilling M J and Pimblott S M 1986
+Stochastic Models of Multi-species Kinetics in Radiation-induced Spurs J. Chem. Soc., Faraday Trans. 1 82 2673–89 <a class="reference external" href="http://doi.org/10.1039/F19868202673">http://doi.org/10.1039/F19868202673</a></p>
+</div>
+<div class="citation" id="turner1983" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">Turner1983</a><span class="fn-bracket">]</span></span>
+<p>Turner JE, Magee JL, Wright HA, Chatterjee A, Hamm RN, RitchieRH 1983
+Physical and chemical development of electron tracksin liquid water. Radiat Res 96:437–449 <a class="reference external" href="https://www.jstor.org/stable/3576111">https://www.jstor.org/stable/3576111</a></p>
+</div>
+<div class="citation" id="plante2017" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Plante2017<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id7">1</a>,<a role="doc-backlink" href="#id14">2</a>)</span>
+<p>Plante I and Devroye L 2017 Considerations for the independent reaction times and step-by-step
+methods for radiation chemistry simulations” Radiat. Phys. Chem. 139 157-172 <a class="reference external" href="http://dx.doi.org/10.1016/j.radphyschem.2017.03.021">http://dx.doi.org/10.1016/j.radphyschem.2017.03.021</a></p>
+</div>
+<div class="citation" id="pimblott1991" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">Pimblott1991</a><span class="fn-bracket">]</span></span>
+<p>Pimblott SM, Pilling MJ, and Green NJB 1991
+Stochastic Models of Sput Kinetics In Water. Radiat. Phys. Chem. 37 (3) 377-388
+<a class="reference external" href="https://doi.org/10.1016/1359-0197(91)90006-N">https://doi.org/10.1016/1359-0197(91)90006-N</a></p>
+</div>
+<div class="citation" id="schuemann2019a" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">Schuemann2019a</a><span class="fn-bracket">]</span></span>
+<p>Schuemann, J, McNamara, A L, Ramos-Méndez, J, Perl, J, Held, K D, Paganetti, H, Incerti, S,
+Faddegon, B 2019 TOPAS-nBio: An Extension to the TOPAS Simulation Toolkit for Cellular and
+Sub-cellular Radiobiology Radiation Research, 191(2), 125–138 <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/30609382/">https://pubmed.ncbi.nlm.nih.gov/30609382/</a></p>
+</div>
+<div class="citation" id="autsavapromporn2007" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">Autsavapromporn2007</a><span class="fn-bracket">]</span></span>
+<p>Autsavapromporn N, Meesungnoen J, Plante I, Jay-Gerin J-P 2007.
+Monte Carlo simulation study of the effects of acidity and LET on the primary free-radical and molecular yields of water radiolysis — Application to the Fricke dosimeter. Canadian Journal of Chemistry, 85(3), 214–229. <a class="reference external" href="https://doi.org/10.1139/v07-021">https://doi.org/10.1139/v07-021</a></p>
+</div>
+<div class="citation" id="plante2011" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">Plante2011</a><span class="fn-bracket">]</span></span>
+<p>Plante I 2011. A Monte-Carlo step-by-step simulation code of the non-homogeneous chemistry of the radiolysis
+of water and aqueous solutions-Part II: Calculation of radiolytic yields under different conditions of LET, pH, and temperature. Radiation and Environmental Biophysics, 50(3), 405–415. <a class="reference external" href="https://doi.org/10.1007/s00411-011-0368-7">https://doi.org/10.1007/s00411-011-0368-7</a></p>
+</div>
+<div class="citation" id="elliot1994" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">Elliot1994</a><span class="fn-bracket">]</span></span>
+<p>Elliot A J 1994. Rate Constants and G-Values for the Simulation of the Radiolysis of Light Water over the Range 0-300°C. <a class="reference external" href="https://inis.iaea.org/records/1964r-srn97">https://inis.iaea.org/records/1964r-srn97</a></p>
+</div>
+<div class="citation" id="dupenhoat200" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">DuPenhoat200</a><span class="fn-bracket">]</span></span>
+<p>Du Penhoat M-A H, Goulet T, Frongillo Y, Fraser M J, Bernat P, Jay-Gerin J P 2000.
+Radiolysis of liquid water at temperatures up to 300 °c: A Monte Carlo simulation study. Journal of Physical Chemistry A, 104(50), 11757–11770. <a class="reference external" href="https://doi.org/10.1021/jp001662d">https://doi.org/10.1021/jp001662d</a></p>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Physics.html" class="btn btn-neutral float-left" title="Physics Processes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Modeling/Intro.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019,The TOPAS-nBio Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
