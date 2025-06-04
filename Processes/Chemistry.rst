@@ -9,8 +9,8 @@ at the picosecond level as shown in [RamosMendez2021]_.
 
 The default chemistry list for TOPAS-nBio can be found at ``topas-nBio/examples/processes/TOPASDefaultReactions.txt``.
 
-To use the default chemistry parameters from TOPAS-nBio, users had to use the topas chemistry modules, either 
-``TsEmDNAChemistry`` or ``TsEmDNAChemistryExtended``. In addition, add the following parameter::
+To use the default chemistry parameters from TOPAS-nBio, users should specify ``TsEmDNAChemistry``
+as the chemistry module. In addition, add the following parameter::
 
  includeFile = TOPASDefaultReactions.txt
 
@@ -81,15 +81,10 @@ large set of parameters: branching ratios, dissociation schemes,
 reaction rates, types of chemical species and diffusion coefficients. 
 Advanced users that require to activate or deactivate reactions, change the 
 reaction rates or diffusion coefficients, etc., have that flexibility 
-provided by TOPAS-nBio. For that, one of the specialized modules ``TsEmDNAChemistry``
-and ``TsEmDNAChemistryExtended``  must be 
-included instead of the Geant4DNA chemistry module as follows:: 
+provided by TOPAS-nBio. This can be done by including ``TsEmDNAChemistry`` 
+instead of the Geant4DNA chemistry module as follows:: 
 
  sv:Ph/Default/Modules = 2 "TsEmDNAPhysics" "TsEmDNAChemistry"
-
-or::
-
- sv:Ph/Default/Modules = 2 "TsEmDNAPhysics" "TsEmDNAChemistryExtended"
 
 Instead of the ``TsEmDNAPhysics`` physics module, one of the other options described in the
 :ref:`Physics Processes` can be used.
@@ -98,8 +93,7 @@ In this way, a whole set of parameters can be customized by using the following
 conventions. Chemical species are named using full names without separation 
 spaces, for example, H\ :sub:`2`\ O\ :sub:`2` is HydrogenPeroxide (case 
 insensitive). The list of available molecules and diffusion coefficients 
-customizable via ``TsEmDNAChemistry`` and ``TsEmDNAChemistryExtended``  are 
-shown in the following table:
+customizable via ``TsEmDNAChemistry`` are shown in the following table:
 
 +--------------------------+--------------------+------------------------------------------------------+
 |  Molecule                |   TOPAS name       | D (10\ :sup:`–9`\ m\ :sup:`2`\ /s) at 25\ :sup:`o`\ C|
@@ -118,13 +112,13 @@ shown in the following table:
 +--------------------------+--------------------+------------------------------------------------------+
 | H\ :sub:`2`\ O\ :sub:`2` | HydrogenPeroxide   |  2.3                                                 |
 +--------------------------+--------------------+------------------------------------------------------+
-| O\ :sub:`2`              | Oxygen             |  2.4       (only in TsEmDNAChemistryExtended for SBS)|
+| O\ :sub:`2`              | Oxygen             |  2.4                                                 |
 +--------------------------+--------------------+------------------------------------------------------+
-| O\ :sub:`2–`             | SuperoxideAnion    |  1.75      (only in TsEmDNAChemistryExtended for SBS)|
+| O\ :sub:`2–`             | SuperoxideAnion    |  1.75                                                |
 +--------------------------+--------------------+------------------------------------------------------+
-| HO\ :sub:`2`             | HydroPeroxy        |  2.3       (only in TsEmDNAChemistryExtended for SBS)|
+| HO\ :sub:`2`             | HydroPeroxy        |  2.3                                                 |
 +--------------------------+--------------------+------------------------------------------------------+
-| HO\ :sub:`–2`            | Dioxidanide        |  1.4       (only in TsEmDNAChemistryExtended for SBS)|
+| HO\ :sub:`–2`            | Dioxidanide        |  1.4                                                 |
 +--------------------------+--------------------+------------------------------------------------------+
 | O\ :sub:`3`\ P           | AtomicOxygen       |  2.0       (only for IRT)                            |
 +--------------------------+--------------------+------------------------------------------------------+
@@ -138,10 +132,18 @@ shown in the following table:
 Prechemical stage
 ~~~~~~~~~~~~~~~~~~~
 The dissociation schemes and branching ratios are inherited from Geant4-DNA. 
-In general, users do not need to change or set these values. If for any reason
-the users require customization of these parameters, the following parameters available
-in TOPAS-nBio will facilitate this task (assuming ``s:Ch/ChemistryName = "TOPASChemistry"``)::
+In general, users do not need to change or set these values. 
+Users can select different branching ratio models as follows::
+    
+    s:Ch/TOPASChemistry/BranchingRatiosModel = "topasnbio" # "g4dna" "experimental"
 
+The default branching ratios in TOPAS-nBio are specified by ``topasnbio``.
+The default branching ratios from Geant4-DNA are specified by ``g4dna``. And ``experimental``
+can be used if you are interested in testing different ratios. Modification of these branching ratios can
+be accomplished as follows (assuming ``s:Ch/ChemistryName = "TOPASChemistry"``)::
+
+ s:Ch/TOPASChemistry/BranchingRatiosModel = "experimental"
+ 
  u:Ch/TOPASChemistry/BranchingRatios/IonizationState/DissociativeDecay = 1.00
  u:Ch/TOPASChemistry/BranchingRatios/A1B1/DissociativeDecay = 0.65 
  u:Ch/TOPASChemistry/BranchingRatios/A1B1/Relaxation = 0.35
@@ -186,13 +188,11 @@ must be used, e.g::
  # Define the reaction without products:
  sv:Ch/TOPASChemistry/Reaction/Hydroxyl/Hydrogen/Products = 1 "None"
 
-TOPAS-nBio provides two sets of chemical parameters in the files ``TOPASChemistry.txt`` 
-and ``TOPASChemistry_Extended.txt`` to be used with ``TsEmDNAChemistry`` and ``TsEmDNAChemistryExtended``
-, respectively. These files (available in examples/processes) should be included in the usual way
-with ``includeFile = "TOPASChemistry.txt"``. The first set of reactions and reaction rates reproduces
-experimental data from the literature, as reported in [RamosMendez2018]_. The examples 
-``ActiveChemistryRevised.txt`` and ``ActiveChemistryExtended.txt`` show how to define the new reaction
-capability.
+TOPAS-nBio provides a set of chemical parameters in the file ``TOPASChemistry.txt`` to be used with ``TsEmDNAChemistry``. 
+These files (available in examples/processes) should be included in the usual way
+with ``includeFile = "TOPASChemistry.txt"``. This set of reactions and reaction rates reproduces
+experimental data from the literature, as reported in [RamosMendez2018]_. The example 
+``ActiveChemistryRevised.txt`` shows how to define the new reaction capability.
 
 Truncation transport for chemical stage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -227,7 +227,10 @@ Main differences between both methods are the following:
 
 Step-By-Step
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-For the SBS method, TOPAS-nBio inherits the reactions and molecules from Geant4-DNA. 
+For the SBS method, TOPAS-nBio inherits the reactions and molecules from Geant4-DNA.
+This is done automatically when using the default Geant4-DNA chemistry list ``g4em-dna-chemistry``.
+When using the configurable chemistry list of TOPAS-nBio ``TsEmDNAChemistry``, the set of diffusion coefficients 
+and reaction rates to be used can be found in the `GvalueRevisedPhysicsChemistry.txt`_ example.
 To incorporate reactions with the background (scavenging) in TOPAS-nBio, the following structure must be used::
 
  # The Reactant: Scavenged Molecules
@@ -252,7 +255,7 @@ Current version of TOPAS-nBio does not produces any product from background reac
 Independent Reaction Times
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 For IRT we provide a revisited reaction kinetics model (reaction and reaction rates) reported in [RamosMendez2021]_ which reconciliated simulated and measured 
-G values at the picosecond range. This model is provided in the example TOPAS-nBio/examples/scorers/GetIRTGvalues.
+G values at the picosecond range. This model is provided in the `TsIRTGvalue.txt`_ example.
 
 The user can define new molecules by using the parameter system by using the ``Mo`` prefix as follows::
 
@@ -293,6 +296,17 @@ the need to introduce or delete the whole reaction::
 
  # Deactivate an already existing Background Reaction
  b:Ch/TOPASChemistry/BackgroundReaction/hydroxyl/DMSO/Active = "False"
+
+The section up to this point describes the ``pure`` IRT, which can be enabled as follows::
+    
+    s:Ch/TOPASChemistry/IRTProcedure = "pure"    
+
+.. note:: the ``pure`` IRT is default in TOPAS-nBio and will be used if no other IRT procedure is specified.
+
+In order to simulate the dose and dose rate dependency of long-term chemistry for continuous and quasi-continuous beam structures, 
+the ``continuous`` IRT can be used instead. This IRT modality is described in detail in [Shin2025]_::
+
+    s:Ch/TOPASChemistry/IRTProcedure = "continuous" 
 
 Simulations considering pH
 ---------------------------------------
@@ -372,3 +386,9 @@ References
 .. [DuPenhoat200] Du Penhoat M-A H, Goulet T, Frongillo Y, Fraser M J, Bernat P, Jay-Gerin J P 2000. 
                   Radiolysis of liquid water at temperatures up to 300 °c: A Monte Carlo simulation study. Journal of Physical Chemistry A, 104(50), 11757–11770. https://doi.org/10.1021/jp001662d
 
+.. [Shin2025] Wook-Geun Shin, J Naoki D-Kondo, José Ramos-Méndez, Jay A LaVerne, Bethany Rothwell, Alejandro Bertolet, Aimee McNamara, Bruce Faddegon, Harald Paganetti and Jan Schuemann 2025.
+                Investigation of hydrogen peroxide yields and oxygen consumption in high dose rate irradiation: a TOPAS-nBio Monte Carlo study. Phys. Med. Biol. 70 (2025) 015012. https://iopscience.iop.org/article/10.1088/1361-6560/ad9ce2
+
+.. _GvalueRevisedPhysicsChemistry.txt: https://github.com/topas-nbio/TOPAS-nBio/blob/master/examples/scorers/SBSGetGValue/GvalueRevisedPhysicsChemistry.txt
+
+.. _TsIRTGvalue.txt: https://github.com/topas-nbio/TOPAS-nBio/blob/e8e23670d48871715f89635aabcf1be43d3ba27c/examples/scorers/IRTGetGValue/TsIRTGvalue.txt
