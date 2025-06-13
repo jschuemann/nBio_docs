@@ -103,7 +103,6 @@ html_theme = 'sphinx_rtd_theme' # explicitly setting theme on RTD
 if not on_rtd:  # only import and set the theme if we're building docs locally
     import sphinx_rtd_theme
     html_theme = 'sphinx_rtd_theme'
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
     html_logo = 'images/TOPAS_nBio_Combined.png'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for

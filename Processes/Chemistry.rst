@@ -153,6 +153,11 @@ be accomplished as follows (assuming ``s:Ch/ChemistryName = "TOPASChemistry"``):
  u:Ch/TOPASChemistry/BranchingRatios/RydbergStatesAndDiffuseBands/AutoIoinization = 0.5
  u:Ch/TOPASChemistry/BranchingRatios/RydbergStatesAndDiffuseBands/Relaxation = 0.5
 
+.. note:: Users should avoid filling the entire world with water. When radiolysis happens close to the world edge
+    the pre-chemical displacements can sometimes create species that are outside the world, leading to segmentation faults. 
+    The solution is to have a small air gap between your target and world edge.
+
+
 Chemical stage
 ~~~~~~~~~~~~~~~
 For the chemical stage, the number of reactions and reaction rates are also 
