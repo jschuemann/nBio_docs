@@ -1,3 +1,5 @@
+.. _Physics Processes:
+
 Physics Processes
 =================
 The physical processes of the Geant4-DNA toolkit [Incerti2010]_ [Bernal2015]_ [Incerti2018]_ 
@@ -24,9 +26,9 @@ Geant-DNA provides several constructors
 which contain a variety of physics models for scattering processes. Hence, the
 selection of a suitable physics list is delegated to the users judgment according to the problem
 they want to tackle. A detailed description of each process and associated model available 
-in Geant4-DNA is shown `here <http://geant4-dna.in2p3.fr/styled-3/styled-8/index.html>`_. These
+in Geant4-DNA is shown `here <link1_>`_. These
 models are condensed into several Geant4 constructors as shown 
-`here <http://geant4-dna.in2p3.fr/styled-3/styled-9/index.html>`_ The
+`here <link2_>`_ The
 correspondence between the Geant4-DNA physics constructors and the TOPAS modules is shown 
 in the table below. Users who are advanced experts in Geant4 physics can also write 
 their own Geant4 physics modules and plug these into TOPAS through the extensions 
@@ -172,21 +174,27 @@ References
 -----------
 .. [Ivanchenko2011] Ivanchenko V, Apostolakis J, Bagulya a., et al., 2011 Recent Improvements 
                     in Geant4 Electromagnetic Physics Models and Interfaces `3th Monte Carlo 
-                    Conf. MC2010` 2 898–903 `link <http://hal.in2p3.fr/in2p3-00658779>`_
+                    Conf. MC2010` 2 898–903 http://hal.in2p3.fr/in2p3-00658779
  
 .. [RamosMendez2017] Ramos-Méndez J, Schuemann J, Incerti S, Paganetti H, Schulte R and 
                    Faddegon B 2017 Flagged uniform particle splitting for variance 
                    reduction in proton and carbon ion track-structure simulations 
-                   `Phys. Med. Biol.` 62 5908–25 `link <http://iopscience.iop.org/0031-9155/62/15/5908>`_
+                   `Phys. Med. Biol.` 62 5908–25 http://iopscience.iop.org/0031-9155/62/15/5908
 
 .. [Incerti2010] Incerti S, Ivanchenko A, Karamitros M, et al., 2010 Comparison of GEANT4 very 
-                 low energy cross section models with experimental data in water. `Med. Phys.` 37 4692–708
+                 low energy cross section models with experimental data in water. `Med. Phys.` 37 4692–708.
+                 https://pubmed.ncbi.nlm.nih.gov/20964188/
 
 .. [Bernal2015] Bernal M A, Bordage M C, Brown J M C, et al., 2015 Track structure modeling in 
                 liquid water: A review of the Geant4-DNA very low energy extension of the Geant4 
                 Monte Carlo simulation toolkit. `Phys. Med.` 31 861–74 
-                `link <http://www.sciencedirect.com/science/article/pii/S1120179715010042>`_
+                http://www.sciencedirect.com/science/article/pii/S1120179715010042
 
 .. [Incerti2018] Incerti S, Kyriakou I, Bernal M A, et al., 2018 Geant4-DNA example applications 
                  for track structure simulations in liquid water: A report from the Geant4-DNA 
-                 Project `Med. Phys.` 45 e722–39 `link <http://doi.wiley.com/10.1002/mp.13048>`_
+                 Project `Med. Phys.` 45 e722–39 http://doi.wiley.com/10.1002/mp.13048
+
+
+.. _link1: http://geant4-dna.in2p3.fr/styled-3/styled-8/index.html
+
+.. _link2: http://geant4-dna.in2p3.fr/styled-3/styled-9/index.html

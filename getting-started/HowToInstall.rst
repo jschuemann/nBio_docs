@@ -2,7 +2,7 @@ How to Install TOPAS-nBio
 =========================
 
 Installing OpenTOPAS
------------------
+--------------------
 
 TOPAS-nBio is an extension to the TOPAS toolkit, using the OpenTOPAS version. In order to install TOPAS-nBio, users must first install OpenTOPAS. 
 

@@ -126,7 +126,7 @@ this section.
 
 Solenoid Chromatin Fiber Model
 ------------------------------
-TsSolenoidFiber is a chromatin fiber model, based on a solenoid geometry, described in Henthorn et al. (2017) [Henthorn2017]_.
+TsSolenoidFiber is a chromatin fiber model, based on a solenoid geometry, described in Henthorn et al. (2017) [Henthorn2017a]_.
 
 .. figure:: images/SolenoidFiber1.png
    :width: 300
@@ -198,7 +198,7 @@ References
 .. [Ermak1978] Ermak D L, McCammon J A 1978. Brownian dynamics with hydrodynamic interactions. 
        The Journal of Chemical Physics, 69(4), 1352–1360. https://doi.org/10.1063/1.436761</div>
 
-.. [Henthorn2017] Henthorn NT, Warmenhoven JW, Sotiropoulos M, Mackay RI, Kirkby KJ & Merchant MJ 2017.
+.. [Henthorn2017a] Henthorn NT, Warmenhoven JW, Sotiropoulos M, Mackay RI, Kirkby KJ & Merchant MJ 2017.
        Nanodosimetric simulation of direct ion-induced DNA damage using different chromatin 
        geometry models. Radiation Research, 188, 770-783.
 

@@ -9,8 +9,8 @@ at the picosecond level as shown in [RamosMendez2021]_.
 
 The default chemistry list for TOPAS-nBio can be found at ``topas-nBio/examples/processes/TOPASDefaultReactions.txt``.
 
-To use the default chemistry parameters from TOPAS-nBio, users had to use the topas chemistry modules, either 
-``TsEmDNAChemistry`` or ``TsEmDNAChemistryExtended``. In addition, add the following parameter::
+To use the default chemistry parameters from TOPAS-nBio, users should specify ``TsEmDNAChemistry``
+as the chemistry module. In addition, add the following parameter::
 
  includeFile = TOPASDefaultReactions.txt
 
@@ -19,7 +19,7 @@ and recreate the validation results from [RamosMendez2021]_.
 
 Geant4 Default chemistry list
 ---------------------------------------------
-TOPAS-nBio can inherit the parameters (reactions, reaction rates, etc.) provided 
+TOPAS-nBio [Schuemann2019a]_ can inherit the parameters (reactions, reaction rates, etc.) provided 
 by the Geant4-DNA toolkit to perform radiolysis simulations via the modules 
 `g4em-dna-chemistry <https://opentopas.readthedocs.io/en/latest/parameters/physics/modular.html#list-of-available-modules>`_ 
 and 
@@ -81,15 +81,10 @@ large set of parameters: branching ratios, dissociation schemes,
 reaction rates, types of chemical species and diffusion coefficients. 
 Advanced users that require to activate or deactivate reactions, change the 
 reaction rates or diffusion coefficients, etc., have that flexibility 
-provided by TOPAS-nBio. For that, one of the specialized modules ``TsEmDNAChemistry``
-and ``TsEmDNAChemistryExtended``  must be 
-included instead of the Geant4DNA chemistry module as follows:: 
+provided by TOPAS-nBio. This can be done by including ``TsEmDNAChemistry`` 
+instead of the Geant4DNA chemistry module as follows:: 
 
  sv:Ph/Default/Modules = 2 "TsEmDNAPhysics" "TsEmDNAChemistry"
-
-or::
-
- sv:Ph/Default/Modules = 2 "TsEmDNAPhysics" "TsEmDNAChemistryExtended"
 
 Instead of the ``TsEmDNAPhysics`` physics module, one of the other options described in the
 :ref:`Physics Processes` can be used.
@@ -98,8 +93,7 @@ In this way, a whole set of parameters can be customized by using the following
 conventions. Chemical species are named using full names without separation 
 spaces, for example, H\ :sub:`2`\ O\ :sub:`2` is HydrogenPeroxide (case 
 insensitive). The list of available molecules and diffusion coefficients 
-customizable via ``TsEmDNAChemistry`` and ``TsEmDNAChemistryExtended``  are 
-shown in the following table:
+customizable via ``TsEmDNAChemistry`` are shown in the following table:
 
 +--------------------------+--------------------+------------------------------------------------------+
 |  Molecule                |   TOPAS name       | D (10\ :sup:`–9`\ m\ :sup:`2`\ /s) at 25\ :sup:`o`\ C|
@@ -118,13 +112,13 @@ shown in the following table:
 +--------------------------+--------------------+------------------------------------------------------+
 | H\ :sub:`2`\ O\ :sub:`2` | HydrogenPeroxide   |  2.3                                                 |
 +--------------------------+--------------------+------------------------------------------------------+
-| O\ :sub:`2`              | Oxygen             |  2.4       (only in TsEmDNAChemistryExtended for SBS)|
+| O\ :sub:`2`              | Oxygen             |  2.4                                                 |
 +--------------------------+--------------------+------------------------------------------------------+
-| O\ :sub:`2–`             | SuperoxideAnion    |  1.75      (only in TsEmDNAChemistryExtended for SBS)|
+| O\ :sub:`2–`             | SuperoxideAnion    |  1.75                                                |
 +--------------------------+--------------------+------------------------------------------------------+
-| HO\ :sub:`2`             | HydroPeroxy        |  2.3       (only in TsEmDNAChemistryExtended for SBS)|
+| HO\ :sub:`2`             | HydroPeroxy        |  2.3                                                 |
 +--------------------------+--------------------+------------------------------------------------------+
-| HO\ :sub:`–2`            | Dioxidanide        |  1.4       (only in TsEmDNAChemistryExtended for SBS)|
+| HO\ :sub:`–2`            | Dioxidanide        |  1.4                                                 |
 +--------------------------+--------------------+------------------------------------------------------+
 | O\ :sub:`3`\ P           | AtomicOxygen       |  2.0       (only for IRT)                            |
 +--------------------------+--------------------+------------------------------------------------------+
@@ -138,10 +132,18 @@ shown in the following table:
 Prechemical stage
 ~~~~~~~~~~~~~~~~~~~
 The dissociation schemes and branching ratios are inherited from Geant4-DNA. 
-In general, users do not need to change or set these values. If for any reason
-the users require customization of these parameters, the following parameters available
-in TOPAS-nBio will facilitate this task (assuming ``s:Ch/ChemistryName = "TOPASChemistry"``)::
+In general, users do not need to change or set these values. 
+Users can select different branching ratio models as follows::
+    
+    s:Ch/TOPASChemistry/BranchingRatiosModel = "topasnbio" # "g4dna" "experimental"
 
+The default branching ratios in TOPAS-nBio are specified by ``topasnbio``.
+The default branching ratios from Geant4-DNA are specified by ``g4dna``. And ``experimental``
+can be used if you are interested in testing different ratios. Modification of these branching ratios can
+be accomplished as follows (assuming ``s:Ch/ChemistryName = "TOPASChemistry"``)::
+
+ s:Ch/TOPASChemistry/BranchingRatiosModel = "experimental"
+ 
  u:Ch/TOPASChemistry/BranchingRatios/IonizationState/DissociativeDecay = 1.00
  u:Ch/TOPASChemistry/BranchingRatios/A1B1/DissociativeDecay = 0.65 
  u:Ch/TOPASChemistry/BranchingRatios/A1B1/Relaxation = 0.35
@@ -150,6 +152,11 @@ in TOPAS-nBio will facilitate this task (assuming ``s:Ch/ChemistryName = "TOPASC
  u:Ch/TOPASChemistry/BranchingRatios/B1A1/Relaxation = 0.30
  u:Ch/TOPASChemistry/BranchingRatios/RydbergStatesAndDiffuseBands/AutoIoinization = 0.5
  u:Ch/TOPASChemistry/BranchingRatios/RydbergStatesAndDiffuseBands/Relaxation = 0.5
+
+.. note:: Users should avoid filling the entire world with water. When radiolysis happens close to the world edge
+    the pre-chemical displacements can sometimes create species that are outside the world, leading to segmentation faults. 
+    The solution is to have a small air gap between your target and world edge.
+
 
 Chemical stage
 ~~~~~~~~~~~~~~~
@@ -186,13 +193,11 @@ must be used, e.g::
  # Define the reaction without products:
  sv:Ch/TOPASChemistry/Reaction/Hydroxyl/Hydrogen/Products = 1 "None"
 
-TOPAS-nBio provides two sets of chemical parameters in the files ``TOPASChemistry.txt`` 
-and ``TOPASChemistry_Extended.txt`` to be used with ``TsEmDNAChemistry`` and ``TsEmDNAChemistryExtended``
-, respectively. These files (available in examples/processes) should be included in the usual way
-with ``includeFile = "TOPASChemistry.txt"``. The first set of reactions and reaction rates reproduces
-experimental data from the literature, as reported in [RamosMendez2018]_. The examples 
-``ActiveChemistryRevised.txt`` and ``ActiveChemistryExtended.txt`` show how to define the new reaction
-capability.
+TOPAS-nBio provides a set of chemical parameters in the file ``TOPASChemistry.txt`` to be used with ``TsEmDNAChemistry``. 
+These files (available in examples/processes) should be included in the usual way
+with ``includeFile = "TOPASChemistry.txt"``. This set of reactions and reaction rates reproduces
+experimental data from the literature, as reported in [RamosMendez2018]_. The example 
+``ActiveChemistryRevised.txt`` shows how to define the new reaction capability.
 
 Truncation transport for chemical stage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -223,9 +228,14 @@ Main differences between both methods are the following:
  * Reactions between chemical species and background are defined in a different way between both methods.
  * Products from background reactions can be simulated only with IRT.
 
+.. _Step-By-Step:
+
 Step-By-Step
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-For the SBS method, TOPAS-nBio inherits the reactions and molecules from Geant4-DNA. 
+For the SBS method, TOPAS-nBio inherits the reactions and molecules from Geant4-DNA.
+This is done automatically when using the default Geant4-DNA chemistry list ``g4em-dna-chemistry``.
+When using the configurable chemistry list of TOPAS-nBio ``TsEmDNAChemistry``, the set of diffusion coefficients 
+and reaction rates to be used can be found in the `GvalueRevisedPhysicsChemistry.txt`_ example.
 To incorporate reactions with the background (scavenging) in TOPAS-nBio, the following structure must be used::
 
  # The Reactant: Scavenged Molecules
@@ -245,10 +255,12 @@ where M = 1 mol/dm3.
 In the previous example solvated electrons and Hydroxyl radicals will be scavenged at a rate (scavenging capacity) of :math:`5 \times 10^{8} s^{-1}` for the solvated electrons and :math:`2.7 \times 10^{7} s^{-1}` for the hydroxyl radical, respectively.
 Current version of TOPAS-nBio does not produces any product from background reaction. This capability will be added in a future release of TOPAS-nBio.
 
+.. _Independent Reaction Times:
+
 Independent Reaction Times
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 For IRT we provide a revisited reaction kinetics model (reaction and reaction rates) reported in [RamosMendez2021]_ which reconciliated simulated and measured 
-G values at the picosecond range. This model is provided in the example TOPAS-nBio/examples/scorers/GetIRTGvalues.
+G values at the picosecond range. This model is provided in the `TsIRTGvalue.txt`_ example.
 
 The user can define new molecules by using the parameter system by using the ``Mo`` prefix as follows::
 
@@ -289,6 +301,17 @@ the need to introduce or delete the whole reaction::
 
  # Deactivate an already existing Background Reaction
  b:Ch/TOPASChemistry/BackgroundReaction/hydroxyl/DMSO/Active = "False"
+
+The section up to this point describes the ``pure`` IRT, which can be enabled as follows::
+    
+    s:Ch/TOPASChemistry/IRTProcedure = "pure"    
+
+.. note:: the ``pure`` IRT is default in TOPAS-nBio and will be used if no other IRT procedure is specified.
+
+In order to simulate the dose and dose rate dependency of long-term chemistry for continuous and quasi-continuous beam structures, 
+the ``continuous`` IRT can be used instead. This IRT modality is described in detail in [Shin2025]_::
+
+    s:Ch/TOPASChemistry/IRTProcedure = "continuous" 
 
 Simulations considering pH
 ---------------------------------------
@@ -331,32 +354,31 @@ References
                      Ivanchenko V, Kurashige H, Mascialino B, Moretto P, Nieminen P, Santin G, 
                      Seznec H, Tran H N, Villagrasa C and Zacharatou C 2011 Modeling Radiation 
                      Chemistry in the Geant4 Toolkit Prog. Nucl. Sci. Technol. 2 503–8 
-                     `link <http://www.aesj.or.jp/publication/pnst002/data/503-508.pdf>`_
+                     http://www.aesj.or.jp/publication/pnst002/data/503-508.pdf
 .. [Incerti2016]  Incerti S, Douglass M, Penfold S, Guatelli S and Bezak E 2016 
                      Review of Geant4-DNA applications for micro and nanoscale simulations Phys. 
-                     Medica 32 1187–200 `link <http://www.physicamedica.com/article/S1120-1797(16)30927-9/pdf>`_
+                     Medica 32 1187–200 http://www.physicamedica.com/article/S1120-1797(16)30927-9/pdf
 .. [RamosMendez2018] Ramos-Méndez J, Perl J, Schuemann J, McNamara A, Paganetti H and Faddegon B 
                      2018 Monte Carlo simulation of chemistry following radiolysis with TOPAS-nBio 
-                     Phys. Med. Biol. 63 105014 `link <http://iopscience.iop.org/article/10.1088/1361-6560/aac04c>`_
+                     Phys. Med. Biol. 63 105014 http://iopscience.iop.org/article/10.1088/1361-6560/aac04c
 .. [RamosMendez2021] Ramos-Méndez J, LaVerne J, D-Kondo J, et. al. 2021
                      TOPAS-nBio validation for simulating water radiolysis and DNA damage under low-LET irradiation. 
-                     Phys. Med. Biol. `link <10.1088/1361-6560/ac1f39>`_
+                     Phys. Med. Biol. https://iopscience.iop.org/article/10.1088/1361-6560/ac1f39
 .. [RamosMendez2022] Ramos-Méndez, J., García-García, O., Domínguez-Kondo, J., Laverne, J. A., Schuemann, J., Moreno-Barbosa, E.,
                      Faddegon, B. (2022). TOPAS-nBio simulation of temperature-dependent indirect DNA strand break yields. Physics in
                      Medicine and Biology. https://doi.org/10.1088/1361-6560/ac79f9
 .. [Clifford1986]    Clifford P, Green N J B, Oldfield M J, Pilling M J and Pimblott S M 1986 
-                     Stochastic Models of Multi-species Kinetics in Radiation-induced Spurs J. Chem. Soc., Faraday Trans. 1 82 2673–89 `link <http://doi.org/10.1039/F19868202673>`_
+                     Stochastic Models of Multi-species Kinetics in Radiation-induced Spurs J. Chem. Soc., Faraday Trans. 1 82 2673–89 http://doi.org/10.1039/F19868202673
 .. [Turner1983]      Turner JE, Magee JL, Wright HA, Chatterjee A, Hamm RN, RitchieRH 1983 
-                     Physical and chemical development of electron tracksin liquid water. Radiat Res 96:437–449 
-                     `link <doi:10.2307/3576111>`_ 
+                     Physical and chemical development of electron tracksin liquid water. Radiat Res 96:437–449 https://www.jstor.org/stable/3576111
 .. [Plante2017]      Plante I and Devroye L 2017 Considerations for the independent reaction times and step-by-step 
-                     methods for radiation chemistry simulations" Radiat. Phys. Chem. 139 157-172 `link <http://dx.doi.org/10.1016/j.radphyschem.2017.03.021>`_
+                     methods for radiation chemistry simulations" Radiat. Phys. Chem. 139 157-172 http://dx.doi.org/10.1016/j.radphyschem.2017.03.021
 .. [Pimblott1991]    Pimblott SM, Pilling MJ, and Green NJB 1991
                      Stochastic Models of Sput Kinetics In Water. Radiat. Phys. Chem. 37 (3) 377-388 
-                     `link <https://doi.org/10.1016/1359-0197(91)90006-N>`_
-.. [Schuemann2019]   Schuemann, J, McNamara, A L, Ramos-Méndez, J, Perl, J, Held, K D, Paganetti, H, Incerti, S, 
+                     https://doi.org/10.1016/1359-0197(91)90006-N
+.. [Schuemann2019a]   Schuemann, J, McNamara, A L, Ramos-Méndez, J, Perl, J, Held, K D, Paganetti, H, Incerti, S, 
                      Faddegon, B 2019 TOPAS-nBio: An Extension to the TOPAS Simulation Toolkit for Cellular and 
-                     Sub-cellular Radiobiology Radiation Research, 191(2), 125–138 `link <https://wwwncbinlmnihgov/pubmed/30609382>`_
+                     Sub-cellular Radiobiology Radiation Research, 191(2), 125–138 https://pubmed.ncbi.nlm.nih.gov/30609382/
 
 .. [Autsavapromporn2007] Autsavapromporn N, Meesungnoen J, Plante I, Jay-Gerin J-P 2007. 
                          Monte Carlo simulation study of the effects of acidity and LET on the primary free-radical and molecular yields of water radiolysis — Application to the Fricke dosimeter. Canadian Journal of Chemistry, 85(3), 214–229. https://doi.org/10.1139/v07-021
@@ -364,8 +386,14 @@ References
 .. [Plante2011] Plante I 2011. A Monte-Carlo step-by-step simulation code of the non-homogeneous chemistry of the radiolysis 
                 of water and aqueous solutions-Part II: Calculation of radiolytic yields under different conditions of LET, pH, and temperature. Radiation and Environmental Biophysics, 50(3), 405–415. https://doi.org/10.1007/s00411-011-0368-7
 
-.. [Elliot1994] Elliot A J 1994. Rate Constants and G-Values for the Simulation of the Radiolysis of Light Water over the Range 0-300°C
+.. [Elliot1994] Elliot A J 1994. Rate Constants and G-Values for the Simulation of the Radiolysis of Light Water over the Range 0-300°C. https://inis.iaea.org/records/1964r-srn97
 
 .. [DuPenhoat200] Du Penhoat M-A H, Goulet T, Frongillo Y, Fraser M J, Bernat P, Jay-Gerin J P 2000. 
                   Radiolysis of liquid water at temperatures up to 300 °c: A Monte Carlo simulation study. Journal of Physical Chemistry A, 104(50), 11757–11770. https://doi.org/10.1021/jp001662d
 
+.. [Shin2025] Wook-Geun Shin, J Naoki D-Kondo, José Ramos-Méndez, Jay A LaVerne, Bethany Rothwell, Alejandro Bertolet, Aimee McNamara, Bruce Faddegon, Harald Paganetti and Jan Schuemann 2025.
+                Investigation of hydrogen peroxide yields and oxygen consumption in high dose rate irradiation: a TOPAS-nBio Monte Carlo study. Phys. Med. Biol. 70 (2025) 015012. https://iopscience.iop.org/article/10.1088/1361-6560/ad9ce2
+
+.. _GvalueRevisedPhysicsChemistry.txt: https://github.com/topas-nbio/TOPAS-nBio/blob/master/examples/scorers/SBSGetGValue/GvalueRevisedPhysicsChemistry.txt
+
+.. _TsIRTGvalue.txt: https://github.com/topas-nbio/TOPAS-nBio/blob/e8e23670d48871715f89635aabcf1be43d3ba27c/examples/scorers/IRTGetGValue/TsIRTGvalue.txt

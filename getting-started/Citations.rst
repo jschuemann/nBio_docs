@@ -1,3 +1,5 @@
+.. _Citations:
+
 Citations
 ======================
 
@@ -39,7 +41,7 @@ Schuemann J., McNamara A. L., Warmenhoven J., et al. (55 authors). (2019). A new
 
 
 Cell models with organelles and targeted nanoparticles
-------------------------------
+------------------------------------------------------
 Hahn, M.B., Zutta Villate, J.M. (2021). Combined cell and nanoparticle models for TOPAS to study radiation dose enhancement in cell organelles. Sci Rep 11(1): 6721. PMID: 33762596. PMCID: PMC7990972. https://doi.org/10.1038/s41598-021-85964-2
 
 
