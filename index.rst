@@ -9,13 +9,13 @@ If you are attending PTCOG, AAPM, RRS, or FRPT this year and are interested in a
 https://github.com/topas-nbio/TOPAS-nBio/discussions/78
 
 
-TOPAS-nBio v3.0 released
+TOPAS-nBio v4.0 released
 ===============================
-The new TOPAS-nBio v3.0 has been released and is based on OpenTOPAS v4.0.
-Please see the release notes for (some of) the new features that are available:
-https://github.com/topas-nbio/TOPAS-nBio/releases/tag/latest
+The new TOPAS-nBio v4.0 has been released and is based on OpenTOPAS v4.0.
+Please see the release notes for a list of bug fixes and new features that are available:
+https://github.com/topas-nbio/TOPAS-nBio/releases/tag/v4.0
 
-The release comes with a new forum, please use the discussions on the TOPAS-nBio GitHub for an integrated experience.
+Please use the discussions on the TOPAS-nBio GitHub for an integrated experience.
 
 
 New TOPAS-nBio forum
