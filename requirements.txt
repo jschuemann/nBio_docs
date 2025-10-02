@@ -1,4 +1,4 @@
 Sphinx>=1.4.2
 docutils==0.17.1
-sphinx-rtd-theme==1.1.0
+sphinx-rtd-theme
 git+https://github.com/tmasilela/topas-pygments.git#egg=topas_pygments
