@@ -128,9 +128,7 @@ html_theme_options = {
         "<p>"
         "We will have a virtual TOPAS / TOPAS-nBio meeting on *** October 21, 11 am EST, for more see *** <a href='https://github.com/OpenTOPAS/OpenTOPAS/discussions/167'>PyData Announcement!</a>"
         "</p>"
-    ),
-
-    ...
+    )
 }
 
 
