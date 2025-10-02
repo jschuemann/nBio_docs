@@ -3,10 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Potential user meetings this year
-==================================
-If you are attending PTCOG, AAPM, RRS, or FRPT this year and are interested in a user meeting, please let us know in the Forum:
-https://github.com/topas-nbio/TOPAS-nBio/discussions/78
+.. attention:: 
+	Virtual user meetings on October 21, 11 am EST
+	==================================
+	We will have a virtual user meeting, for more info, please see:
+	https://github.com/OpenTOPAS/OpenTOPAS/discussions/167
 
 
 TOPAS-nBio v4.0 released
