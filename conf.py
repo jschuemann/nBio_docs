@@ -124,7 +124,7 @@ html_static_path = ['_static']
 html_theme_options = {
     # Announcement banner defined as a string of arbitrary HTML, temporarily
     # displayed at the top of each page until the user begins scrolling.
-    'announcement':  "We will have a virtual TOPAS / TOPAS-nBio meeting on *** October 21, 11 am EST, for more see *** <a href='https://github.com/OpenTOPAS/OpenTOPAS/discussions/167'> </a>"
+    'announcement':  "We will have a virtual TOPAS / TOPAS-nBio meeting on October 21, 11 am EST",
 }
 
 
