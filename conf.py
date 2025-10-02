@@ -121,6 +121,12 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+rst_prolog = """
+.. attention::
+    **Important:** Virtual User Meeting.
+    We will be holding a virtual user meetin on Oct. 21, 11am EST. For more, see https://github.com/OpenTOPAS/OpenTOPAS/discussions/167
+"""
+
 html_theme_options = {
     # Announcement banner defined as a string of arbitrary HTML, temporarily
     # displayed at the top of each page until the user begins scrolling.
