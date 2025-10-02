@@ -4,8 +4,7 @@
    contain the root `toctree` directive.
 
 .. attention:: 
-	Virtual user meetings on October 21, 11 am EST
-	==================================
+	*** Virtual user meetings on October 21, 11 am EST ***
 	We will have a virtual user meeting, for more info, please see:
 	https://github.com/OpenTOPAS/OpenTOPAS/discussions/167
 
