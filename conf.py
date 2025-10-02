@@ -123,15 +123,17 @@ html_static_path = ['_static']
 
 rst_prolog = """
 .. attention::
-    **Important:** Virtual User Meeting.
-    We will be holding a virtual user meetin on Oct. 21, 11am EST. For more, see https://github.com/OpenTOPAS/OpenTOPAS/discussions/167
+    | **Virtual User Meeting**
+    | We will be holding a virtual user meetin on Oct. 21, 11am EST. 
+    | For more, see https://github.com/OpenTOPAS/OpenTOPAS/discussions/167
 """
 
-html_theme_options = {
-    # Announcement banner defined as a string of arbitrary HTML, temporarily
-    # displayed at the top of each page until the user begins scrolling.
-    'announcement':  "We will have a virtual TOPAS / TOPAS-nBio meeting on October 21, 11 am EST",
-}
+# This didn't work:
+#html_theme_options = {
+#    # Announcement banner defined as a string of arbitrary HTML, temporarily
+#    # displayed at the top of each page until the user begins scrolling.
+#    'announcement':  "We will have a virtual TOPAS / TOPAS-nBio meeting on October 21, 11 am EST",
+#}
 
 
 # Custom sidebar templates, must be a dictionary that maps document names
