@@ -121,6 +121,19 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+html_theme_options = {
+    # Announcement banner defined as a string of arbitrary HTML, temporarily
+    # displayed at the top of each page until the user begins scrolling.
+    'announcement': (
+        "<p>"
+        "We will have a virtual TOPAS / TOPAS-nBio meeting on *** October 21, 11 am EST, for more see *** <a href='https://github.com/OpenTOPAS/OpenTOPAS/discussions/167'>PyData Announcement!</a>"
+        "</p>"
+    ),
+
+    ...
+}
+
+
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
 #
