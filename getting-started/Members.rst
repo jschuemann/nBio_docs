@@ -83,15 +83,25 @@ Former Members
 
 +--------------------------------------+
 |  Aimee McNamara, Ph.D.               |
+|                                      |
 |  Isaac Meyer, Ph.D.                  |
+|                                      |
 |  Jungwook Shin, Ph.D.                |
+|                                      |
 |  Naoki D. Kondo, Ph.D.               |
+|                                      |
 |  Ramon Ortiz Catalan, Ph.D.          |
+|                                      |
 |  Dohyeon Yoo, Ph.D.                  |
+|                                      |
 |  Sam Ingram, Ph.D.                   |
+|                                      |
 |  Charlotte Heaven, Ph.D.             |
+|                                      |
 |  Michael Merchany, Ph.D.             |
+|                                      |
 |  Karen Kirkby, Ph.D.                 |
+|                                      |
 +--------------------------------------+
 
 
