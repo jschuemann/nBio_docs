@@ -16,7 +16,11 @@ Members of TOPAS-nBio
 |                                      |
 |  Aimee McNamara, Ph.D.               |
 |                                      |
-|  DoHyeon Yoo, Ph.D.                  |
+|  Wook Geun Shin, Ph.D.               |
+|                                      |
+|  Victor Onecha, Ph.D.                |
+|                                      |
+|  Jose A Lopez-Valverde, Ph.D.        |
 |                                      |
 |  Alejandro Bertolet, Ph.D.           |
 |                                      |
@@ -46,9 +50,7 @@ Members of TOPAS-nBio
 | .. image:: ../images/UManchester.png |
 |    :scale: 42%                       |
 +--------------------------------------+
-|  Michael Merchant, Ph.D.             |
-|                                      |
-|  Karen Kirkby, Ph.D.                 |
+|  Michael Taylor, Ph.D.               |
 |                                      |
 |  John Warmenhoven, Ph.D.             |
 |                                      |
@@ -73,6 +75,23 @@ Members of TOPAS-nBio
 +--------------------------------------+
 |  Jay LaVerne, Ph.D.                  |
 |                                      |
++--------------------------------------+
+
+
+Former Members
+---------------------------------------
+
++--------------------------------------+
+|  Aimee McNamara, Ph.D.               |
+|  Isaac Meyer, Ph.D.                  |
+|  Jungwook Shin, Ph.D.                |
+|  Naoki D. Kondo, Ph.D.               |
+|  Ramon Ortiz Catalan, Ph.D.          |
+|  Dohyeon Yoo, Ph.D.                  |
+|  Sam Ingram, Ph.D.                   |
+|  Charlotte Heaven, Ph.D.             |
+|  Michael Merchany, Ph.D.             |
+|  Karen Kirkby, Ph.D.                 |
 +--------------------------------------+
 
 
