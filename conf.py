@@ -123,9 +123,9 @@ html_static_path = ['_static']
 
 rst_prolog = """
 .. attention::
-    | **Virtual User Meeting**
-    | We will be holding a virtual user meetin on Oct. 21, 11am EST. 
-    | For more, see https://github.com/OpenTOPAS/OpenTOPAS/discussions/167
+    | **New TOPAS-nBio Announcement Email list**
+    | Sign up for announcements of new user meetings, code releases and more. 
+    | For more, see https://github.com/topas-nbio/TOPAS-nBio/discussions/101
 """
 
 # This didn't work:
