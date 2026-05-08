@@ -1,0 +1,13 @@
+/* Remove background and borders for tables with :class: no-row-bg */
+table.no-row-bg,
+table.no-row-bg th,
+table.no-row-bg td {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* More space after figures */
+.align-center {
+  margin-bottom: 1.5em !important;
+}

@@ -79,5 +79,12 @@ By releasing TOPAS-nBio as an open source extension to TOPAS, we intend to encou
     Scorers/Cells
     Scorers/DNAScorers
     Scorers/Chem
-    
-  
+.. toctree::
+    :maxdepth: 1
+    :caption: TOPAS-CLOUD
+
+    Cloud/CloudOverview
+    Cloud/CloudPart1
+    Cloud/CloudPart2
+    Cloud/checkList
+

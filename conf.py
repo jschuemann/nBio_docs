@@ -45,6 +45,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.todo',
     'sphinx.ext.autosectionlabel',
+    'sphinx_copybutton',
 ]
 
 autosectionlabel_prefix_document = True
@@ -283,5 +284,6 @@ epub_exclude_files = ['search.html']
 
 def setup(app):
     app.add_css_file('dark_background.css')
+    app.add_css_file('table-fig-format.css')
 
 # -- Extension configuration -------------------------------------------------

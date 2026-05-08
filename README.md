@@ -12,7 +12,7 @@ If working on a Mac, I recommend installing Python with Homebrew to avoid messin
 
 To build and view the docs locally (recommended for substantial editing), you will need to have Sphinx version 1.4.2 or newer and do:
 
-	pip3 install sphinx sphinx-autobuild sphinx_rtd_theme
+	pip3 install sphinx sphinx-autobuild sphinx_rtd_theme sphinx-copybutton
 
 To install TOPAS pygments:
 
