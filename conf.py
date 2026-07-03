@@ -128,7 +128,7 @@ rst_prolog = """
     | When: Monday, 7/20, 6pm
     | Where: TBD - Check back here during AAPM
     | Or check our LinkedIn: https://www.linkedin.com/company/110193068/admin/dashboard/
-"""
+
 .. attention::
     | ** TOPAS-nBio Announcement Email list**
     | Sign up for announcements of new user meetings, code releases and more. 
