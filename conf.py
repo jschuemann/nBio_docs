@@ -123,7 +123,14 @@ html_static_path = ['_static']
 
 rst_prolog = """
 .. attention::
-    | **New TOPAS-nBio Announcement Email list**
+    | ** TOPAS-nBio User Meeting at AAPM**
+    | Join us for the next user meeting at AAPM
+    | When: Monday, 7/20, 6pm
+    | Where: TBD - Check back here during AAPM
+    | Or check our LinkedIn: https://www.linkedin.com/company/110193068/admin/dashboard/
+"""
+.. attention::
+    | ** TOPAS-nBio Announcement Email list**
     | Sign up for announcements of new user meetings, code releases and more. 
     | For more, see https://github.com/topas-nbio/TOPAS-nBio/discussions/101
 """
