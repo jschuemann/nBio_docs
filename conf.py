@@ -125,8 +125,8 @@ rst_prolog = """
 .. attention::
     | ** TOPAS-nBio User Meeting at AAPM**
     | Join us for the next user meeting at AAPM
-    | When: Monday, 7/20, 6pm
-    | Where: TBD - Check back here during AAPM
+    | When: Monday, 7/20, 5:30pm
+    | Where: Next to the AAPM donors lounge.
     | Or check our LinkedIn: https://www.linkedin.com/company/110193068/admin/dashboard/
 
 .. attention::
