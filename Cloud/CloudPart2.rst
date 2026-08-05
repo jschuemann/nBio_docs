@@ -9,7 +9,7 @@ This section explains how to configure AWS and its resources to run TOPAS-nBio s
 
 AWS provides several resources that work together to run TOPAS-nBio simulations:
 
-* **AWS Batch** – a resource that organises and runs your simulation jobs. You submit a job definition (see step ...) and compute environment (see step ...)
+* **AWS Batch** – a resource that organises and runs your simulation jobs. You submit a job definition and compute environment (see step :ref:`6 <cloud_step6_compute_resources>`)
   which Batch uses to launch the necessary compute resources (EC2 instances) to run your simulations.
 * **EC2** – the actual virtual machines that run your simulations. When you use Batch, you normally do not create or manage these EC2 instances yourself;
   Batch does that automatically.
@@ -224,7 +224,7 @@ The compute environment defines what kind of compute resources Batch may use. In
 ``minvCpus`` is the minimum number of virtual CPUs that Batch keeps running (for example, ``0`` means it can scale down to no instances when idle),
 and ``maxvCpus`` is the upper limit on how many virtual CPUs Batch is allowed to use when scaling up to run your jobs.
 
-Either work directly from the `aws directory`_ of the TOPAS-nBio repository source code, or create a local directory to work in and copy the files over.
+Copy the contents of the `aws directory`_ of the TOPAS-nBio repository into a local directory to work in.
 The contents of each of the files are shown in this guide for convenience.
 
 The ``batch-compute-env.json`` file should contain the following content:
@@ -415,8 +415,8 @@ The ``batch-postP-job-definition.json`` file should contain the following conten
 Replace:
 
 * ``YOUR_IMAGE_URI`` with your TOPAS-nBio image URI in ECR or Docker Hub. If you would like to use the official TOPAS-nBio images from ECR, 
-  you can use the following URIs: ``public.ecr.aws/q4p2q6v1/topas-nbio-test`` for the latest TOPAS-nBio image and 
-  ``public.ecr.aws/q4p2q6v1/topas-nbio-test:postprocess`` for the postprocessing image
+  you can use the following URIs: ``public.ecr.aws/q0u0d8d4/topas-nbio`` for the latest TOPAS-nBio image and 
+  ``public.ecr.aws/q0u0d8d4/topas-nbio:postprocessing`` for the postprocessing image
 * ``AWS_REGION`` with your AWS region.
 * Bucket names if you chose to name them something different from ``topas-nbio-input`` and ``topas-nbio-output``.
 
@@ -736,9 +736,8 @@ Here are some of the important commands used in this guide.
    chmod +x postProcess_submit.sh
    ./postProcess_submit.sh
 
-.. _ECR: https://aws.amazon.com/ecr/
-.. _Docker Hub: https://hub.docker.com/
+.. _ECR: https://gallery.ecr.aws/q0u0d8d4/topas-nbio
+.. _Docker Hub: https://hub.docker.com/r/opentopas/topas-nbio
 .. _install the AWS CLI: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 .. _aws directory: https://github.com/topas-nbio/TOPAS-nBio/tree/main/aws
 .. _AWS S3 website: https://aws.amazon.com/s3/pricing/
-.. _link: https://gallery.ecr.aws/q4p2q6v1/topas-nbio-test

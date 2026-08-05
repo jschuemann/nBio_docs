@@ -88,10 +88,10 @@ Later sections in this ReadTheDocs provide more detailed instructions on what ex
   upload it, then describe which step you encountered an error on, along with any potential error messages. If you feel that a section of this guide is outdated/incorrect, 
   please reach out on the TOPAS-nBio `user forum`_
 
-.. _here: https://gallery.ecr.aws/q4p2q6v1/topas-nbio-test
+.. _here: https://gallery.ecr.aws/q0u0d8d4/topas-nbio
 .. _OpenTOPAS repository: https://github.com/OpenTOPAS/OpenTOPAS/tree/2d6f0cb3884a91561b8e35b783b8ba5911e982e9/docker
-.. _AWS ECR Public: https://gallery.ecr.aws/q4p2q6v1/topas-nbio-test
-.. _Docker Hub: https://hub.docker.com/r/tmasilela/topas-nbio
+.. _AWS ECR Public: https://gallery.ecr.aws/q0u0d8d4/topas-nbio
+.. _Docker Hub: https://hub.docker.com/r/opentopas/topas-nbio
 .. _this GitHub repository: https://github.com/HectorMiras/topas_docker_azure_batch
 .. _AWS: https://aws.amazon.com/ecr/pricing/
 .. _Docker: https://www.docker.com/pricing/
