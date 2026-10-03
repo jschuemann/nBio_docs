@@ -123,10 +123,10 @@ html_static_path = ['_static']
 
 rst_prolog = """
 .. attention::
-    | ** TOPAS-nBio User Meeting at AAPM**
-    | Join us for the next user meeting at AAPM
-    | When: Monday, 7/20, 5:30pm
-    | Where: Next to the AAPM donors lounge.
+    | ** TOPAS-nBio User Meeting at RRS**
+    | Join us for the next user meeting at the RRS
+    | When: Tuesday, 10/06, 12:15pm
+    | Where: Kohala 2.
     | Or check our LinkedIn: https://www.linkedin.com/company/110193068/admin/dashboard/
 
 .. attention::
